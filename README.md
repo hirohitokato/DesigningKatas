@@ -3,7 +3,10 @@
 
 ## 準備
 
-Visual Studio Codeを使用して閲覧する場合、以下の設定をONにしておいてください。
+Visual Studio Codeを使用して閲覧する場合、以下の手順で閲覧してください。
+
+1. Marp for VS Code拡張機能のインストール
+2. 以下の設定をONにしておく
 
 > Markdown > Marp: Enable HTML  ← チェックを入れる  
 > (`"markdown.marp.enableHtml": true`)
