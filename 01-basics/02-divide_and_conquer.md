@@ -46,12 +46,12 @@ style: |
 
 どんなに複雑な問題も、解決可能な小さい問題に分割できる
 
-* システム → ドメイン → 機能 → モジュール → 関数 → コード → ...
+* `システム → ドメイン → 機能 → モジュール → 関数 → コード → ...`
 * **山も崩せば塵となる**
 
 解決した小さな問題を再び組み上げれば、解決した大きな問題が出来上がる
 
-* コード → 関数 → モジュール → 機能 → ドメイン → システム(完成!)
+* `コード → 関数 → モジュール → 機能 → ドメイン → システム(完成!)`
 * **塵も積もれば山となる**
 
 ![bg 100% blur:2px opacity:0.3](https://kroki.io/mermaid/svg/eNpLy8kvT85ILCpRCHHhUlBwjH6xpP3l7ImPG1c9ndr_cmFPrIKurp2TocaTHWufr-h-umvZ48Z1EBlNkHKwrBFeWWMcsk6GIGkFZ0ONF8sXP9u462n_-hfNe-EWIysxwqPECKLEmLASEzxKjCFKTHErcYa4xQVbUDxq2A3R92xHB1itEQlqIVa7GBGj1gSqFsQ2hbCNidDnAnG7qwZa5GKog7jbFcSEOMsVAEfvDgE=)
