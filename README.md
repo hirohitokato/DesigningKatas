@@ -13,4 +13,5 @@ Visual Studio Codeを使用して閲覧する場合、以下の手順で閲覧�
 
 ## 実施内容
 
-1. 2023/10/06 01-basics/01-no_silver_bullets.md
+1. 2023/10/06 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
+2. 2023/10/11 [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md)
