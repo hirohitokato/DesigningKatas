@@ -54,7 +54,7 @@ style: |
 * `コード → 関数 → モジュール → 機能 → ドメイン → システム(完成!)`
 * **塵も積もれば山となる**
 
-![bg 100% blur:2px opacity:0.3](https://kroki.io/mermaid/svg/eNpLy8kvT85ILCpRCHHhUlBwjH6xpP3l7ImPG1c9ndr_cmFPrIKurp2TocaTHWufr-h-umvZ48Z1EBlNkHKwrBFeWWMcsk6GIGkFZ0ONF8sXP9u462n_-hfNe-EWIysxwqPECKLEmLASEzxKjCFKTHErcYa4xQVbUDxq2A3R92xHB1itEQlqIVa7GBGj1gSqFsQ2hbCNidDnAnG7qwZa5GKog7jbFcSEOMsVAEfvDgE=)
+![bg 100% blur:1px opacity:0.2](https://kroki.io/mermaid/svg/eNpLy8kvT85ILCpRCHHhUlBwjH6xpP3l7ImPG1c9ndr_cmFPrIKurp2TocaTHWufr-h-umvZ48Z1EBlNkHKwrBFeWWMcsk6GIGkFZ0ONF8sXP9u462n_-hfNe-EWIysxwqPECKLEmLASEzxKjCFKTHErcYa4xQVbUDxq2A3R92xHB1itEQlqIVa7GBGj1gSqFsQ2hbCNidDnAnG7qwZa5GKog7jbFcSEOMsVAEfvDgE=)
 
 
 ---
