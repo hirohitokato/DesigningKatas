@@ -25,17 +25,29 @@ style: |
   mermaid.initialize({ startOnLoad: true });
 </script>
 
-# KISS (Keep It Simple, Stupid)
+# KISS
 
-コードをシンプルに保つ
+---
+
+![bg](https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/kiss-end-of-the-road-world-tour-admat-1-1677694412.jpeg?crop=1.00xw:0.456xh;0,0.0185xh&resize=900:*)
+
+>>> https://www.wbaltv.com/article/baltimore-kiss-final-concert-tour-cfg-bank-arena/43145518
 
 ---
 
 ![bg opacity:0.2](https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/kiss-end-of-the-road-world-tour-admat-1-1677694412.jpeg?crop=1.00xw:0.456xh;0,0.0185xh&resize=900:*)
 
-※これではないです。
+**※違います。**
 
 >>> https://www.wbaltv.com/article/baltimore-kiss-final-concert-tour-cfg-bank-arena/43145518
+
+---
+
+# KISS (Keep It Simple, Stupid)$^1$
+
+コードをシンプルに保つ
+
+>>> 1: KISSは他にも「Keep It Simple and Stupid」「Keep It Super Simple」などとも言われる
 
 ---
 
