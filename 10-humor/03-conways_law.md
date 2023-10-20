@@ -25,15 +25,14 @@ style: |
   mermaid.initialize({ startOnLoad: true });
 </script>
 
-# テストエンジニアとサンドイッチ
+# コンウェイの法則
+(Conway's law)
 
 ---
 
-> 二人のテストエンジニアが、レストランで飲み物を注文した。
-> そしてカバンからサンドイッチを出し、食べ始めた。
-> 
-> 「お客様、ご自分で持ち込んだサンドイッチを食べるのはご遠慮ください」
+> 「システムを設計する組織は、そのコミュニケーション構造をそっくりまねた構造の設計を生み出してしまう」
 >
->　テストエンジニアは、サンドイッチを交換した。
+> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.  
+> — _Melvin E. Conway$^1$_
 
-_詠み人知らず([Software Testing Jokes](https://softwaretestingfundamentals.com/software-testing-jokes/#Sandwich)より)_
+>>> 1: メルヴィン・コンウェイ： アメリカのコンピュータ科学者でありプログラマー。「コルーチン」という言葉を生み出した。
