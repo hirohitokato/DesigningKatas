@@ -1,22 +1,10 @@
 ---
 marp: true
+theme: katas
 ---
 <!-- 
 size: 16:9
 paginate: true
-style: |
-  /* 三重引用を脚注の記号に転用 */
-  blockquote > blockquote > blockquote {
-    font-size: 55%;
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    border-top: 0.1em dashed #555;
-    position: absolute;
-    bottom: 70px;
-    left: 70px;
-  }
 -->
 <!-- header: 勉強会#-->
 <script type="module">
