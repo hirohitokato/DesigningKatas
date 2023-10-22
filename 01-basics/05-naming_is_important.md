@@ -100,7 +100,7 @@ def setDriverFlag3(is_on):
 適切な関数名・変数名を考えてみよう
 
 ```py
-def regist_user(name, pwd):
+def regist_cust(name, pwd):
     ...
 
 def cre_task(exinf, tskatr, task, itskpri, …):
