@@ -14,7 +14,7 @@ paginate: true
 
 # 名前重要
 
-_Name/Naming is important_
+_Naming/Name is important_
 
 ---
 
@@ -33,11 +33,13 @@ _Name/Naming is important_
 * 名前を付けること
 * 付けた名前そのもの
 
-はとても重要であるという意味。Ruby言語の開発者であるまつもとゆきひろ氏が座右の銘として挙げている
+はとても重要であるという意味。Ruby言語の開発者であるまつもとゆきひろ氏が、自身の座右の銘として挙げている
 
->>> [プログラマが知るべき97のこと](https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4/%E5%90%8D%E5%89%8D%E9%87%8D%E8%A6%81/)より
+>>> [プログラマが知るべき97のこと - 名前重要](https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4/%E5%90%8D%E5%89%8D%E9%87%8D%E8%A6%81/)より
 
 ---
+
+## なぜ？
 
 * 適切な名前をつけられる
     * その機能が正しく理解されて、設計されている
@@ -89,7 +91,7 @@ def ctlFlg3(is_on):
 ```
 ↓
 ```py
-def setDriverFlag3(is_on):
+def setDriverFlag3State(is_on):
     ...
 ```
 
