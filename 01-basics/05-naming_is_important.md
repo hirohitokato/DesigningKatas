@@ -115,6 +115,18 @@ def clear_cache_and_load_data():
 
 ---
 
+## とはいえ守るべきもの
+
+プロジェクトで一貫性を保つことが最優先。
+
+* 異なるネーミングルールの混在は混乱の元にしかならない
+    * 名前だけでなく技術も同様。
+* 悪法もまた法なり$^1$
+
+>>> 俗にソクラテス(古代ギリシャの哲学者)が死刑判決を下された時に言ったといわれている。
+
+---
+
 ![bg](https://pbs.twimg.com/media/F841re7XIAA67ad?format=jpg&name=large)
 
 >>>> https://x.com/lewismenelaws/status/1715367533606281464?s=51&t=8SPovdJ4_WYmWx6V6E-yLg
