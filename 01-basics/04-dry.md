@@ -84,7 +84,7 @@ def funcAA(…):
 def funcAB(…):
     # funcAによく似た処理
 ```
-↓
+↓ 数値も同様
 ```py
 def funcA(…, …):
     # 同じ処理をまとめたもの
