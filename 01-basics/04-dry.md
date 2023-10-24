@@ -92,6 +92,28 @@ def funcA(…, …):
 
 ---
 
+## DRY example 4
+
+```py
+if h1 < 634:
+    do_something()
+  :
+if h2 < 634:
+    do_something()
+```
+↓
+```py
+SKYTREE_HEIGHT = 634
+
+if h1 < SKYTREE_HEIGHT:
+    do_something()
+  :
+if h2 < SKYTREE_HEIGHT:
+    do_something()
+```
+
+---
+
 ## DRYにすべきではないケース
 
 * 似た関数でも、ある変更が他には関係しないケースがある場合
