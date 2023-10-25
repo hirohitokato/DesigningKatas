@@ -1,9 +1,10 @@
 # DesigningKatas
+
 設計・プログラミングに関する大事な考え方やコードへの応用例を説明します。
 
-## 準備
+## 表示するためには
 
-Visual Studio Codeを使用して閲覧する場合、事前にMarp for VS Code拡張機能をインストールしてください。
+各スライドは[Marp](https://marp.app/)を使って作成＆表示しています。Visual Studio Codeを使用して閲覧する場合、Marp for VS Code拡張機能をインストールしてご覧ください。
 
 ※カスタムテーマや閲覧設定は[.vscode/settings.json](.vscode/settings.json)で設定済みです。
 
