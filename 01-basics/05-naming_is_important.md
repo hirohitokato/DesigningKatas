@@ -130,3 +130,9 @@ def clear_cache_and_load_data():
 ![bg](https://pbs.twimg.com/media/F841re7XIAA67ad?format=jpg&name=large)
 
 >>>> https://x.com/lewismenelaws/status/1715367533606281464?s=51&t=8SPovdJ4_WYmWx6V6E-yLg
+
+---
+
+![bg fit](assets/kani.jpg)
+
+>>> https://twitter.com/sgtcoward/status/1717419972971188379?s=43
