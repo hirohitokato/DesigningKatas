@@ -12,6 +12,7 @@ paginate: true
   mermaid.initialize({ startOnLoad: true });
 </script>
 
+# 未実施
 # PIE
 
 _Program Intently and Expressively_

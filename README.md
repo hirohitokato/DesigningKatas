@@ -16,3 +16,5 @@
 4. 2023/10/20 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md) & カレーレシピの分割位置(分割と統治の補講)
 5. 2023/10/25 [名前重要](01-basics/05-naming_is_important.md) & [90:90の法則](10-humor/01-90_90rule.md)
 6. 2023/10/27 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
+7. 2023/11/01 [参照の一点性](01-basics/07-single_point_of_reference.md) & [コンウェイの法則](10-humor/03-conways_law.md)
+8. 2023/11/08 [７つの設計原理](01-basics/08-seven_design_principles.md)
