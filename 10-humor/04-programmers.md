@@ -12,7 +12,9 @@ paginate: true
   mermaid.initialize({ startOnLoad: true });
 </script>
 
-# プログラマーの特性 ＆ プログラマーの思い出
+# プログラマーとは
+
+プログラマーの特性 ＆ プログラマーの思い出
 
 ---
 
