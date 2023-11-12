@@ -12,7 +12,7 @@ paginate: true
   mermaid.initialize({ startOnLoad: true });
 </script>
 
-# 銀の弾などない(No silver bullet)
+# #1 銀の弾などない(No silver bullet)
 
 ![bg cover blur opacity:.2](https://3.bp.blogspot.com/-1TdKzs2PvX8/WQvvDPSOQgI/AAAAAAABEEI/bglWMgfxqnkM1Gvx2O7NbKvrj03u1F1PACLcB/s800/gin_dangan_silver_bullet.png)
 
