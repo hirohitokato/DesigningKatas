@@ -8,7 +8,7 @@
 
 ※カスタムテーマや閲覧設定は[.vscode/settings.json](.vscode/settings.json)で設定済みです。
 
-## 実施内容
+## 実施履歴
 
 1. 2023/10/06 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/10/11 [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md)
