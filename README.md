@@ -4,7 +4,7 @@
 
 ## 表示するためには
 
-各スライドは[Marp](https://marp.app/)を使って作成＆表示しています。Visual Studio Codeを使用して閲覧する場合、Marp for VS Code拡張機能をインストールしてご覧ください。
+各スライドは[Marp](https://marp.app/)を使って作成しています。手元の環境でもスライド形式で閲覧したい場合、MarpでPDF等に変換するか、Visual Studio Codeの[Marp for VS Code拡張機能](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)をインストールしてvscode上でご覧ください。
 
 ※カスタムテーマや閲覧設定は[.vscode/settings.json](.vscode/settings.json)で設定済みです。
 
