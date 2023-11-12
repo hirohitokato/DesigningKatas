@@ -19,3 +19,4 @@
 7. 2023/11/01 [参照の一点性](01-basics/07-single_point_of_reference.md) & [コンウェイの法則](10-humor/03-conways_law.md)
 8. 2023/11/08 [７つの設計原理](01-basics/08-seven_design_principles.md)
 9. 2023/11/10 [PIE(Program Intently and Expressively)](01_basics/09-pie.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
+10. 2023/11/15 [TMTOWTDI](01-basics/10-tmtowtdi.md)

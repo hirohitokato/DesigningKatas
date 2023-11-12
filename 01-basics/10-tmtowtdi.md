@@ -12,6 +12,8 @@ paginate: true
   mermaid.initialize({ startOnLoad: true });
 </script>
 
+<!-- 今日は数ある原理原則の中でもとびきり難しいものを紹介します -->
+
 # TMTOWTDI
 
 ---
