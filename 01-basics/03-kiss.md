@@ -88,3 +88,7 @@ def factorial(number: int) -> int:
 
 * https://code-specialist.com/code-principles/kiss
 * https://ja.wikipedia.org/wiki/KISSの原則
+
+---
+
+![bg contain](assets/KISS_detail.jpg)
