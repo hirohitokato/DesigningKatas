@@ -44,6 +44,15 @@ _Abstraction_
 
 `UDPClient`, `TCPClient`, `TCPServer`, `UDPServer`
 
+* 共通の要素をもとにグループ分けする
+* グループに名前をつける
+(プログラミングに慣れている人は親クラスを作るイメージです)
+
+|グループ名|属する要素|
+|---|---|
+|〇〇|◎◎◎, △△△△|
+|□□||
+
 <div class="mermaid">
 classDiagram
     XXX <|-- YYY
@@ -51,12 +60,6 @@ classDiagram
     class YYY{
     }
     class ZZZ{
-    }
-    AAA <|-- BBB
-    AAA <|-- CCC
-    class BBB{
-    }
-    class CCC{
     }
 </div>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@9"></script>
