@@ -7,10 +7,6 @@ size: 16:9
 paginate: true
 -->
 <!-- header: 勉強会#-->
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
 
 <!-- 今日は数ある原理原則の中でもとびきり難しいものを紹介します -->
 
