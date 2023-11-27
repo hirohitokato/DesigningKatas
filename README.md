@@ -10,6 +10,8 @@
 
 ## 勉強会の実施履歴
 
+### 1st group
+
 1. 2023/10/06 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/10/11 [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md)
 3. 2023/10/13 [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md) & [KISS(Keep It Simple, Stupid)](01-basics/03-kiss.md)
@@ -22,3 +24,6 @@
 10. 2023/11/15 [TMTOWTDI](01-basics/10-tmtowtdi.md)
 11. 2023/11/17 [ここまでの復習と分類](01-basics/11-wrapup.md)
 
+### 2nd group
+
+1. 2023/11/28 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)

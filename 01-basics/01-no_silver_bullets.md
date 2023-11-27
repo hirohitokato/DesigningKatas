@@ -24,6 +24,8 @@ paginate: true
 
 >>> 1: 1931-2022 アメリカ合衆国のソフトウェア技術者
 >>> 2: “No Silver Bullet — Essence and Accident in Software Engineering”. Proceedings of the IFIP Tenth World Computing Conference: 1069–1076
+>>> 3: 論文では狼人間のことを普段は日常に紛れ、そして突然変化する魔物と呼んでいる
+
 ---
 ## ソフトウェア開発の難しさ = 本質的な複雑性＋偶発的な複雑性
 
