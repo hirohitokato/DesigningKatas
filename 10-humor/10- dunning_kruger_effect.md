@@ -37,7 +37,7 @@ _Dunning–Kruger effect_
 
 ---
 
-![bg 75%](./assets/dunning-kruger.jpg)
+![bg 75%](./assets/dunning-kruger.png)
 
 >>> [The Dunning Kruger Effect](https://dev.to/theiyd/the-dunning-kruger-effect-3cj2)
 
