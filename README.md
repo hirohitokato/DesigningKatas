@@ -23,7 +23,7 @@
 9. 2023/11/10 [PIE(Program Intently and Expressively)](01_basics/09-pie.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 10. 2023/11/15 [TMTOWTDI](01-basics/10-tmtowtdi.md)
 11. 2023/11/17 [ここまでの復習と分類](01-basics/11-wrapup.md)
-12. 2023/11/29 [抽象化(Abstraction)(アーキテクチャ根底技法)](01-basics/12-abstraction.md)
+12. 2023/11/29 [抽象化(Abstraction)(アーキテクチャ根底技法)](01-basics/12-abstraction.md) & [10種類の人間](10-humor/05-10kinds_of_people.md)
 
 ### 2nd group
 
