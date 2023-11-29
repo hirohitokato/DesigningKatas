@@ -53,3 +53,12 @@ _Dunning–Kruger effect_
 ---
 
 ![bg](./assets/linus_torvalds.jpg)
+
+---
+
+## 最新情報
+
+> **「能力が低いほど自分を過大評価する」というダニング＝クルーガー効果への反論がさらなる反論を呼ぶ**
+> [GIGAZINEの記事](https://gigazine.net/news/20231128-dunning-kruger-effect-autocorrelation/)
+
+ダニングクルーガー効果は存在しない、統計の誤りであるという論も出ているそうで。
