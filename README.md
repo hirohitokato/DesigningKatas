@@ -28,3 +28,4 @@
 ### 2nd group
 
 1. 2023/11/28 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
+2. 2023/11/30 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
