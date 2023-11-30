@@ -29,6 +29,6 @@ paginate: true
 * PNG _(正式には"Portable Network Graphics"、非公式には"PNG's not GIF")_
 * VISA _(Visa International Service Association)_
 
-言語学的にはこれを「**再帰的頭字語**」または**自己言及型頭字語**と言います。
+言語学的にはこれを「[**再帰的頭字語**](https://ja.wikipedia.org/wiki/%E5%86%8D%E5%B8%B0%E7%9A%84%E9%A0%AD%E5%AD%97%E8%AA%9E)」または**自己言及型頭字語**と言います。
 
 <!-- GNUはRichard M. Stallmanを中心とした、世界中の開発者によるボランティア活動によって開発が進められているソフトウェアのまとまりでありプロジェクト。Unix系の設計ではあるがUNIXとは違いフリーソフトウェアでありUNIXに由来するソースコードを全く使っていないことを示すため -->
