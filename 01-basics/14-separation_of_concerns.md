@@ -25,10 +25,10 @@ _Separation of Concerns (SoC)_
 >>> 1: [Wikipedia『関心の分離』](https://ja.wikipedia.org/wiki/%E9%96%A2%E5%BF%83%E3%81%AE%E5%88%86%E9%9B%A2)をもとに加筆
 ---
 
-## Google「もっとも重要な原則です」
+![bg contain](assets/14-android_app_guide.png)
 
-![](assets/14-android_app_guide.png)
 <!-- Googleが公開しているアプリアーキテクチャガイドにて「最も重要な原則は関心の分離です」とある -->
+
 ---
 
 ## 目標
