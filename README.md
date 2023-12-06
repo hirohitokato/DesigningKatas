@@ -24,9 +24,15 @@
 10. 2023/11/15 [TMTOWTDI](01-basics/10-tmtowtdi.md)
 11. 2023/11/17 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2023/11/29 [抽象化(Abstraction)(アーキテクチャ根底技法)](01-basics/12-abstraction.md) & [10種類の人間](10-humor/05-10kinds_of_people.md)
-13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化](01-basics/14-separation_of_concerns.md)
+13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
+14. 2023/12/06 [関心の分離](01-basics/14-separation_of_concerns.md) & 演習
 
 ### 2nd group
 
 1. 2023/11/28 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/11/30 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
+
+###  3rd group
+
+1. 2023/12/08 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
+
