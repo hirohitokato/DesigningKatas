@@ -35,7 +35,7 @@ _Sufficiency, Completeness, Primitiveness_
 
 ## プリミティブ性
 
-表現しようとしている抽象に無駄や重複がないか
+表現しようとしている抽象は純粋か(無駄や重複がないか)
 
 ---
 
