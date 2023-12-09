@@ -81,6 +81,8 @@ def factorial(number: int) -> int:
 ---
 言葉
 
+<!-- エンジニア界隈に多い -->
+
 ### アクロニム・頭字語(acronym)
 主にアルファベットによる略語の一種。複数の単語から構成された単語の頭文字を並べて作られた語のこと。
 単語として発話できない場合は **イニシャリズム** という
@@ -115,3 +117,8 @@ R.I.P.: Rest In Peace。本来はラテン語で「安らかに眠れ」を意�
 * https://code-specialist.com/code-principles/kiss
 * https://ja.wikipedia.org/wiki/KISSの原則
 
+---
+
+![bg](https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/kiss-end-of-the-road-world-tour-admat-1-1677694412.jpeg?crop=1.00xw:0.456xh;0,0.0185xh&resize=900:*)
+
+>>> https://www.wbaltv.com/article/baltimore-kiss-final-concert-tour-cfg-bank-arena/43145518
