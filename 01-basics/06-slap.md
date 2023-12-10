@@ -10,7 +10,7 @@ paginate: true
 
 # SLAP
 
-![bg](assets/slap.jpg)
+![bg](assets/06-slap.jpg)
 
 ---
 

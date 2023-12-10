@@ -129,6 +129,6 @@ def clear_cache_and_load_data():
 
 ---
 
-![bg fit](assets/kani.jpg)
+![bg fit](assets/05-kani.jpg)
 
 >>> https://twitter.com/sgtcoward/status/1717419972971188379?s=43

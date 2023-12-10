@@ -18,11 +18,11 @@ paginate: true
 
 ---
 
-![bg contain](assets/KISS_detail.jpg)
+![bg contain](assets/03-KISS_detail.jpg)
 
 ---
 
-![bg opacity:0.2](assets/KISS_detail.jpg)
+![bg opacity:0.2](assets/03-KISS_detail.jpg)
 
 **※違います。**
 

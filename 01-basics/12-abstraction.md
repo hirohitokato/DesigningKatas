@@ -70,7 +70,7 @@ _Abstraction_
 
 ### 解答例
 
-![center h:200](./assets/inheritance.png)
+![center h:200](./assets/12-inheritance.png)
 
 ---
 

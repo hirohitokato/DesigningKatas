@@ -8,7 +8,7 @@ paginate: true
 -->
 <!-- header: 勉強会#-->
 
-![bg opacity:0.2](assets/marx.jpg)
+![bg opacity:0.2](assets/09-marx.jpg)
 
 # PIE
 
@@ -79,7 +79,7 @@ for item in collection
 
 ---
 
-![bg contain](assets/marx.jpg)
+![bg contain](assets/09-marx.jpg)
 >>> http://www.csstoday.com/Item/738.aspx より
 
 <!-- マルクス(1818-1883。ドイツの哲学者、経済学者、革命家)：フリードリヒ・エンゲルスとともに、包括的な世界観および革命思想として科学的社会主義（マルクス主義）を打ちたて、資本主義の高度な発展により社会主義・共産主義社会が到来する必然性を説いた。大量の著書があるそうで、特に資本論と共産主義宣言が有名

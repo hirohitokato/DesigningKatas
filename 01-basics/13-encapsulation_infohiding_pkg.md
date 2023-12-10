@@ -119,4 +119,4 @@ _Packaging_
 3. 判定さんは何を外に見せていれば業務が回るでしょうか？
 4. ダメ男くんはガウガウファイナンスの何を知っていれば良いでしょうか？
 
-![center h:250](./assets/encapsulation.jpg)
+![center h:250](./assets/13-encapsulation.jpg)

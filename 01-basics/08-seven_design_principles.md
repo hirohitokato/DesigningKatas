@@ -149,7 +149,7 @@ _Seven design principles_
 
 どうしてこうなった？
 
-![bg right contain](assets/fujitsu_rumor.png)
+![bg right contain](assets/08-fujitsu_rumor.png)
 
 ---
 
@@ -166,7 +166,7 @@ _Seven design principles_
 
 ## まさに「ペリクレス$^1$戦略」
 
-![bg right](assets/pericles.jpg)
+![bg right](assets/08-pericles.jpg)
 
 スパルタとの戦争$^2$のときにペリクレスが籠城作戦を執った結果、内部で疫病が発生し市民の1/6の病死・治安も悪化するなど大失敗$^3$。
 **以来「防御的な行動で敵の疲弊を待ち、現状維持を狙う戦略」をペリクレス戦略と呼ぶように**

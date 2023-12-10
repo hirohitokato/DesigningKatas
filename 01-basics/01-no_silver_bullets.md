@@ -96,4 +96,4 @@ paginate: true
         * 使えるものは使っていく(ライブラリ,ツール,AI,周囲の人)
         * **自動化!!**
 
-![bg 110% left:20%](assets/monogatari_kyojinno_katani_noru.png)
+![bg 110% left:20%](assets/01-monogatari_kyojinno_katani_noru.png)
