@@ -58,6 +58,8 @@ paginate: true
 * 問題を小さく分解する（分割と統治！）
 * 声に出して処理を説明する
 
+<!-- ラバーダッキング -->
+
 ---
 
 ## シンプルなコード ≠ 短いコード
@@ -79,7 +81,7 @@ def factorial(number: int) -> int:
 （Quiz:これは何をする処理でしょう？）
 
 ---
-言葉
+## (ついでに言語学の学習)
 
 <!-- エンジニア界隈に多い -->
 
@@ -92,7 +94,7 @@ def factorial(number: int) -> int:
 ### バクロニム（backronym/bacronym）
 ある単語の各文字を使って、新たに頭字語としての意味を持たせたもの
 
-> KISS, DRY, Suica, R.I.P., ARE, etc.
+> **KISS**, DRY, Suica, R.I.P., A.R.E., etc.
 
 <!--
 AIDS: 後天性免疫不全症候群、Acquired immune deficiency syndrome
@@ -111,6 +113,9 @@ R.I.P.: Rest In Peace。本来はラテン語で「安らかに眠れ」を意�
 
 * オッカムの剃刀
 * YAGNI
+
+<!-- オッカムの剃刀:「ある事実Pを同様に説明できるのであれば仮説の数（または措定される実体の数）は少ないほうが良い」 -->
+<!-- You Ain't Gonna Need It -->
 
 ## 参考
 
