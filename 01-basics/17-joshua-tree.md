@@ -15,7 +15,7 @@ paginate: true
 # ジョシュアツリーの法則
 _Joshua Tree Principle_
 
-![bg contain](https://around-usa.com/sys/wp-content/uploads/2017/03/JoshuaTreeNationalPark-01.jpg)
+![bg contain brightness:0.7](https://around-usa.com/sys/wp-content/uploads/2017/03/JoshuaTreeNationalPark-01.jpg)
 
 >>> https://around-usa.com/objective/nature/national-park/joshuatree/
 >>> 個人的にはヨシュアツリーと読むのが好き
