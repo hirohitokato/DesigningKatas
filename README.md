@@ -27,6 +27,7 @@
 13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 14. 2023/12/06 [関心の分離](01-basics/14-separation_of_concerns.md) & 演習
 15. 2023/12/08 [充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md)
+16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェイスと実装の分離](01-basics/16-segmentation_principles.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -43,7 +44,7 @@
 ### 4th group
 <!-- AC -->
 
-1. 2023/12/13 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
+1. 2023/12/13 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md) & [90:90の法則](10-humor/01-90_90rule.md)
 
 ### 5th group
 <!-- PB -->
