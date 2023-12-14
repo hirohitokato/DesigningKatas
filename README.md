@@ -35,11 +35,13 @@
 1. 2023/11/28 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/11/30 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
 3. 2023/12/12 [KISS](01-basics/03-kiss.md) & [90:90の法則](10-humor/01-90_90rule.md)
+4. 2023/12/15 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 
 ### 3rd group
 <!-- MS -->
 
 1. 2023/12/08 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
+2. 2023/12/15 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
 
 ### 4th group
 <!-- AC -->
