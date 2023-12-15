@@ -179,11 +179,13 @@ DRYの対義語として『WET』『DAMP』がある。
 > WET: _Write Everything Twice / Write Every Time_
 > 　（すべてを２回書く / 毎回書く）
 
-> DAMP: _Descriptive And Meaningful Phrases_
+> DAMP: _Descriptive And Meaningful Phrases_$^1$
 > 　（説明的かつ意味が分かりやすい言い回し）
 
 * WETは常にアンチパターンとして考える
 * DAMPはDRYほど簡潔にすべきではない場合、たとえばユースケースやテストコードを記述するときに良いと言われる。
+
+>>> http://blog.jayfields.com/2006/05/dry-code-damp-dsls.html
 
 <!-- DAMP: 2006年にJayというエンジニア？がブログに記述した記事。 http://blog.jayfields.com/2006/05/dry-code-damp-dsls.html -->
 <!-- バクロニム: ある単語の各文字を使って略語にしつつも、新たに頭字語としての意味を持たせたもの -->
