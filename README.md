@@ -24,10 +24,11 @@
 10. 2023/11/15 [TMTOWTDI](01-basics/10-tmtowtdi.md)
 11. 2023/11/17 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2023/11/29 [抽象化(Abstraction)(アーキテクチャ根底技法)](01-basics/12-abstraction.md) & [10種類の人間](10-humor/05-10kinds_of_people.md)
-13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
-14. 2023/12/06 [関心の分離](01-basics/14-separation_of_concerns.md) & 演習
-15. 2023/12/08 [充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md)
-16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェイスと実装の分離](01-basics/16-segmentation_principles.md)
+13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化(アーキテクチャ根底技法)](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
+14. 2023/12/06 [関心の分離(アーキテクチャ根底技法)](01-basics/14-separation_of_concerns.md) & 演習
+15. 2023/12/08 [充足性 & 完全性 & プリミティブ性(アーキテクチャ根底技法)](01-basics/15-suff_comp_prim.md)
+16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェイスと実装の分離(アーキテクチャ根底技法)](01-basics/16-segmentation_principles.md)
+17. 2023/12/15 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 
 ### 2nd group 
 <!-- VP -->
