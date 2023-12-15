@@ -188,4 +188,5 @@ DRYの対義語として『WET』『DAMP』がある。
 >>> http://blog.jayfields.com/2006/05/dry-code-damp-dsls.html
 
 <!-- DAMP: 2006年にJayというエンジニア？がブログに記述した記事。 http://blog.jayfields.com/2006/05/dry-code-damp-dsls.html -->
+<!-- DAMPは書籍「Googleのソフトウェアエンジニアリング」(分厚くて重い)のp289に出てきた。 -->
 <!-- バクロニム: ある単語の各文字を使って略語にしつつも、新たに頭字語としての意味を持たせたもの -->
