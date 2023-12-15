@@ -18,14 +18,15 @@ paginate: true
     * { color: white}
 </style>
 
-![bg contain](assets/02-bigmountain.png)
+![bg contain](assets/02-bigmountain.jpg)
 
 ## 大きな問題を一息で解決できる人はいない
 
 大きな問題をそのまま解決しようとしても、たいてい遅れるか躓くかで解決できない
 
 * 問題が複雑に絡み合っているため掌上に乗らない
-* 誰だって同じ
+
+・・・これは誰もが同じ
 
 >>> Photo by Pavel Novak - Cropped and scaled down from Image:Everest kalapatthar.jpg.
 
