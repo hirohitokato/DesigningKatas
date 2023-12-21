@@ -54,4 +54,4 @@
 <!-- PB -->
 
 1. 2023/12/13 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
-2. 2023/12/21 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
+2. 2023/12/21 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
