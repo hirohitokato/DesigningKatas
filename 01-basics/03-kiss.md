@@ -31,6 +31,8 @@ paginate: true
 
 ![bg contain](assets/03-KISS_detail.jpg)
 
+<!-- iPadの情報を転記 -->
+
 ---
 
 ![bg opacity:0.2](assets/03-KISS_detail.jpg)
