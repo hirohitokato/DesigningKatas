@@ -29,6 +29,7 @@
 15. 2023/12/08 [充足性 & 完全性 & プリミティブ性(アーキテクチャ根底技法)](01-basics/15-suff_comp_prim.md)
 16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェイスと実装の分離(アーキテクチャ根底技法)](01-basics/16-segmentation_principles.md)
 17. 2023/12/15 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
+18. 2023/12/22 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [プログラマーとは](10-humor/07-programmers.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -43,6 +44,7 @@
 
 1. 2023/12/08 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/12/15 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
+3. 2023/12/22 [KISS](01-basics/03-kiss.md)
 
 ### 4th group
 <!-- AC -->
