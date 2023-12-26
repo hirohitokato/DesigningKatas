@@ -22,7 +22,9 @@ https://www.ntt.com/bizon/glossary/j-y/ubiquitous.html -->
 * プログラムの中に分かりにくい造語や用語が存在する
 * 文脈によってどちらとも取れるような用語が出てきて迷う
 
-![center](https://kroki.io/plantuml/svg/eNpzKC5JLCopzc3hUszMS84pTUlVcDaJd87PK0nMzEst0isASfk4RvqHhsT7OPq5BDs7BrhqaHJxBaQWFefnaSTqKDxuWvG4efPj5s7HzcseN-953LQNSOooKClpwhQl6Sg8nbbt2dK1j5sbQSqaF6BIJ-sovJzW_XzmLuzSKToKL5aterJn1vMl-yASXA6peSlAhwEAdedPnw==)
+![center 65%](assets/19-ubiquitous.png)
+
+>>> https://blog.flinters.co.jp/entry/2021/03/10/150000
 
 <!-- これはつまりそれぞれの人やドキュメント・ソースコードが別の言葉を話しているのと同義 -->
 
@@ -52,7 +54,7 @@ https://www.ntt.com/bizon/glossary/j-y/ubiquitous.html -->
 <!-- そもそも「言語」と言っているのがポイント。 -->
 <!-- ユビキタス用語集と呼んでいないのに注意 -->
 <!-- ユビキタス自体がどこにでもあるという意味を持っているように、開発のあらゆる場面で使うからこそ効果が出るという話 -->
-
+<!-- 新しい言葉をみんなで作り出しても良い -->
 ---
 
 ## どうやって管理するか
@@ -65,7 +67,8 @@ https://www.ntt.com/bizon/glossary/j-y/ubiquitous.html -->
 |プログラム(英語)|ソースコード中で使うときの用語|
 |説明|説明や背景および注意事項|
 
-プログラムで使うときまで意識が及んでいるとベター。他にも「よくある間違い」「モデル」など
+プログラムで使うときまで意識が及んでいるとベター。他にも「よくある間違い」「モデル」などを入れる事例もある。
+エンジニア以外のメンバーに翻訳不要で伝えられていればOK。
 
 ---
 
@@ -117,3 +120,5 @@ https://www.ntt.com/bizon/glossary/j-y/ubiquitous.html -->
     * https://www.ogis-ri.co.jp/otc/hiroba/technical/DDDEssence/chap1.html
 * ユビキタス言語づくりには、どんなメリットがあるのか
     * https://note.com/aguri/n/nc3478ea605b7
+* ドメイン駆動設計(DDD)との格闘 - ユビキタス言語には不屈の闘志が不可欠
+    * https://blog.flinters.co.jp/entry/2021/03/10/150000
