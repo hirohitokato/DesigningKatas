@@ -38,6 +38,7 @@
 2. 2023/11/30 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
 3. 2023/12/12 [KISS](01-basics/03-kiss.md) & [90:90の法則](10-humor/01-90_90rule.md)
 4. 2023/12/15 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md) & [テストエンジニアとサンドイッチ](10-humor/02-sandwich.md)
+5. 2023/12/26 [名前重要](01-basics/05-naming_is_important.md)
 
 ### 3rd group
 <!-- MS -->
