@@ -94,6 +94,29 @@ def factorial(number: int) -> int:
 （Quiz:これは何をする処理でしょう？）
 
 ---
+
+## 似た意味を持つ概念
+
+* オッカムの剃刀
+* YAGNI
+
+<!-- オッカムの剃刀:「ある事実Pを同様に説明できるのであれば仮説の数（または措定される実体の数）は少ないほうが良い」。オッカムのウィリアムという14世紀の神学者であり哲学者がよく言っていた言葉 -->
+<!-- You Ain't Gonna Need It -->
+
+## 参考
+
+* https://code-specialist.com/code-principles/kiss
+* https://ja.wikipedia.org/wiki/KISSの原則
+
+<!--Q:今あるコードがすでに汚いときはどうしたら良い？ A:ボーイスカウトルールを適用してみる-->
+<!--Q:シンプルにするための具体的なコーディングガイドとか何かない？ A:個人的には
+* Google C++スタイルガイド: https://ttsuki.github.io/styleguide/cppguide.ja.html
+* Swift APIデザインガイド: https://www.swift.org/documentation/api-design-guidelines/
+* 読みやすいコードのガイドライン: https://www.amazon.co.jp/dp/B0BGX2VGYR / https://amzn.to/3TIqF6X
+-->
+
+---
+
 ## (ついでに言語学の学習)
 
 <!-- エンジニア界隈に多い -->
@@ -121,19 +144,6 @@ Suica: Super Urban Intelligent Card / スイスイ行けるICカード
 ARE: アレ。Aim, Respect, Empower
 R.I.P.: Rest In Peace。本来はラテン語で「安らかに眠れ」を意味する「requiescat in pace(レクウィエスカト・イン・パーチェ)」
 -->
----
-## 似た意味を持つ概念
-
-* オッカムの剃刀
-* YAGNI
-
-<!-- オッカムの剃刀:「ある事実Pを同様に説明できるのであれば仮説の数（または措定される実体の数）は少ないほうが良い」 -->
-<!-- You Ain't Gonna Need It -->
-
-## 参考
-
-* https://code-specialist.com/code-principles/kiss
-* https://ja.wikipedia.org/wiki/KISSの原則
 
 ---
 
