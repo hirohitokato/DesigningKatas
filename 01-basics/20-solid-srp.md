@@ -37,6 +37,21 @@ _Single Responsibility Principle_
 
 ## SOLID
 
+コードの臭いに気づき消臭する５つの原則
 
+* S: 単一責任の原則: Sindle Responsibility Principle
+* O: 開放閉鎖の原則: Open/Closed Principle
+* L: リスコフの置換原則: Liskov Substitution Principle
+* I: インターフェイス分離の原則: Interface Segregation Principle
+* D: 依存関係逆転の原則: Dependency Inversion Principle
 
-OLDI
+---
+
+## SOLID
+
+オブジェクト指向のクラス設計・任意のモジュール設計において **超**重要な原則
+
+* SOLIDを理解していると
+    * スパゲティコードがなくなり読みやすくなる
+    * 機能拡張に素早く柔軟に対応できる
+    * 長期間にわたってメンテナンスしやすくなる
