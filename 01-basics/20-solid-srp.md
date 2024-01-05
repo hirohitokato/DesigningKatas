@@ -13,7 +13,7 @@ _Single Responsibility Principle_
 
 ---
 
-## SOLID
+## その前にSOLID
 
 オブジェクト指向のクラス設計・任意のモジュール設計において **超**重要な原則
 
@@ -36,6 +36,10 @@ _Single Responsibility Principle_
 
 >>> Robert C. Martin氏(通称:ボブおじさん)による論文「Design Principles and Design Patterns」より
 
+ <!-- 逆にアーキテクチャとは何のためにあるか。メンテナンスのためにある。
+ １回で作れて以降の変更も要らないものにアーキテクチャは不要。
+ 時間がかかり、人が絡み、変化していくものにはしっかりしたアーキテクチャが必要
+ （つまり書き捨てのスクリプト以外には必要と考えて良い） -->
 ---
 
 ## SOLID
