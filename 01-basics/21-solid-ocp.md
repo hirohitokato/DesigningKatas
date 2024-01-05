@@ -12,3 +12,5 @@ paginate: true
 _Open Closed Principle_
 
 ---
+
+複数のアルゴリズムと実行する処理とは別にする
