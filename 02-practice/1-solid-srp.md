@@ -88,6 +88,9 @@ _Single Responsibility Principle_
 
 同じような処理だからとまとめる
 安直なリファクタリングあるある
+
+![center](./assets/01-srp_invalid.png)
+
 ---
 
 ## 単一責任の原則は要求分析の時点から始まっている
