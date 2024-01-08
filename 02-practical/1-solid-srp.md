@@ -98,9 +98,11 @@ _Single Responsibility Principle_
 
 ## どうすればよいか
 
-共通して安定しているデータを切り離す$^1$
+安定しているデータを切り離す／ロジック(とその先のデータ)を切り離す$^1$
 
-![center](assets/01-srp_improved.png)
+![center contain](assets/01-srp_improved.png)
+
+**責任の境界**を見出す。
 
 >>> 1:諸説あります
 
@@ -108,6 +110,7 @@ _Single Responsibility Principle_
 
 ## 単一責任の原則は要求分析の時点から始まっている
 
+* Employeeで１つにまとめるのは誰の都合？3
 * この『生徒』はどんなときにも同じ概念か
 * 『ドライバー』という単語はOSのドライバーとは意味が違う…？
 
