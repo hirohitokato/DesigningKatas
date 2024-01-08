@@ -21,3 +21,8 @@ img[alt~="center"] {
     display: block;
     margin: 0 auto;
 }
+
+/* 強調に色をつける */
+strong {
+    color: #941100;
+}
