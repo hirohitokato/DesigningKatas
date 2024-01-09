@@ -135,12 +135,16 @@ _Seven design principles_
 
 ---
 
-## 34年前の本だけれど今も役立つ良書
+## 34年も前の本だけれど今も役立つ良書
 
 * けっこう良いことが書かれている
 * 当時の最先端の知見が詰まった本
 
-・・・けれど・・・
+![bg right 50%](https://m.media-amazon.com/images/I/61r-UesONtL._SL1014_.jpg)
+
+---
+
+## ・・・けれど・・・
 
 ---
 

@@ -40,6 +40,7 @@
 3. 2023/12/12 [KISS](01-basics/03-kiss.md) & [90:90の法則](10-humor/01-90_90rule.md)
 4. 2023/12/15 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md) & [テストエンジニアとサンドイッチ](10-humor/02-sandwich.md)
 5. 2023/12/26 [名前重要](01-basics/05-naming_is_important.md)
+6. 2024/01/09 [７つの設計原理](01-basics/08-seven_design_principles.md)
 
 ### 3rd group
 <!-- MS -->
