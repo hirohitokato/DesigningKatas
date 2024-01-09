@@ -13,26 +13,42 @@ _Single Responsibility Principle_
 
 ---
 
-## その前に『SOLID』とは
+## 『SOLID』？
 
-オブジェクト指向のクラス設計・任意のモジュール設計において **超**重要な原則
+> ### SOLID(堅牢)なソフトウェアを作る原則を集めたバクロニム
 
-* SOLIDを理解していると
+オブジェクト指向のクラス設計・任意のモジュール設計において **超**重要
+
+* SOLIDを実践できていると…
     * スパゲティコードがなくなり読みやすくなる
     * 機能拡張に素早く柔軟に対応できる
     * 長期間にわたってメンテナンスしやすくなる
 
-### → SOLID(堅牢)なソフトウェアを作るバクロニム
-
 ---
 
-## ソフトウェアアーキテクチャとは？
+## SOLIDの５原則
+
+* S: 単一責任の原則: Sindle Responsibility Principle
+* O: 開放閉鎖の原則: Open/Closed Principle
+* L: リスコフの置換原則: Liskov Substitution Principle
+* I: インターフェイス分離の原則: Interface Segregation Principle
+* D: 依存関係逆転の原則: Dependency Inversion Principle
+
+<!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
+<!-- 待って、そもそもアーキテクチャって？ -->
+---
+
+## 『アーキテクチャ』の定義をあらためて考える
+
+アーキテクチャとは…
 
 * 複数の階層をなしたもの
     * ↓
 * システムの全体的な形状と構造を定義するもの
     * ↓
 * モジュールやコンポーネント・クラスの構造とその相互接続
+
+### ソフトウェア全体だけでなく、細かなクラス設計も含めた構造のこと
 
 >>> Robert C. Martin氏(通称:ボブおじさん)による論文「Design Principles and Design Patterns」より
 
@@ -43,22 +59,13 @@ _Single Responsibility Principle_
 <!-- 書籍クリーンアーキテクチャの中で「ソフトウェアアーキテクチャの目的は、求められるシステムを構築・保守するために必要な人材を最低限に抑えることである」 -->
 
 <!-- 設計とアーキテクチャは同じである。大きな視点で考えるときも、小さな視点で考えるときも必要なこととして考えてほしい -->
----
-
-## SOLID
-
-コードの臭いに気づき消臭する５つの原則
-
-* S: 単一責任の原則: Sindle Responsibility Principle
-* O: 開放閉鎖の原則: Open/Closed Principle
-* L: リスコフの置換原則: Liskov Substitution Principle
-* I: インターフェイス分離の原則: Interface Segregation Principle
-* D: 依存関係逆転の原則: Dependency Inversion Principle
 
 ---
 
 # SOLID #1 単一責任の原則(SRP)
 _Single Responsibility Principle_
+
+> ## モジュールを変更する理由はたったひとつだけであるべき
 
 ---
 
