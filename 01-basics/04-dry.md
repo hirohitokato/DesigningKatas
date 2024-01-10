@@ -207,17 +207,17 @@ struct Student {
 
 ```python
 def validate_age(value): # 購入者の年齢認証
-    validdate_type(value, int)
+    validate_type(value, int)
     validate_min_integer(value, 0)
 
 def validate_quantity(value): # 購入するワインの注文数
-    validdate_type(value, int)
+    validate_type(value, int)
     validate_min_integer(value, 0)
 ```
 ↓ 似ているから共通化しよう
 ```python
 def validate_something(value):
-    validdate_type(value, :integer)
+    validate_type(value, :integer)
     validate_min_integer(value, 0)
 ```
 
