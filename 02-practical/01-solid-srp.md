@@ -151,3 +151,11 @@ _Single Responsibility Principle_
 >>> https://jp.yamaha.com/products/musical_instruments/winds/accessories/metronomes/me-55be/index.html
 
 <!-- オシレータ・シーケンサー・シンセサイザー -->
+
+---
+
+## SRPはどう使う？
+ 
+* **設計時**：役割(責務という)が十分に小さく直交するよう気をつける
+* **違反の臭い**：異なる理由の変更作業なのに同じクラスに手を入れていた。複数の使用者が同じクラスを参照している
+* **リファクタリング**：別ドメインや別クラスに分けたり
