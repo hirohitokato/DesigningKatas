@@ -32,6 +32,7 @@
 18. 2023/12/22 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [プログラマーとは](10-humor/07-programmers.md)
 19. 2023/12/27 [ユビキタス言語](01-basics/19-ubiquitous.md)
 20. 2024/01/10 [単一責任の原則(SOLID)](02-practical/01-solid-srp.md)
+21. 2024/01/12 [開放閉鎖の原則(SOLID)](02-practical/02-solid-ocp.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -49,6 +50,7 @@
 1. 2023/12/08 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/12/15 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
 3. 2023/12/22 [KISS](01-basics/03-kiss.md) & [再帰を理解するたった１つの冴えた方法](10-humor/06-howto_know_recursion.md)
+4. 2024/01/12 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 
 ### 4th group
 <!-- AC -->
