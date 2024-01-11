@@ -28,11 +28,11 @@ _Single Responsibility Principle_
 
 ## SOLIDの５原則
 
-* S: 単一責任の原則: Sindle Responsibility Principle
-* O: 開放閉鎖の原則: Open/Closed Principle
-* L: リスコフの置換原則: Liskov Substitution Principle
-* I: インターフェイス分離の原則: Interface Segregation Principle
-* D: 依存関係逆転の原則: Dependency Inversion Principle
+* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+* I: インターフェイス分離の原則: Interface Segregation Principle(ISP)
+* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
 
 <!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
 <!-- 待って、そもそもアーキテクチャって？ -->
@@ -158,4 +158,4 @@ _Single Responsibility Principle_
  
 * **設計時**：役割(責務という)が十分に小さく直交するよう気をつける
 * **違反の臭い**：異なる理由の変更作業なのに同じクラスに手を入れていた。複数の使用者が同じクラスを参照している
-* **リファクタリング**：別ドメインや別クラスに分けたり
+* **消臭方法**：責務が同じもの同士、別ドメインや別クラスに分割する
