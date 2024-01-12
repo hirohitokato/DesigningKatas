@@ -31,8 +31,8 @@
 17. 2023/12/15 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 18. 2023/12/22 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [プログラマーとは](10-humor/07-programmers.md)
 19. 2023/12/27 [ユビキタス言語](01-basics/19-ubiquitous.md)
-20. 2024/01/10 [単一責任の原則(SOLID)](02-practical/01-solid-srp.md)
-21. 2024/01/12 [開放閉鎖の原則(SOLID)](02-practical/02-solid-ocp.md)
+20. 2024/01/10 [単一責任の原則(SRP)[SOLID]](02-practical/01-solid-srp.md)
+21. 2024/01/12 [開放閉鎖の原則(OCP)[SOLID]](02-practical/02-solid-ocp.md)
 
 ### 2nd group 
 <!-- VP -->
