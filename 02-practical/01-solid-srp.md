@@ -6,7 +6,7 @@ theme: katas
 size: 16:9
 paginate: true
 -->
-<!-- header: 勉強会#-->
+<!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
 # SOLID #1 単一責任の原則(SRP)
 _Single Responsibility Principle_
