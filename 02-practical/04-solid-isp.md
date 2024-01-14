@@ -6,3 +6,4 @@
 
 https://zenn.dev/maru44/articles/3405308b1b83bc
 -->
+イギリスの三枚舌外交
