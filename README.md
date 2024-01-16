@@ -43,7 +43,7 @@
 4. 2023/12/15 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md) & [テストエンジニアとサンドイッチ](10-humor/02-sandwich.md)
 5. 2023/12/26 [名前重要](01-basics/05-naming_is_important.md)
 6. 2024/01/09 [７つの設計原理](01-basics/08-seven_design_principles.md)
-6. 2023/01/16 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
+6. 2023/01/16 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 
 ### 3rd group
 <!-- MS -->
