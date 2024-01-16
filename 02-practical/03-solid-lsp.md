@@ -13,6 +13,8 @@ paginate: true
 
 答は「リスコフの置換原則を守ればいい」です。 -->
 
+---
+
 # SOLID #3 リスコフの置換原則
 _Liskov Substitution Principle_
 
