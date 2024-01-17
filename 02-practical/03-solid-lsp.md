@@ -69,7 +69,7 @@ _Liskov Substitution Principle_
 
 * 親クラスで規定していないことをやろうとしている
 
-> → 使用側が特定の派生クラスを限定した処理を呼ばなければならなくなる
+> → 使用側が特定の派生クラスに限定した処理を呼ばなければならなくなる
 
 ![bg right contain](assets/03-lsp-invalid.png)
 
