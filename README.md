@@ -27,12 +27,13 @@
 13. 2023/12/01 [カプセル化/情報隠蔽/パッケージ化(アーキテクチャ根底技法)](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 14. 2023/12/06 [関心の分離(アーキテクチャ根底技法)](01-basics/14-separation_of_concerns.md) & 演習
 15. 2023/12/08 [充足性 & 完全性 & プリミティブ性(アーキテクチャ根底技法)](01-basics/15-suff_comp_prim.md)
-16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェイスと実装の分離(アーキテクチャ根底技法)](01-basics/16-segmentation_principles.md)
+16. 2023/12/13 [ポリシーとメカニズムの分離・インターフェースと実装の分離(アーキテクチャ根底技法)](01-basics/16-segmentation_principles.md)
 17. 2023/12/15 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 18. 2023/12/22 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [プログラマーとは](10-humor/07-programmers.md)
 19. 2023/12/27 [ユビキタス言語](01-basics/19-ubiquitous.md)
 20. 2024/01/10 [単一責任の原則(SRP)[SOLID]](02-practical/01-solid-srp.md)
 21. 2024/01/12 [開放閉鎖の原則(OCP)[SOLID]](02-practical/02-solid-ocp.md)
+22. 2024/01/17 [リスコフの置換原則(LSP)[SOLID]](02-practical/03-solid-lsp.md) & [アンナ・カレーニナの法則](10-humor/09-anna_karenina.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -60,6 +61,7 @@
 2. 2023/12/18 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md)
 3. 2023/12/27 [KISS](01-basics/03-kiss.md)
 4. 2024/01/10 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
+5. 2024/01/17 [名前重要](01-basics/05-naming_is_important.md)
 
 ### 5th group
 <!-- PB -->
@@ -68,3 +70,4 @@
 2. 2023/12/21 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
 3. 2023/12/27 [KISS](01-basics/03-kiss.md)
 4. 2024/01/10 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
+5. 2024/01/17 [名前重要](01-basics/05-naming_is_important.md)

@@ -21,7 +21,7 @@ paginate: true
 1. [関心の分離](./14-separation_of_concerns.md)
 1. [充足性 & 完全性 & プリミティブ性](./15-suff_comp_prim.md)
 1. [ポリシーとメカニズムの分離](01-basics/16-segmentation_principles.md)
-1. [インターフェイスと実装の分離](01-basics/16-segmentation_principles.md)
+1. [インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 
 ---
 
