@@ -34,6 +34,7 @@
 20. 2024/01/10 [単一責任の原則(SRP)[SOLID]](02-practical/01-solid-srp.md)
 21. 2024/01/12 [開放閉鎖の原則(OCP)[SOLID]](02-practical/02-solid-ocp.md)
 22. 2024/01/17 [リスコフの置換原則(LSP)[SOLID]](02-practical/03-solid-lsp.md) & [アンナ・カレーニナの法則](10-humor/09-anna_karenina.md)
+23. 2024/01/19 [インターフェース分離の原則(ISP)[SOLID]](02-practical/04-solid-isp.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -53,6 +54,7 @@
 2. 2023/12/15 [分割と統治(Divide and Conquer)(アーキテクチャ根底技法)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
 3. 2023/12/22 [KISS](01-basics/03-kiss.md) & [再帰を理解するたった１つの冴えた方法](10-humor/06-howto_know_recursion.md)
 4. 2024/01/12 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
+5. 2024/01/19 [名前重要](01-basics/05-naming_is_important.md)
 
 ### 4th group
 <!-- AC -->
