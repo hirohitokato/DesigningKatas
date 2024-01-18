@@ -25,8 +25,6 @@ _Interface Segregation Principle_
 
 異なる責務のインターフェイスを安易に混ぜてはいけない
 
-イギリスの三枚舌外交
-
 ---
 
 ## 何が問題か？
