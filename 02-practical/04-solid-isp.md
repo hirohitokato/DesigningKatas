@@ -79,7 +79,7 @@ C言語だとヘッダファイルが近い概念。 -->
 
 ![center h:200px](assets/04-isp-complex_interface.png)
 
-* Camera/Piano/Guiter/SmartPhoneは責務が異なる
+* Camera/Piano/Guitar/SmartPhoneは責務が異なる
     * SRPと同様に責務でグルーピング
 
 ---
