@@ -21,6 +21,19 @@ _Interface Segregation Principle_
 
 ---
 
+## SOLIDの５原則
+
+* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+* I: インターフェース分離の原則: Interface Segregation Principle(ISP)
+* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
+
+<!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
+<!-- 他の原則が割と覚えてからしばらく経つと使いこなせるようになるものが多いのに対して、この原則はすぐに設計や実装に使えるのが特徴です -->
+
+---
+
 ## インターフェース分離の原則
 
 異なる責務のインターフェースを安易に混ぜてはいけない
