@@ -2,6 +2,12 @@
 /* 勉強会#向けテーマ */
 
 @import 'default';
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;400;700&family=Noto+Serif+JP:wght@200;400;700&display=swap");
+
+
+section {
+  font-family: "Noto Sans JP", sans-serif;
+}
 
 /* 三重引用を脚注の記号に転用 */
 blockquote>blockquote>blockquote {
