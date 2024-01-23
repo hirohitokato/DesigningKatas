@@ -89,7 +89,21 @@ class USBPort
  
 * **ソースコードの依存関係** : コード上で書く/書かれる関係
 * **制御の流れ** : 処理が呼ばれるときの呼ぶ/呼ばれる(上下)関係
- 
+
+```js
+class Peripheral {
+    constructor(parent) { parent.action = this.add; }
+    add(a, b) { return a + b; }
+}
+class CoreLogic {
+    action = null;
+    calc(a, b) { return this.action(a, b); }
+}
+const parent = new CoreLogic();
+const child = new Peripheral(parent);
+console.log(parent.calc(2, 3));  // 6を出力
+```
+
 ---
 
 ## DIPはどう使う？
