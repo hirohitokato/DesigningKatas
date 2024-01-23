@@ -7,6 +7,8 @@
 
 section {
   font-family: "Noto Sans JP", sans-serif;
+  /* 01-basicsなど、↓の相対パス指定から辿れる位置のみ対応しているので注意 */
+  cursor: url("../.marp-themes/pointer_red.png"), pointer;
 }
 
 /* 三重引用を脚注の記号に転用 */
