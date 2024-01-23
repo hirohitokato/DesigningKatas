@@ -84,11 +84,12 @@ https://speakerdeck.com/kishida/write-a-executable-process-for-ai-era
 -->
 
 ---
-## 目安
+## 原則の使い方
 
 ### 変数の定義で単一代入を扱うようにする
 
 * 関数の引数は変更しない
+* できるだけconstを使う
 * ループは別腹
 
 ### 再代入を行う処理と行わない処理とを分離する
