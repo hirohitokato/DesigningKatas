@@ -141,7 +141,7 @@ class USBPort:
 
 ---
 
-## 依存関係が逆転した！
+## 依存関係が逆転し、不安定層→安定層の流れが整った
 
 ![center 80%](assets/05-dip-instruction1.png)
 
