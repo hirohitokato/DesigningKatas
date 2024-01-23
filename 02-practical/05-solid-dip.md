@@ -149,6 +149,7 @@ class USBPort:
 
 ![center 80%](assets/05-dip-instruction3.png)
 
+<!-- 安心して右側の処理を入れ替えたり追加できるようになった -->
 
 ---
 
