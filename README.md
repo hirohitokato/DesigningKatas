@@ -66,6 +66,7 @@
 3. 2023/12/27 [KISS](01-basics/03-kiss.md)
 4. 2024/01/10 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 5. 2024/01/17 [名前重要](01-basics/05-naming_is_important.md)
+6. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
 
 ### 5th group
 <!-- PB -->
@@ -75,3 +76,4 @@
 3. 2023/12/27 [KISS](01-basics/03-kiss.md)
 4. 2024/01/10 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 5. 2024/01/17 [名前重要](01-basics/05-naming_is_important.md)
+6. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
