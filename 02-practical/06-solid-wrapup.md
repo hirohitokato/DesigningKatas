@@ -26,6 +26,12 @@ paginate: true
 
 ---
 
+## 各原則の関係
+
+![contain center](assets/06-relationship.png)
+
+---
+
 ## コードの臭い
  
 * **硬さ**: 設計変更が困難
