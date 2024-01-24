@@ -28,6 +28,19 @@ _Dependency Inversion Principle_
 
 ---
 
+## SOLIDの５原則
+
+* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+* I: インターフェース分離の原則: Interface Segregation Principle(ISP)
+* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
+
+<!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
+<!-- 他の原則が割と覚えてからしばらく経つと使いこなせるようになるものが多いのに対して、この原則はすぐに設計や実装に使えるのが特徴です -->
+
+---
+
 ## 依存関係逆転の原則とは
 
 クラス・モジュール間において単一方向の依存関係を維持したまま、<br>双方向の処理フローを実現する技術。

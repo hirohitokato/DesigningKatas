@@ -1,3 +1,31 @@
+---
+marp: true
+math: mathjax
+theme: katas
+---
+<!-- 
+size: 16:9
+paginate: true
+-->
+<!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
+
+# SOLIDまとめ
+
+---
+
+## SOLIDの５原則
+
+* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+* I: インターフェース分離の原則: Interface Segregation Principle(ISP)
+* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
+
+<!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
+<!-- 他の原則が割と覚えてからしばらく経つと使いこなせるようになるものが多いのに対して、この原則はすぐに設計や実装に使えるのが特徴です -->
+
+---
+
 ## コードの臭い
  
 * **硬さ**: 設計変更が困難

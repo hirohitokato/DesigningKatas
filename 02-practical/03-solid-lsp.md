@@ -29,6 +29,19 @@ _Liskov Substitution Principle_
 
 ---
 
+## SOLIDの５原則
+
+* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+* I: インターフェース分離の原則: Interface Segregation Principle(ISP)
+* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
+
+<!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
+<!-- 他の原則が割と覚えてからしばらく経つと使いこなせるようになるものが多いのに対して、この原則はすぐに設計や実装に使えるのが特徴です -->
+
+---
+
 ## リスコフの置換原則とは
 
 > 型$S$の各オブジェクト$o_{1}$に対し、型$T$のオブジェクト$o_{2}$が存在し、$T$に関して定義されたすべてのプログラム$P$が$o1$を$o2$で置き換えても動作を変えない場合、$S$は$T$のサブタイプである。
