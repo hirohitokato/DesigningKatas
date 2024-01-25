@@ -36,6 +36,7 @@
 22. 2024/01/17 [リスコフの置換原則(LSP)[SOLID]](02-practical/03-solid-lsp.md) & [アンナ・カレーニナの法則](10-humor/09-anna_karenina.md)
 23. 2024/01/19 [インターフェース分離の原則(ISP)[SOLID]](02-practical/04-solid-isp.md)
 24. 2024/01/24 [依存関係逆転の原則(DIP)[SOLID]](02-practical/05-solid-dip.md)
+25. 2024/01/26 [SOLIDまとめ](02-practical/06-solid-wrapup.md)
 
 ### 2nd group 
 <!-- VP -->
