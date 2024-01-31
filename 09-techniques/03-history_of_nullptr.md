@@ -21,12 +21,13 @@ https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-T
 
 
 ---
-## nullの語源
+## 語源
 
 ラテン語の『nullus』に由来。「無」を意味する。
 
 >>> 別言語で出てくる`nil`もラテン語の nihil の短縮形に由来する
 
+<!-- ラテン語の意味は虚無。冷めたり暗い考えに陥りがちな人を表す「ニヒル」と同じ。 -->
 ---
 
 ## ヌル文字$^1$ '`\0`'
