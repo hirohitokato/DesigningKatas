@@ -11,14 +11,39 @@ paginate: true
 
 # nullポインタの歴史
 
+<!-- この概念を採用したことによって10億ドルの損失を世界中に生んだと言われる厄災とでもいうべき存在 -->
+
 ---
 ## nullポインタとは
 
 何のオブジェクトも指していないことを表す特別なポインタの値。
-メモリ空間として
+（リアルモードで動くプログラムを除き）不正なアドレスとして扱われる。
 
-https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
+プログラミング言語「Algol 60」が初出
 
+<!-- 1960年に作られたプログラミング言語。ペルセウス座の恒星で2等星もアルゴルと名付けられているが、意味はアラビア語で「食屍鬼(グール)の頭」を意味する -->
+<!-- https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ -->
+
+---
+
+## Algol 60のサンプルコード (階乗(n!)を求める)
+
+```algol
+begin
+	comment Algol 60で階乗を求めるプログラム;
+	integer procedure factorial(n); integer n;
+	begin
+		integer i,fact;
+		fact:=1;
+		for i:=2 step 1 until n do
+			fact:=fact*i;
+		factorial:=fact
+	end;
+	integer i;
+	for i:=1 step 1 until 10 do outinteger(1,factorial(i));
+	outstring(1,"\n")
+end
+```
 
 ---
 ## 語源
