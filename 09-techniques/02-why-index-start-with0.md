@@ -19,8 +19,8 @@ _Why do array indexes start with 0 in many programming languages?_
 けっこう行ったり来たりしている
 
 1. FORTRAN(1954-)は配列の要素番号は1から始まっていた
-2. ALGOL(1958-)は0からスタート
-3. COBOL(1959-), BASIC(1964-)は1からスタート
+2. ALGOL(1958-)は0
+3. COBOL(1959-), BASIC(1964-)は1
 4. C言語(1972-)では0
 5. MATLAB(1970年代後半)は1
 
