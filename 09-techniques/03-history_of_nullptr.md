@@ -94,4 +94,6 @@ c++ではnullptr というキーワードができましたが、既に混乱は
 
 という理由で作られた。
 
+ここはもう少し詳しく
+
 >>> Tony Hoareによる講演「[Null References: The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)」から
