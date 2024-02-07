@@ -37,6 +37,7 @@
 23. 2024/01/19 [インターフェース分離の原則(ISP)[SOLID]](02-practical/04-solid-isp.md)
 24. 2024/01/24 [依存関係逆転の原則(DIP)[SOLID]](02-practical/05-solid-dip.md)
 25. 2024/01/26 [SOLIDまとめ](02-practical/06-solid-wrapup.md)
+26. 2024/02/07 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 
 ### 2nd group 
 <!-- VP -->
@@ -49,6 +50,7 @@
 6. 2024/01/09 [７つの設計原理](01-basics/08-seven_design_principles.md)
 7. 2023/01/16 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 8. 2024/01/23 [参照の一点性(アーキテクチャ根底技法)](01-basics/07-single_point_of_reference.md)
+9. 2024/02/06 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 
 ### 3rd group
 <!-- MS -->
