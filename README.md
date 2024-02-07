@@ -60,6 +60,7 @@
 3. 2023/12/22 [KISS](01-basics/03-kiss.md) & [再帰を理解するたった１つの冴えた方法](10-humor/06-howto_know_recursion.md)
 4. 2024/01/12 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 5. 2024/01/19 [７つの設計原理](01-basics/08-seven_design_principles.md)
+6. 2024/02/08 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 
 ### 4th group
 <!-- AC -->
