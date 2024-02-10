@@ -92,10 +92,10 @@ c++ではnullptr というキーワードができましたが、既に混乱は
 
 **「実装が簡単であったから」「(簡単という)誘惑に抗えなかったから」**
 
-という理由で実装された。
+という理由で実装された。本来はコンパイル時からヌル許容/非許容を判断できるようにしたかったとのこと
 
 
->>> Tony Hoareによる講演「[Null References: The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)」より。本来は型安全
+>>> Tony Hoareによる講演「[Null References: The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)」より
 
 <!-- アントニー・リチャード・ホーア（トニー・ホーア）はイギリスの計算機科学者。クイックソートを考案した人 -->
 <!-- それは10億ドルにも相当する私の誤りだ。null参照を発明したのは1965年のことだった。当時、私はオブジェクト指向言語 (ALGOL W) における参照のための包括的型システムを設計していた。目標は、コンパイラでの自動チェックで全ての参照が完全に安全であることを保証することだった。しかし、私は単にそれが容易だというだけで、無効な参照を含める誘惑に抵抗できなかった。これは、後に数え切れない過ち、脆弱性、システムクラッシュを引き起こし、過去40年間で10億ドル相当の苦痛と損害を引き起こしたとみられる。 -->
