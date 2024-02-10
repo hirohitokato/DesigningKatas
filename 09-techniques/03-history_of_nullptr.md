@@ -90,9 +90,9 @@ c++ではnullptr というキーワードができましたが、既に混乱は
 
 1965年にALGOL W言語を開発する際
 
-**「実装が簡単であったから」「(簡単という)誘惑に抗えなかったから」**
+> **「実装が簡単であったから」「(簡単という)誘惑に抗えなかったから」**
 
-という理由で実装された。本来はコンパイル時からヌル許容/非許容を判断できるようにしたかったとのこと
+という理由で実装された。本来はコンパイル時からヌル許容/非許容を判断したかった
 
 
 >>> Tony Hoareによる講演「[Null References: The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)」より
