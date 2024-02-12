@@ -23,6 +23,30 @@ _Inheritance vs delegation_
 
 ---
 
+## 継承 / 委譲
+
+```py
+# 継承
+class Base:
+    …
+class Derived(Base):
+    # 親のメソッドやプロパティを利用できる
+```
+
+```py
+# 委譲
+class Leg:
+    def move(self): …
+
+class Child {
+    def init(self):
+        my_leg = Leg()
+    def move(self):
+        my_leg.move()
+```
+
+---
+
 ## 使い分け
 
 「is-a」の関係であれば継承、「has-a/use-a」の場合は委譲（がベター）。
@@ -34,6 +58,13 @@ _Inheritance vs delegation_
 
 >>> ブログ記事「[継承と委譲の使い分けと、インターフェースの重要性について](https://ikenox.info/blog/inheritance-delegation-interface/)」から引用
  
+---
+
+## 継承のデメリット
+
+* コードが読みにくくなる
+* すぐ神クラスになる
+* 変な継承をする人がいる
 
 ---
 
