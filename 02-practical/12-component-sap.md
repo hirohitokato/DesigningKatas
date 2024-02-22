@@ -15,3 +15,11 @@ paginate: true
 _Stable Abstractions Principle_
 
 ---
+## タネ本
+
+### 『クリーンアーキテクチャ<br>　 ― 達人に学ぶソフトウェアの構造と設計』
+* Robert C. Martin(著), 角征典, 髙木正弘(訳)
+* アスキードワンゴ刊
+![bg right:30% 90%](assets/07-cleanarchitecture.jpg)
+
+---
