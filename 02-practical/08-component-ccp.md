@@ -78,3 +78,29 @@ iOSアプリに使われているクラスを初見でグルーピングして�
 ![height:300px center](assets/08-exercise.png)
 
 >>> 参考リポジトリ: https://github.com/yumemi-inc/ios-engineer-codecheck (株式会社ゆめみの入社テスト)
+
+---
+
+App/
+AppContent
+AppDelegate
+
+Model/
+GitHubSearcher
+GitHubAPIClient
+GitHubRepository
+ImageCache
+ImageDownloader
+
+View/Navigation/
+NavigationRouter
+
+View/MainView/
+MainPresenter
+MainView
+MainContent
+
+View/DetailView/
+DetailContent
+DetailView
+DetailViewPresenter
