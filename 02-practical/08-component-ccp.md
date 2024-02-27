@@ -70,4 +70,11 @@ _The Common Reuse Principle_
 このように、時間や進行とともにコンポーネントに求められるものが変化していくことに注意してほしい。-->
 
 ---
-## エクササイズ： あるUIライブラリの分割
+## エクササイズ： iOSアプリのクラス分割
+
+iOSアプリに使われているクラスを初見でグルーピングしてみよう。
+
+
+![height:300px center](assets/08-exercise.png)
+
+>>> 参考リポジトリ: https://github.com/yumemi-inc/ios-engineer-codecheck (株式会社ゆめみの入社テスト)
