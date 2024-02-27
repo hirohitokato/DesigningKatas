@@ -51,6 +51,7 @@
 7. 2023/01/16 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 8. 2024/01/23 [参照の一点性(アーキテクチャ根底技法)](01-basics/07-single_point_of_reference.md)
 9. 2024/02/06 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
+10. 2024/02/27 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 
 ### 3rd group
 <!-- MS -->
