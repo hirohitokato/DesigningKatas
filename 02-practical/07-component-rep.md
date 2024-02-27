@@ -11,9 +11,7 @@ paginate: true
 
 ### コンポーネントの原則 #0 & #1
 
-# コンポーネントの原則 ― 導入
-
-＆
+# コンポーネントの原則 ― 導入 &
 
 # 再利用・リリース等価の原則(REP)
 _The Reuse/Release Equivalence Principle_
@@ -100,6 +98,8 @@ _The Reuse/Release Equivalence Principle_
 ![center width:768px](assets/07-semantic_ver.png)
 
 >>> 1.GitHubの共同創業者であるTom Preston-Werner氏が2010年に提唱。詳細は[公式ページ](https://semver.org/lang/ja/spec/v2.0.0.html)を参照
+
+<!-- URLをチャットにも貼り付ける -->
 
 ---
 ## セマンティック・バージョニング
