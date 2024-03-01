@@ -38,7 +38,8 @@
 24. 2024/01/24 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 25. 2024/01/26 [SOLIDまとめ](02-practical/06-solid-wrapup.md)
 26. 2024/02/07 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
-27. 2024/02/28 [[コンポーネントの原則]導入～再利用・リリース等価の原則(REP)](02-practical/07-component-rep.md)
+27. 2024/02/28 [[コンポーネントの原則]導入～再利用・リリース等価の原則(REP)](02-practical/07-component-rep.md) & 演習
+28. 2024/03/01 [[コンポーネントの原則]閉鎖性共通の原則(CCP)＆全再利用の原則(CRP)](02-practical/08-component-ccp_crp.md) & 演習
 
 ### 2nd group 
 <!-- VP -->

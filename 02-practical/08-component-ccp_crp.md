@@ -74,7 +74,6 @@ _The Common Reuse Principle_
 
 iOSアプリに使われているクラスを初見でグルーピングしてみよう。
 
-
 ![height:300px center](assets/08-exercise.png)
 
 >>> 参考リポジトリ: https://github.com/yumemi-inc/ios-engineer-codecheck (株式会社ゆめみの入社テスト)
