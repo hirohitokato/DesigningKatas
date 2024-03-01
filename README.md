@@ -64,6 +64,7 @@
 4. 2024/01/12 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 5. 2024/01/19 [７つの設計原理](01-basics/08-seven_design_principles.md)
 6. 2024/02/09 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
+7. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 <!-- 足並みを揃えるため次はSLAPをやりたい -->
 
 ### 4th group
