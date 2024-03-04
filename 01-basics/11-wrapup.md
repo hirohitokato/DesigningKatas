@@ -14,16 +14,16 @@ paginate: true
 
 ## ここまでの内容
 
-1. [銀の弾などない(No silver bullet)](./01-no_silver_bullets.md)
-2. [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
-3. [KISS(Keep It Simple, Stupid)](./03-kiss.md)
-4. [DRY(Don't Repeat Yourself)](./04-dry.md) & カレーレシピの分割
-5. [名前重要](./05-naming_is_important.md) & [90:90の法則](10-humor/01-90_90rule.md)
-6. [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
-7. [参照の一点性](./07-single_point_of_reference.md)
-8. [７つの設計原理](./08-seven_design_principles.md)
-9. [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
-10. [TMTOWTDI](./10-tmtowtdi.md)
+* [銀の弾などない(No silver bullet)](./01-no_silver_bullets.md)
+* [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
+* [KISS(Keep It Simple, Stupid)](./03-kiss.md)
+* [DRY(Don't Repeat Yourself)](./04-dry.md) & カレーレシピの分割
+* [名前重要](./05-naming_is_important.md) & [90:90の法則](10-humor/01-90_90rule.md)
+* [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
+* [参照の一点性](./07-single_point_of_reference.md)
+* [７つの設計原理](./08-seven_design_principles.md)
+* [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
+* [TMTOWTDI](./10-tmtowtdi.md)
 
 ---
 
