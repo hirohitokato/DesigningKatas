@@ -20,13 +20,13 @@ paginate: true
 * [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
 * [KISS(Keep It Simple, Stupid)](./03-kiss.md)
 * [DRY(Don't Repeat Yourself)](./04-dry.md)
-* [名前重要](./05-naming_is_important.md) & [90:90の法則](10-humor/01-90_90rule.md)
+* [名前重要](./05-naming_is_important.md)
 * [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
 * [参照の一点性](./07-single_point_of_reference.md)
 * [７つの設計原理](./08-seven_design_principles.md)
-* [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
+* [PIE(Program Intently and Expressively)](./09-pie.md)
 * [TMTOWTDI](./10-tmtowtdi.md)
-* [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
+* [なぜ配列の要素番号はゼロから始まるのか](../09-techniques/02-why-index-start-with0.md)
 
 ---
 
@@ -62,6 +62,6 @@ paginate: true
 > 物事がこうであるということを知っているが、
 > なぜそうであるかということを知らない。
 > 
-> ――― マルティン・ハイデガー
+> ――― マルティン・ハイデッガー
 
 >>> マルティン・ハイデッガー（ドイツ語: Martin Heidegger, 1889年9月26日 - 1976年5月26日）。ドイツの哲学者。
