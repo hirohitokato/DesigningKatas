@@ -10,6 +10,8 @@ paginate: true
 
 # ここまでの復習
 
+<!-- gitリポジトリのURLを貼る -->
+
 ---
 
 ## ここまでの内容
@@ -17,7 +19,7 @@ paginate: true
 * [銀の弾などない(No silver bullet)](./01-no_silver_bullets.md)
 * [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
 * [KISS(Keep It Simple, Stupid)](./03-kiss.md)
-* [DRY(Don't Repeat Yourself)](./04-dry.md) & カレーレシピの分割
+* [DRY(Don't Repeat Yourself)](./04-dry.md)
 * [名前重要](./05-naming_is_important.md) & [90:90の法則](10-humor/01-90_90rule.md)
 * [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
 * [参照の一点性](./07-single_point_of_reference.md)
