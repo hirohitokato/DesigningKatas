@@ -24,10 +24,11 @@ paginate: true
 * [７つの設計原理](./08-seven_design_principles.md)
 * [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 * [TMTOWTDI](./10-tmtowtdi.md)
+* [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 
 ---
 
-## 書籍『プリンシプル オブ プログラミング』による分類$^1$
+## 書籍『プリンシプル オブ プログラミング』による原則の分類$^1$
 
 * **前提** 〜プログラミングの変わらぬ真実〜
     * 普遍的な事実であり、前提知識
