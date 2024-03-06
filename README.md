@@ -43,7 +43,7 @@
 29. 2024/03/06 [[コンポーネントの原則]非循環依存関係の原則(ADP)](02-practical/11-component-sap.md) & 演習
 
 
-### 2nd group 
+### 2nd group
 <!-- VP -->
 
 1. 2023/11/28 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
@@ -80,6 +80,7 @@
 6. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [ダニング＝クルーガー効果](10-humor/10-dunning_kruger_effect.md)
 7. 2024/02/07 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 8. 2024/02/28 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
+9. 2024/03/06 [[アーキテクチャ根底技法]参照の一点性](01-basics/07-single_point_of_reference.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 
 ### 5th group
 <!-- PB -->
@@ -92,3 +93,4 @@
 6. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
 7. 2024/02/07 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 8. 2024/02/28 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
+9. 2024/03/06 [[アーキテクチャ根底技法]参照の一点性](01-basics/07-single_point_of_reference.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
