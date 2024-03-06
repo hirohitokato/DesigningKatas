@@ -21,7 +21,7 @@ _Single point of reference_
 開発方法論やプログラミング言語の種類とは関係なく利用できるものなので覚えて行ってほしい -->
 ---
 
-## 参照の一点性$^1$
+## 参照の一点性
 
 変数を一度定義したら値を書き換えない。
 
@@ -79,8 +79,8 @@ def factorial(n):
 　return n * factorial(n - 1)
 ```
 
-<!-- ちなみに再帰は２－３種類のパターンがあるだけなので、それさえ覚えてしまえば意外と頭に入ってきます。及び腰になっている人もこの記事とかで読んでおくと良いです。
-https://speakerdeck.com/kishida/write-a-executable-process-for-ai-era
+<!-- ちなみに再帰は２-３種類のパターンがあるだけなので、それさえ覚えてしまえば意外と頭に入ってきます。及び腰になっている人もこの記事とかで読んでおくと良いです。
+再帰が分かった気になれるスライド : https://speakerdeck.com/kishida/write-a-executable-process-for-ai-era
 -->
 
 ---
@@ -147,6 +147,14 @@ var query = list
 守って保守性を高めるための工夫になるし、関数型プログラミングにおけるモナドの１つとして役に立つと思う。
 デバッグしにくいけどね。 -->
 
+>>> Reactive Extensions(Rx), Kotlin Flow, Swift Combineも同じ
+
+<!-- 最近、Rx系のライブラリとしてC#ではR3が登場して話題になってます。現代の「async/awaitがあればRx要らなくない？」に
+向き合い、RxのメッセージングをLINQとして処理できる、オブザーバーパターンのベストプラクティスとして再設計されたライブラリになっているので要チェック。
+R３関連リンク：
+https://github.com/Cysharp/R3
+https://neue.cc/2024/02/27_R3.html
+ -->
 
 <!--
 Q&A: 中で状態を持たないクラスや関数を扱う場合、引数が大量になる場合はどうしたらいい？
