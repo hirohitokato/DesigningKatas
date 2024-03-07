@@ -113,7 +113,7 @@ _Stable Dependencies Principle_
 
 <!-- 
 SRP: Single Responsibility Principle
-DIP: Dependeny Inversion Principle
+DIP: Dependeny Inversion Principle ← 正解
 REP: The Reuse/Release Equivalence Principle : 再利用・リリース等価の原則
 ADP: Acyclic Dependencies Principle : 非循環依存関係の原則
  -->

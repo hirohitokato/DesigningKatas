@@ -40,8 +40,8 @@
 26. 2024/02/07 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 27. 2024/02/28 [[コンポーネントの原則]導入～再利用・リリース等価の原則(REP)](02-practical/07-component-rep.md) & 演習
 28. 2024/03/01 [[コンポーネントの原則]閉鎖性共通の原則(CCP)＆全再利用の原則(CRP)](02-practical/08-component-ccp_crp.md) & 演習
-29. 2024/03/06 [[コンポーネントの原則]非循環依存関係の原則(ADP)](02-practical/11-component-sap.md) & 演習
-
+29. 2024/03/06 [[コンポーネントの原則]非循環依存関係の原則(ADP)](02-practical/09-component-adp.md) & 演習
+30. 2024/03/08 [[コンポーネントの原則]安定依存の原則(SDP)](02-practical/10-component-sdp.md)
 
 ### 2nd group
 <!-- VP -->
@@ -67,7 +67,8 @@
 4. 2024/01/12 [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 5. 2024/01/19 [７つの設計原理](01-basics/08-seven_design_principles.md)
 6. 2024/02/09 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
-7. 2023/01/24 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
+7. 2023/03/01 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
+8. 2024/03/08 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 
 ### 4th group
 <!-- AC -->
