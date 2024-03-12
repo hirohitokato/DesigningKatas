@@ -57,7 +57,7 @@
 9. 2024/02/06 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
 10. 2024/02/27 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 11. 2024/03/05 [ここまでの復習と分類](01-basics/11-wrapup.md)
-12. 2024/03/12 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md) & [10種類の人間](10-humor/05-10kinds_of_people.md)
+12. 2024/03/12 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
 
 ### 3rd group
 <!-- MS -->
