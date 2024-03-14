@@ -118,6 +118,11 @@ def clear_cache_and_load_data():
 
 <!-- exinf:extended information, tskatr:task attributes, task: function pointer of task, itskpri: task priority(iは?) -->
 
+<!-- 単語の命名とかも適当につけると後で後悔することに。
+新幹線： こだま→ひかり→何？。。。のぞみに。ひかりで使い切った感が。希望はひかりよりも速いとか、こじつけもいいところ
+英語のminutes, secondsも。もともとhourしかなかったのが文明が進んでもっと細かいのが必要になって、小さいものとしてラテン語の「pars minuta prima（pasrs＝部分、minuta＝小さい、prima＝最初の）」から「minuta」になりminuteになった。ところが更に細かい単位が必要になって、二番目の細かいもの「pars minuta secunda」のsecundaが残った。second minuteという意味。より細かいのが必要になるとは考えてなかった
+ -->
+
 ---
 
 ## とはいえ守るべきもの
@@ -149,3 +154,20 @@ def clear_cache_and_load_data():
 ![bg fit](assets/05-kani.jpg)
 
 >>> https://twitter.com/sgtcoward/status/1717419972971188379?s=43
+
+<!-- 
+* ひよこ: ピヨピヨ鳴く小さいもの
+    * すずめ: シュシュと鳴く群れ。カモメ、ツバメのめ
+    * ねこ: ねーねー鳴く小さいもの。中国語のまおまお
+* 呻(うめ)く: う！と言うから めくは春めく/ときめく
+* がなる: が！と鳴るから
+* 騒ぐ: ざわざわ
+* 震える: プルプルしてる
+* 旗: パタパタ揺れるから。はためく
+* うんこ: うーんっと踏ん張るから
+* 吸う、吐く、吹く: すー、はー、ふー
+新明解語源辞典
+* 英語
+    * baby: バブバブ言うから
+    * バルバロイ: 蛮族の言ってることがわからずバブバブ言ってたから。バブバブ言ってるやつが強いから、そこからブレイブ(brave)が
+-->
