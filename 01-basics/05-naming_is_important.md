@@ -120,7 +120,7 @@ def clear_cache_and_load_data():
 
 <!-- 単語の命名とかも適当につけると後で後悔することに。
 新幹線： こだま→ひかり→何？。。。のぞみに。ひかりで使い切った感が。希望はひかりよりも速いとか、こじつけもいいところ
-英語のminutes, secondsも。もともとhourしかなかったのが文明が進んでもっと細かいのが必要になって、小さいものとしてラテン語の「pars minuta prima（pasrs＝部分、minuta＝小さい、prima＝最初の）」から「minuta」になりminuteになった。ところが更に細かい単位が必要になって、二番目の細かいもの「pars minuta secunda」のsecundaが残った。second minuteという意味。より細かいのが必要になるとは考えてなかった
+英語のminutes, secondsも。もともとhourしかなかったのが文明が進んでもっと細かいのが必要になって、小さいものとして中世ラテン語の「pars minuta prima（pasrs＝部分、minuta＝小さい、prima＝最初の）」から「minuta」になりminuteになった。ところが更に細かい単位が必要になって、二番目の細かいもの「pars minuta secunda」のsecundaが残った。second minuteという意味。より細かいのが必要になるとは考えてなかった
  -->
 
 ---
