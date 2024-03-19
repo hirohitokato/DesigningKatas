@@ -118,10 +118,7 @@ def clear_cache_and_load_data():
 
 <!-- exinf:extended information, tskatr:task attributes, task: function pointer of task, itskpri: task priority(iは?) -->
 
-<!-- 単語の命名とかも適当につけると後で後悔することに。
-新幹線： こだま→ひかり→何？。。。のぞみに。ひかりで使い切った感が。希望はひかりよりも速いとか、こじつけもいいところ
-英語のminutes, secondsも。もともとhourしかなかったのが文明が進んでもっと細かいのが必要になって、小さいものとして中世ラテン語の「pars minuta prima（pars＝部分、minuta＝小さい、prima＝最初の）」から「minuta」になりminuteになった。ところが更に細かい単位が必要になって、二番目の細かいもの「pars minuta secunda」のsecundaが残った。second minuteという意味。ここまではいいのだけれど、次がミリ秒とサードにならなかったのは惜しい
- -->
+ad
 
 ---
 
