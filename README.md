@@ -43,6 +43,7 @@
 29. 2024/03/06 [[コンポーネントの原則]非循環依存関係の原則(ADP)](02-practical/09-component-adp.md) & 演習
 30. 2024/03/08 [[コンポーネントの原則]安定依存の原則(SDP)](02-practical/10-component-sdp.md)
 31. 2024/03/15 [[コンポーネントの原則]安定度・抽象度等価の原則(SAP)](02-practical/11-component-sap.md)
+32. 2024/03/22 [YAGNI](01-basics/20-yagni.md)
 
 ### 2nd group
 <!-- VP -->
@@ -73,6 +74,7 @@
 8. 2023/03/01 [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md) & [コンウェイの法則](10-humor/03-conways_law.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 9. 2024/03/08 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 10. 2024/03/15 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
+11. 2024/03/22 [ここまでの復習と分類](01-basics/11-wrapup.md)
 
 ### 4th group
 <!-- AC -->
