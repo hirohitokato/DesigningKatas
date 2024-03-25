@@ -84,6 +84,8 @@ int count_bits(int n)
 ```
 
 >>> [Henry S. Warren著『Hacker's Delight』より](https://www.amazon.co.jp/exec/obidos/ASIN/0201914654)
+
+<!-- 渡した数値のビットの1の数を数えるコード。1960年代に考案 -->
 <!-- Intel x86 アーキテクチャが SSE 4.2 から導入した population count 命令の POPCNT を使うのが何倍も速い。 -->
 
 ---
