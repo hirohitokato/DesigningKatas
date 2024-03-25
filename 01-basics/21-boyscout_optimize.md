@@ -108,7 +108,7 @@ int count_bits(int n)
 
 <!-- 渡した数値のビットの1の数を数えるコード。1960年代に考案 -->
 <!-- Intel x86 アーキテクチャが SSE 4.2 から導入した population count 命令の POPCNT を使うのが何倍も速い。 -->
-
+<!-- C++20でも int n = std::popcount(n); と書ける。 -->
 ---
 
 ## 非可逆変換
