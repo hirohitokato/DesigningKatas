@@ -89,6 +89,7 @@
 8. 2024/02/28 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 9. 2024/03/06 [[アーキテクチャ根底技法]参照の一点性](01-basics/07-single_point_of_reference.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 10. 2024/03/13 [ここまでの復習と分類](01-basics/11-wrapup.md)
+11. 2024/03/27 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
 
 ### 5th group
 <!-- PB -->
@@ -103,3 +104,4 @@
 8. 2024/02/28 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 9. 2024/03/06 [[アーキテクチャ根底技法]参照の一点性](01-basics/07-single_point_of_reference.md) & [エンジニア適正クイズ](10-humor/04-milk_and_egg.md)
 10. 2024/03/13 [ここまでの復習と分類](01-basics/11-wrapup.md)
+11. 2024/03/27 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
