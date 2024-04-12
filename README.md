@@ -75,6 +75,7 @@
 9. 2024/03/08 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 10. 2024/03/15 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
 11. 2024/03/22 [ここまでの復習と分類](01-basics/11-wrapup.md)
+12. 2024/04/12 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 
 ### 4th group
 <!-- AC -->
