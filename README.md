@@ -60,6 +60,7 @@
 10. 2024/02/27 [TMTOWTDI](01-basics/10-tmtowtdi.md) & [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
 11. 2024/03/05 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2024/03/12 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
+13. 2024/04/16 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 
 ### 3rd group
 <!-- MS -->
