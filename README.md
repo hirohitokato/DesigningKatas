@@ -61,6 +61,7 @@
 11. 2024/03/05 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2024/03/12 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
 13. 2024/04/16 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
+14. 2024/04/23 [[アーキテクチャ根底技法]関心の分離](01-basics/14-separation_of_concerns.md) & 演習
 
 ### 3rd group
 <!-- MS -->

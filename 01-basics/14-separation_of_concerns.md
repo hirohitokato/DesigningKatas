@@ -38,7 +38,7 @@ _Separation of Concerns (SoC)_
 
 ![bg contain](assets/14-android_app_guide.png)
 
-<!-- Googleが公開しているアプリアーキテクチャガイドにて「最も重要な原則は関心の分離です」とある -->
+<!-- Googleが公開しているアプリアーキテクチャガイド( https://developer.android.com/topic/architecture?hl=ja )では「最も重要な原則は関心の分離です」とある。あらゆる処理を１つのクラスにまとめないようにすることを求めている -->
 
 ---
 
