@@ -44,6 +44,7 @@
 30. 2024/03/08 [[コンポーネントの原則]安定依存の原則(SDP)](02-practical/10-component-sdp.md)
 31. 2024/03/15 [[コンポーネントの原則]安定度・抽象度等価の原則(SAP)](02-practical/11-component-sap.md)
 32. 2024/03/22 [YAGNI](01-basics/20-yagni.md)
+33. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
 
 ### 2nd group
 <!-- VP -->
@@ -78,6 +79,7 @@
 10. 2024/03/15 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
 11. 2024/03/22 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2024/04/12 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
+13. 2024/04/26 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md)
 
 ### 4th group
 <!-- AC -->
