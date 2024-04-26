@@ -19,7 +19,7 @@ _Separation of Interface and Implementation_
 
 ---
 
-## たぶんタネ本
+## タネ本
 
 ### 『ソフトウェアアーキテクチャ<br>　 ― ソフトウェア開発のためのパターン体系』
 * F.ブッシュマン(著), 金澤 典子(訳)
