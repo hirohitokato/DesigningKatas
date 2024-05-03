@@ -6,5 +6,6 @@
     * 「優れたコード > ひどいコード + 優れたコメント」。コードの読みにくさを補う「補助的なコメント」は通常必要になることはない。ひどいコードを直すためのトリガーとして考えてみよう
 * デザインパターンもう一度
     * Head Firstデザインパターン(オーム社)でピックアップしているものを紹介(残りはやらない)
-    * Observer, Decorator, Factory, Singleton, Command, Adapter/Facade, Template Method, Iterator/Composite, State, Proxy, Compound(?)/State
-        * 紹介されていないのはBridge,Builder,Chain of Responsibility, Flyweight, Interpreter, Mediator, Memento, Prototype, Visitor
+        * https://www.oreilly.co.jp/books/9784873119762/
+        * Observer, Decorator, Factory, Singleton, Command, Adapter/Facade, Template Method, Iterator/Composite, State, Proxy, Compound(?)/State
+            * 紹介されていないのはBridge,Builder,Chain of Responsibility, Flyweight, Interpreter, Mediator, Memento, Prototype, Visitor
