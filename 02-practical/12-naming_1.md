@@ -46,7 +46,7 @@ _Code Readability_
 
 ## 前提: 英文法に近い形で命名する
 
-* 「メッセージを表示するテキストビュー上で発生したクリックイベントのリスナー」
+<b>例「メッセージ表示用のテキストビューで発生したクリックイベントのリスナー」</b>
 * **✕** `ListenerEventMessageClickViewText`
     * 「リスナーを対象とするイベントのメッセージ(?)を表示するクリックビュー(??)のテキスト？？」🤔
 * **◯** `MessageTextViewClickEventListener`
@@ -68,7 +68,7 @@ _Code Readability_
 * 一般的な関数、手続き、メソッド
     * `add(…)`, `registerDescription(…)`, `getValue()`, etc.
 
-### まずはこの２つを覚える。
+### 例外も多いがまずはこの２つを覚える
 
 ---
 
@@ -89,12 +89,12 @@ _Code Readability_
 ## 命令文の使い方
 
 1. 動詞の原形を先頭に置いた関数名にする
-    * ユーザーの動作を記録する: **✕**`userActionLog()`, **◯**`logUserAction()`
+    * ユーザーの動作を記録する: **✕**`userActionLog()` →  **◯**`logUserAction()`
 2. 関数が引数を取る場合は仮引数の名前も含めて命令文を構成する(こともある)
     * 値をvalueと比較する: `compareTo(value)`
 3. 性質や状態を返す関数には名詞(句)を使う
     * 名詞句を使わない場合は`get`/`query`/`obtain`などを先頭に置く
-    * 適切な動詞で、副作用の有無や実行時間を意味に含める
+    * 副作用の有無や実行時間を意味に含める:<br> **✕**`getAverage()` → **◯**`calculateAverage()`
 
 ---
 
@@ -115,4 +115,28 @@ _Code Readability_
 ---
 
 ## なぜ文法が無視されていくのか
+`UserActionEvent`というイベントの基底クラスがあったとして…
 
+```cpp
+// ◯ あるべき姿
+class ClickActionEvent: UserActionEvent { … }
+class DragActionEvent: UserActionEvent { … }
+class MouseOverActionEvent: UserActionEvent { … }
+```
+```cpp
+// ✕ 見た目の統一感を優先した姿
+class UserActionEventClick: UserActionEvent { … }
+class UserActionEventDrag: UserActionEvent { … }
+class UserActionEventMouesOver: UserActionEvent { … }
+```
+
+**見た目の美しさや統一感・一貫性は可読性のための手段。**<br>理解しやすいかどうかを重視すること
+
+---
+
+## 今回のまとめ
+
+* 名前は正確で説明的であること
+* 英文法にしたがい解釈しやすくすること
+* 品詞を対象やその状況で使い分けること
+* 見た目の美しさ　＜　読みやすさ
