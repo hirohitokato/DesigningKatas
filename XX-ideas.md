@@ -8,4 +8,4 @@
     * Head Firstデザインパターン(オーム社)でピックアップしているものを紹介(残りはやらない)
         * https://www.oreilly.co.jp/books/9784873119762/
         * Observer, Decorator, Factory, Singleton, Command, Adapter/Facade, Template Method, Iterator/Composite, State, Proxy, Compound(?)/State
-            * 紹介されていないのはBridge,Builder,Chain of Responsibility, Flyweight, Interpreter, Mediator, Memento, Prototype, Visitor
+            * 紹介されていない： Bridge,Builder,Chain of Responsibility, Flyweight, Interpreter, Mediator, Memento, Prototype, Visitor
