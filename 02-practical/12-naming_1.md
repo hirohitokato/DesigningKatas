@@ -120,6 +120,9 @@ _Code Readability_
 * 形を変換する関数、コールバックに用いる引数
     * `toInt()`, `fromMemberId(x)`, `asSequence()`, `onFinished`, etc.
 
+<!-- 真偽値を示す変数・関数のときに、途中でisとかが入るような文になっているのは冗長な場合があるし、直訳でダサいのでやめよう。
+例えば「初期化処理が完了したか」でisを使わなければと「initializing_is_completed」としたりすることがあるが、これは「wasInitialized」でいい。 -->
+
 ---
 
 ## なぜ文法が無視されていくのか
