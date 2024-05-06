@@ -59,11 +59,13 @@ _Code Readability_
 
 ## 単位や実体を示す語句を追加する
 
-時間、長さ、
-`timeout` < `timeoutInMillis`/`timeoutInSeconds`
+時間、長さ、通貨、2次元配列のループにおける列と行などを区別できるようにする。
 
-
+* `timeout` → `timeoutInMillis`/`timeoutInSeconds` $^1$
 * `pixels`,`points`,`inches`
+* `i, j` → `row, col`
+
+>>> 1: 単位の前に`In`をつけると英文法として自然。ただし省略されることもある
 
 ---
 
