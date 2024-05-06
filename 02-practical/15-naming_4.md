@@ -9,7 +9,7 @@ paginate: true
 -->
 <!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
-# 読みやすいコードの作り方 - 命名(3)
+# 読みやすいコードの作り方 - 命名(4)
 
 _Code Readability_
 
@@ -44,9 +44,26 @@ _Code Readability_
 
 ## 紛らわしい略語を避ける
 
+大きなルールは２つ
+
+1. 一般知識・プロダクト用語・言語・使用プラットフォーム以外の省略語は原則使わない
+    * `im`＝`illegalMessage`?`inputMethod`?`instanceManager`??
+2. デファクトスタンダードな省略語は、狭いスコープでのみ使ってよいかもしれない
+    * 文字列を`str`, ミリ秒を`millis`(Javaのみ)
+
+<!-- Javaの標準APIに ClockInMillis, System#currentTimeInMillis などがあるのでデファクトとしての標準的な省略語。
+でも他の言語では聞かないので使わないほうがよい。InMilliSeconds、InMsなど言語の例を見るとよい。
+また言語として標準の単位があるのでそれに従うべき（JSだとミリ秒、Pythonだと秒） -->
+
 ---
 
 ## 単位や実体を示す語句を追加する
+
+時間、長さ、
+`timeout` < `timeoutInMillis`/`timeoutInSeconds`
+
+
+* `pixels`,`points`,`inches`
 
 ---
 
