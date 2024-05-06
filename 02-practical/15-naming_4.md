@@ -61,9 +61,17 @@ _Code Readability_
 
 時間、長さ、通貨、2次元配列のループにおける列と行などを区別できるようにする。
 
-* `timeout` → `timeoutInMillis`/`timeoutInSeconds` $^1$
+* `timeout` → `timeoutInMillis`/`timeoutInSeconds` $^{※}$
 * `pixels`,`points`,`inches`
 * `i, j` → `row, col`
+
+ドメイン駆動開発の値オブジェクトのように、単位を型で表す方法も考慮できる。
+
+```cpp
+class Inch { int value; }
+class Centimeter { int value; }
+void setWidth(Inch width) { ... }
+```
 
 >>> 1: 単位の前に`In`をつけると英文法として自然。ただし省略されることもある
 
