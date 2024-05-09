@@ -80,7 +80,7 @@ _Code Readability_
 
 ---
 
-## 名詞/名詞句の使い方
+## 名詞/名詞句の使い方 (型や変数の命名方法)
 
 1. 名前を付ける対象を示す単語(最も重要な単語)を最後に置く
     * 例) ボタンの高さ:  **✕**`heightButton` →  **◯**`buttonHeight`
@@ -94,14 +94,14 @@ _Code Readability_
 
 ---
 
-## 命令文の使い方
+## 命令文の使い方 (関数/メソッドの命名方法)
 
 1. 動詞の原形を先頭に置いた関数名にする
     * ユーザーの動作を記録する: **✕**`userActionLog()` →  **◯**`logUserAction()`
 2. 関数が引数を取る場合は仮引数の名前も含めて命令文を構成する(こともある)
     * 値をvalueと比較する: `compareTo(value)`
 3. 性質や状態を返す関数には名詞(句)を使う
-    * `size()`, `length()`, `listOf()`
+    * `size()`, `length()`, `maxValueIn(array)`
     * 名詞句を使わない場合は`get`/`query`/`obtain`などを先頭に置く
     * 副作用の有無や実行時間を意味に含める:<br> **✕**`getAverage()` → **◯**`calculateAverage()`
 
