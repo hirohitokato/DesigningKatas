@@ -101,6 +101,7 @@ _Code Readability_
 2. 関数が引数を取る場合は仮引数の名前も含めて命令文を構成する(こともある)
     * 値をvalueと比較する: `compareTo(value)`
 3. 性質や状態を返す関数には名詞(句)を使う
+    * `size()`, `length()`, `listOf()`
     * 名詞句を使わない場合は`get`/`query`/`obtain`などを先頭に置く
     * 副作用の有無や実行時間を意味に含める:<br> **✕**`getAverage()` → **◯**`calculateAverage()`
 
