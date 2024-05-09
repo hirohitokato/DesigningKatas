@@ -45,6 +45,7 @@
 31. 2024/03/15 [[コンポーネントの原則]安定度・抽象度等価の原則(SAP)](02-practical/11-component-sap.md)
 32. 2024/03/22 [YAGNI](01-basics/20-yagni.md)
 33. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
+34. 2024/05/10 [[読みやすいコードのガイドライン]命名(1)](02-practical/12-naming_1.md)
 
 ### 2nd group
 <!-- VP -->
