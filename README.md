@@ -45,7 +45,7 @@
 31. 2024/03/15 [[コンポーネントの原則]安定度・抽象度等価の原則(SAP)](02-practical/11-component-sap.md)
 32. 2024/03/22 [YAGNI](01-basics/20-yagni.md)
 33. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
-34. 2024/05/10 [[読みやすいコードのガイドライン]命名(1)](02-practical/12-naming_1.md)
+34. 2024/05/10 [[読みやすいコードの作り方]命名(1)](02-practical/12-naming_1.md)
 
 ### 2nd group
 <!-- VP -->
@@ -83,6 +83,7 @@
 11. 2024/03/22 [ここまでの復習と分類](01-basics/11-wrapup.md)
 12. 2024/04/12 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 13. 2024/04/26 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md) & [プログラミングに関するジョークいくつか](10-humor/13-jokes_from_quora.md)
+14. 2024/05/10 [[アーキテクチャ根底技法]関心の分離](01-basics/14-separation_of_concerns.md) & 演習
 
 ### 4th group
 <!-- AC -->
