@@ -92,7 +92,7 @@ void showReceivedMessage(MessageModel model) { … }
 void onReceivedMessage(MessageModel model) { … }
 ```
 
->>> ※ただし抽象メソッドとして定義する場合などは`onReceived～`も可。サブクラスでどう使われるか定義時点では分からないため。`
+>>> ※ただし抽象メソッドとして機能提供する場合などは`onReceived～`も可。サブクラスでどう使われるか定義時点では分からないため。`
 
 <!-- もっと考えると、showReceivedMessageもなぜ呼ばれたかが意味に乗っているので
 さらに「Received」を外してshowMessage(...)で良いかもしれない。ただしそこまで考えると今度は
