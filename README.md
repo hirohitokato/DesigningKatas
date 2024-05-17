@@ -46,6 +46,7 @@
 32. 2024/03/22 [YAGNI](01-basics/20-yagni.md)
 33. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
 34. 2024/05/10 [[読みやすいコードの作り方]命名(1)](02-practical/12-naming_1.md)
+35. 2024/05/10 [[読みやすいコードの作り方]命名(2)](02-practical/12-naming_2.md) & [プログラミングに関するジョークいくつか](10-humor/13-jokes_from_quora.md)
 
 ### 2nd group
 <!-- VP -->
