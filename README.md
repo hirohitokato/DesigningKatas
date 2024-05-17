@@ -85,6 +85,7 @@
 12. 2024/04/12 [[アーキテクチャ根底技法]カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md) & 演習
 13. 2024/04/26 [[アーキテクチャ根底技法]抽象化(Abstraction)](01-basics/12-abstraction.md) & [プログラミングに関するジョークいくつか](10-humor/13-jokes_from_quora.md)
 14. 2024/05/10 [[アーキテクチャ根底技法]関心の分離](01-basics/14-separation_of_concerns.md) & 演習
+15. 2024/05/17 [[アーキテクチャ根底技法]充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md) & 演習
 
 ### 4th group
 <!-- AC -->
