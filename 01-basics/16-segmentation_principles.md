@@ -49,12 +49,13 @@ _Separation of Interface and Implementation_
 
 ## ポリシーと実装の…
 
-![bg right contain 90%](https://kroki.io/plantuml/svg/eNpzKC5JLCopzc1RCC4pSixJTa9U8E0tychP4crMK0ktSktMTlV43Dz3cfOqx03bHzfvqeZSUNDVBRLKCtWJScVAPckltQrF-bmp8Wmlecklmfl5GppctVzJOYnFxQpP9s551rHs_Z6JCqkVJal5KcW4zCJkwCRyDXjcvPBx0-rHzd2Pm3Y9bl4A1qFQDPOqFYpxQE1caOoV8nWLdFEUAfUk5-eVJGbmKdhxOQCdBAw7AJhzj9c=)
+![bg right contain 90%](https://kroki.io/plantuml/svg/eNrjSs5JLC5WeNw893HzqsdN2x8371Go5lIAAt3ikqLEktT0SisFjafr5r9Y3KrJVcvFBVGvpAET01SCqtdOTC7JzM_TQFIFUfJ-z0QsSlBVTMJmCIqjdO2AlkLtVOJCMBVsavT0EDbhlJnExQUARa5jGA==)
 
-GoF$^1$のストラテジーパターン(Strategy Pattern)の派生と言える。
+GoF$^1$のストラテジーパターンもそれ
 
 * やりたいことに対して実装を柔軟に切り替えられる
-* 右図の`メカニズム`は変更不要で実装を変更でき、提供できるサービスも変化させられる
+* 右図の`ポリシー`は変更不要で実装を変更でき、提供内容を変化させられる
+* 実装は独立しているので、他アプリにも流用しやすい
 
 >>> 1:書籍『オブジェクト指向における再利用のためのデザインパターン』の4人の共著者のこと。Gang of Four(４人のギャング)と呼ばれる
 
