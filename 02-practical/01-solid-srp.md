@@ -30,6 +30,8 @@ _Single Responsibility Principle_
 
 ## SOLIDの５原則
 
+堅牢なアーキテクチャを持つソフトウェアを作るための５大原則
+
 * S: 単一責任の原則: Sindle Responsibility Principle(SRP)
 * O: 開放閉鎖の原則: Open/Closed Principle(OCP)
 * L: リスコフの置換原則: Liskov Substitution Principle(LSP)
@@ -118,7 +120,7 @@ _Single Responsibility Principle_
 
 ## どうすればよいか
 
-安定しているデータを切り離す／ロジック(とその先のデータ)を切り離す$^1$
+安定しているデータを切り離す ＆ ロジック(とその先のデータ)を切り離す$^1$
 
 ![center contain](assets/01-srp_improved.png)
 
