@@ -161,7 +161,7 @@ class PDFPresenter {
 <!-- ❌ メソッド名がヤバい。PrinterPresenterとは関係なくてヤバい -->
 
 ```cs
-// ❌ 使う側で処理の書き換えが必要
+// ✕ 使う側で処理の書き換えが必要
 if (target == OutputType::Printer) { // プリンターで印刷するとき
     var presenter = new PrinterPresenter();
     presenter.print(contents);
