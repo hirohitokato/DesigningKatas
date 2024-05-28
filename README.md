@@ -68,6 +68,7 @@
 15. 2024/04/30 [[アーキテクチャ根底技法]充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md) & 演習
 16. 2024/05/07 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 17. 2024/05/21 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
+18. 2024/05/28 [ユビキタス言語](01-basics/19-ubiquitous.md)
 
 ### 3rd group
 <!-- MS -->
