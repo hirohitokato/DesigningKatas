@@ -61,7 +61,7 @@ _Code Readability_
 
 時間、長さ、通貨、2次元配列のループにおける列と行などを区別できるようにする。
 
-* `timeout` → `timeoutInMillis`/`timeoutInSeconds` $^{※}$
+* `timeout` → `timeoutInMillis`/`timeoutInSeconds` $^{※1}$
 * `pixels`,`points`,`inches`
 * `i, j` → `row, col`
 
@@ -70,7 +70,7 @@ _Code Readability_
 ```cpp
 class Inch { int value; }
 class Centimeter { int value; }
-void setWidth(Inch width) { ... }
+void setWidth(Inch width) { ... } // SetWidth(Centimeter(10))はコンパイルエラー
 ```
 
 >>> 1: 単位の前に`In`をつけると英文法として自然。ただし省略されることもある
@@ -78,6 +78,21 @@ void setWidth(Inch width) { ... }
 ---
 
 ## 肯定的な単語を用いる
+
+`isEnabled` > `isDisabled`。`!isDisabled`と書いたときに二重否定になって迷う。
+
+```cpp
+if (!window.isNotDisabled) { // 🤔 (5分後)…isEnabledでいいんじゃない？
+    ...
+}
+```
+
+一応例外もあるが(↓)、使わないにこしたことはない。
+
+* ほとんどの状況で否定演算子と共に使う場合
+* disabledな状態が特殊な意味を持つとき
+
+
 
 ---
 
