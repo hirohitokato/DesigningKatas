@@ -70,6 +70,7 @@
 16. 2024/05/07 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 17. 2024/05/21 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 18. 2024/05/28 [ユビキタス言語](01-basics/19-ubiquitous.md)
+19. 2024/06/04 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
 
 ### 3rd group
 <!-- MS -->
