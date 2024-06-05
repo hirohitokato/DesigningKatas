@@ -94,7 +94,7 @@
 17. 2024/05/31 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 
 ### 4th group
-<!-- AC -->
+<!-- ACD -->
 
 1. 2023/12/13 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md) & [90:90の法則](10-humor/01-90_90rule.md)
 2. 2023/12/18 [[アーキテクチャ根底技法]分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md)
@@ -113,7 +113,7 @@
 16. 2024/06/05 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 
 ### 5th group
-<!-- PB -->
+<!-- PSB -->
 
 1. 2023/12/13 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
 2. 2023/12/21 [[アーキテクチャ根底技法]分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md) & [90:90の法則](10-humor/01-90_90rule.md)
@@ -131,3 +131,4 @@
 14. 2024/05/15 [[アーキテクチャ根底技法]充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md) & 演習
 15. 2024/05/22 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 16. 2024/05/29 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
+17. 2024/06/05 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
