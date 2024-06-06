@@ -48,6 +48,7 @@
 34. 2024/05/10 [[読みやすいコードの作り方]命名(1)](02-practical/12-naming_1.md)
 35. 2024/05/17 [[読みやすいコードの作り方]命名(2)](02-practical/13-naming_2.md) & [プログラミングに関するジョークいくつか](10-humor/13-jokes_from_quora.md)
 36. 2024/05/31 [[読みやすいコードの作り方]命名(3)](02-practical/14-naming_3.md)
+37. 2024/06/07 [[読みやすいコードの作り方]命名(4)](02-practical/15-naming_4.md)
 
 ### 2nd group
 <!-- VP -->
@@ -92,6 +93,7 @@
 15. 2024/05/17 [[アーキテクチャ根底技法]充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md) & 演習
 16. 2024/05/24 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 17. 2024/05/31 [アーキテクチャ根底技法10個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
+18. 2024/06/07 [ユビキタス言語](01-basics/19-ubiquitous.md)
 
 ### 4th group
 <!-- ACD -->
