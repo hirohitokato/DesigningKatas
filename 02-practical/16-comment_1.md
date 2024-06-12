@@ -125,4 +125,5 @@ fun registerDescription(keyword: String, description: String)
     * Pythonの型コメント(PEP484)、Closure compilerの型アノテーションなど
 * 継続的インテグレーション
 >>> 1: UNIXスクリプトで１行目にインタプリタを指定する方法。shebang。
+
     
