@@ -39,15 +39,10 @@ _Code Readability_
 
 * 関数・クラス・ファイルやパッケージなど
 * プログラミング言語やドキュメンテーションツールによって異なる
-    * Python(PyDoc): `""" 〜 """`で括られたコメント
-    * C++/C#など: `/** 〜 */`で括られたコメント
+    * Python(PyDoc): `""" 〜 """`, C++/C#系: `/** 〜 */`で括られたコメント
 * APIリファレンスや、エディタ上でのクイックヒントなどに使われる
 
-![center](assets/16-docucomment_swift.png)
-
----
-
-# ドキュメンテーションコメントのアンチパターン
+![center 30%](assets/16-docucomment_swift.png)
 
 ---
 
