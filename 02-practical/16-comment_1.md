@@ -50,7 +50,7 @@ _Code Readability_
 ## ドキュメンテーションコメントと非形式的なコメント
 
 * **ドキュメンテーションコメント**: 形式的な説明。クラス/関数/変数の宣言や定義に使う
-    * pydoc, Documentation Comment, Doxygen, etc.によりドキュメントを自動生成可
+    * pydoc, Documentation Comment, Doxygen, etc.によりドキュメントを自動生成可(下図)
 * **非形式的なコメント**: 定義・宣言に限らずコードのあらゆる場所に書かれる
 
 ![center](assets/16-docucomment_swift.png)
@@ -65,3 +65,64 @@ _Code Readability_
 4. (開発の補助)
 
 これらの恩恵が特にない場合、コメントを書く必要なし
+
+---
+
+## コメントからのリファクタリング
+
+```kotlin
+/** <<BAD>>
+ * キーワードとその説明文のペア [newData] を追加する。
+ *
+ * 追加した定義は [getDescription] メソッドで参照できる。
+ * もしキーワードが追加済ならば、何もせずに `false` を返す。
+ * それ以外の場合の追加処理は成功し、 `true` を返す。
+ */
+fun add(newData: Pair<String, String>): Boolean
+```
+
+---
+
+## コメントからのリファクタリング
+
+```kotlin
+/** <<BAD>>
+ * キーワードとその説明文のペア [newData] を追加する。
+ *
+ * 追加した定義は [getDescription] メソッドで参照できる。
+ * もしキーワードが追加済みならば、何もせずに `false` を返す。
+ * それ以外の場合の追加処理は成功し、 `true` を返す。
+ */
+fun add(newData: Pair<String, String>): Boolean
+```
+
+* `add`というメソッド名の意味が実際の動作と比べて広すぎる
+* `newData`という仮引数名の情報量が少ない
+* 追加済みの場合の挙動が一般的ではない
+
+---
+
+## リファクタリング後
+
+```kt
+/** <<GOOD>>
+ * キーワード[keyword]に対する説明[description]を新規に登録、もしくは上書きする
+ *
+ * 登録された定義は、[getDescription]によって取得できる。
+ */
+fun registerDescription(keyword: String, description: String)
+```
+
+---
+
+## その他のコメントの目的
+
+* 統合開発環境(IDE)やエディタのためのコメント
+    * `// TODO: 〜`, `//FIXME: 〜`, `#region 〜 #endregion` など
+* メタプログラミングを行うためのコメント
+    * `#!/bin/sh` と書くなど$^1$
+* 型や制約の検証・解析を摺るためのコメント
+    * Pythonの型コメント(PEP484)、Closure compilerの型アノテーションなど
+* 継続的インテグレーション
+>>> 1: UNIXスクリプトで１行目にインタプリタを指定する方法。shebang。
+    
