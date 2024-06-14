@@ -15,7 +15,7 @@ _Single Responsibility Principle_
 
 ## 『SOLID』？
 
-> ### SOLID(堅牢)なソフトウェアを作る原則を集めたバクロニム
+> ### SOLID(堅牢)なソフトウェアを作る原則を集めたバクロニム$^1$
 
 オブジェクト指向のクラス設計・任意のモジュール設計において **超**重要
 
@@ -24,6 +24,7 @@ _Single Responsibility Principle_
     * 機能拡張に素早く柔軟に対応できる
     * 長期間にわたってメンテナンスしやすくなる
 
+>>> バクロニム（backronym または bacronym）とは、ある単語の各文字を使って新たに頭字語としての意味を持たせたもの。逆頭字語。
 <!-- SOLIDというオブジェクト指向設計をスマートにできるようになりたい場合に「まず習っておけ」と真っ先に伝えている5大原則 -->
 
 ---
@@ -32,7 +33,7 @@ _Single Responsibility Principle_
 
 堅牢なアーキテクチャを持つソフトウェアを作るための５大原則
 
-* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* S: 単一責任の原則: Single Responsibility Principle(SRP)
 * O: 開放閉鎖の原則: Open/Closed Principle(OCP)
 * L: リスコフの置換原則: Liskov Substitution Principle(LSP)
 * I: インターフェース分離の原則: Interface Segregation Principle(ISP)
@@ -108,8 +109,7 @@ _Single Responsibility Principle_
 
 ## 似ているからといって安易な共通化をしない
 
-同じような処理だからとまとめる
-安直なリファクタリングあるある
+同じような処理だからとまとめるのは安直なリファクタリングあるある
 
 ![center](./assets/01-srp_invalid.png)
 
