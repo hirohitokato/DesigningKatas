@@ -123,7 +123,7 @@ fun registerDescription(keyword: String, description: String)
     * `// TODO: 〜`, `//FIXME: 〜`, `#region 〜 #endregion` など
 * メタプログラミングを行うためのコメント
     * `#!/bin/sh` と書くなど$^1$
-* 型や制約の検証・解析を摺るためのコメント
+* 型や制約の検証・解析をするためのコメント
     * Pythonの型コメント(PEP484)、Closure compilerの型アノテーションなど
 * 継続的インテグレーション
 >>> 1: UNIXスクリプトで１行目にインタプリタを指定する方法。shebang。
