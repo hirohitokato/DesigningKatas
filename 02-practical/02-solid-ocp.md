@@ -64,6 +64,7 @@ https://zenn.dev/naas/scraps/41ed1c120aff53
 
 * プリンタ/スキャナドライバをOSに追加する仕組み
 * ソフトウェアのプラグイン機構
+* DI (Dependency Injection。依存性注入)
 * ゲームのMOD
 
 どれも既存の処理・コードを変更することなく機能追加できている
