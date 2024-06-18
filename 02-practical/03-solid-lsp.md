@@ -31,7 +31,7 @@ _Liskov Substitution Principle_
 
 ## SOLIDの５原則
 
-* S: 単一責任の原則: Sindle Responsibility Principle(SRP)
+* S: 単一責任の原則: Single Responsibility Principle(SRP)
 * O: 開放閉鎖の原則: Open/Closed Principle(OCP)
 * L: リスコフの置換原則: Liskov Substitution Principle(LSP)
 * I: インターフェース分離の原則: Interface Segregation Principle(ISP)
