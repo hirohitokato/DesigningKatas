@@ -68,4 +68,33 @@ fun ...() {
      if (messageModel == null || ...) { ... }
      ︙
 ```
-コメントの抽象度を高く、粒度を粗く保つことに注意
+コメントの抽象度を高く、粒度を粗く保つよう注意する
+
+---
+
+## 非直感的なコードの説明
+
+パッと見て分からないコードを補足することで可読性を改善できる
+
+* 誤解を生みやすいコードに対する注意点を明確にする
+* 放って置くと間違った方法でリファクタリングされかねないコードに釘を刺す
+
+---
+
+```kt
+class WordReplacementEntry (
+    val startIndex: Int
+    val endIndex: Int
+    val newText: Int
+)
+
+/** 文字列を置換。 */
+fun ...() {
+    val stringBuilder: StringBuilder = ...
+    val entries: List<WordReplacementEntry> = ...
+
+    for (entry in entries.reverse()) {
+        stringBuilder.replace(entry.startIndex, entry.endIndex, entry.newText)
+    }
+}
+```
