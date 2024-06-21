@@ -72,7 +72,8 @@ class Dictionary {
     * _"Adds a new element at the end of the array."_ (Swift:`Array.append()`)
     * _"Returns a list containing all elements that are not null."_<br>(Kotlin:`filterNotNull()`)
 
-<!-- いくつかのドキュメンテーションツールが最初に登場するピリオドを終点としてあつかい、そこまでを要約と扱っているため -->
+<!-- ドキュメンテーションツールだけでなく、このプログラミング言語だったらこう書くべきという指針が書かれていることもあるのでそれを守るようにする -->
+<!-- いくつかのドキュメンテーションツールが最初に登場するピリオドを終点としてあつかい、そこまでを要約と扱っている -->
 <!-- 英語の例を読むと分かりやすいので紹介します。 -->
 
 <!-- いくつかテクニックがあるので活用しましょう。
@@ -115,7 +116,7 @@ fun ...(user: UserModel) {
 
 重要な部分をまず記述する
 ```kt
-/**<NOT BAD>
+/**<NOT SO BAD>
  * プロフィール画像を表示する。
  */
 ```
@@ -189,14 +190,14 @@ fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
  * メッセージの内容(本文テキスト・送信者名・送信時刻)をレイアウトに
  * バインドして表示するプレゼンテーションクラス。
  *
- * メッセージのモデル[MessageModel]を[updateLayout]に渡すと、
+ * メッセージのモデル[MessageModel]を[updateLayout]メソッドに渡すと、
  * すべての表示内容が更新される。
  */
 class MessageViewPresenter(messageLayout: Layout)
 ```
 
 <!-- クラスなのに関数のように引数が付いているように見えるが、これはKotlinでクラスのプロパティ(メンバ変数)を定義する書き方 -->
-
+<!-- 詳細とはいえ、このupdateLayoutメソッドの詳細に触れるのは同メソッドのドキュメンテーションコメントに任せるように -->
 ---
 
 ## 基本的な使い方
