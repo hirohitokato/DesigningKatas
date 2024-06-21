@@ -50,6 +50,7 @@
 36. 2024/05/31 [[読みやすいコードの書き方]命名(3)](02-practical/14-naming_3.md)
 37. 2024/06/07 [[読みやすいコードの書き方]命名(4)](02-practical/15-naming_4.md)
 38. 2024/06/14 [[読みやすいコードの書き方]コメント(1)](02-practical/16-comment_1.md) & [[読みやすいコードの書き方]コメント(2)](02-practical/17-comment_2.md)
+39. 2024/06/14 [[読みやすいコードの書き方]コメント(3)](02-practical/16-comment_3.md)
 
 ### 2nd group
 
@@ -100,6 +101,7 @@
 17. 2024/05/31 [アーキテクチャ根底技法 10 個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 18. 2024/06/07 [ユビキタス言語](01-basics/19-ubiquitous.md)
 19. 2024/06/14 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
+20. 2024/06/18 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 
 ### 4th group
 
