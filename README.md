@@ -123,6 +123,7 @@
 14. 2024/05/15 [[アーキテクチャ根底技法]充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md) & 演習
 15. 2024/06/05 [[アーキテクチャ根底技法]ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
 16. 2024/06/19 [アーキテクチャ根底技法 10 個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
+17. 2024/06/26 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [ユビキタス言語](01-basics/19-ubiquitous.md)
 
 ### 5th group
 

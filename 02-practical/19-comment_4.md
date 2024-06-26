@@ -88,13 +88,13 @@ class WordReplacementEntry (
     val newText: Int
 )
 
-/** 文字列を置換。 */
-fun ...() {
-    val stringBuilder: StringBuilder = ...
-    val entries: List<WordReplacementEntry> = ...
+/** 文字列を置換。 "foo"にWordReplacementEntry(0,2,"b")で
+ *  呼び出すと 0から1番目の要素がbに変わり、 "bbo" が得られる. */
+fun ...(str: StringBuilder, entries: List<WordReplacementEntry>) {
 
-    for (entry in entries.reverse()) {
-        stringBuilder.replace(entry.startIndex, entry.endIndex, entry.newText)
+    for (entry in entries.reverse()) { // ←なぜreverse()??
+        str.replace(entry.startIndex, entry.endIndex, entry.newText)
     }
 }
 ```
+
