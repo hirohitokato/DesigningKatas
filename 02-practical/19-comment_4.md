@@ -50,12 +50,25 @@ _Code Readability_
 
 ---
 
-## 大きなコードの分割
+## 1.大きなコードの分割
 
 コードが長くても別クラスや関数に抽出・分割しないほうが良いケースもある。
 
-1. 空行を使ってまとまりを作る
-1. 分割されたまとまりの１つ１つにコメントを追加する
+```kt
+fun ...() {
+    val messageCache = ...
+    val messageKey = ...
+     ︙(何行か処理が続く)
+
+     if (messageModel == null || ...) { ... }
+     ︙(何行か処理が続く)
+```
+
+---
+
+## 1.大きなコードの分割
+
+コードが長くても別クラスや関数に抽出・分割しないほうが良いケースもある。
 
 ```kt
 fun ...() {
@@ -68,11 +81,24 @@ fun ...() {
      if (messageModel == null || ...) { ... }
      ︙
 ```
+
+1. 空行を使ってまとまりを作る
+1. 分割されたまとまりの１つ１つにコメントを追加する
+
 コメントの抽象度を高く、粒度を粗く保つよう注意する
+
+<!-- サンプルは時間的凝集度を破っている。時間的凝集とは、機能的に関連はないが「初期化時」 など近い時間で実行する処理をまとめた関数
+
+* 時間的凝集の問題点
+    * 機能的には関係ない関数が 1 つの関数にまとめられている
+    * 機能的な関連はないので、あるときには同時に実行するとしても、別のときには同時に実行しないかもしれない
+    * その関数の再利用性は低い
+* 時間的凝集の改善方法
+    * 実装を機能的凝集の関数（単一の機能を処理する関数）に切り出す。 -->
 
 ---
 
-## 非直感的なコードの説明
+## 2.非直感的なコードの説明
 
 パッと見て分からないコードを補足することで可読性を改善できる
 
@@ -81,20 +107,74 @@ fun ...() {
 
 ---
 
-```kt
-class WordReplacementEntry (
-    val startIndex: Int
-    val endIndex: Int
-    val newText: Int
+## 2.非直感的なコードの説明
+
+```cpp
+struct WordReplacementEntry (
+    int startIndex;
+    int endIndex;
+    int newText;
 )
 
 /** 文字列を置換。 "foo"にWordReplacementEntry(0,2,"b")で
- *  呼び出すと 0から1番目の要素がbに変わり、 "bbo" が得られる. */
-fun ...(str: StringBuilder, entries: List<WordReplacementEntry>) {
+ *  呼び出すと 0番目から2個の要素がbに変わり、 "bbo" が得られる.
+ *  entriesはstartIndexの値が昇順で並んでいること */
+void someFunction(string str, WordReplacementEntry[] entries) {
 
-    for (entry in entries.reverse()) { // ←なぜreverse()??
+    for (auto entry in entries.reversed()) { // ←なぜreversed()??
         str.replace(entry.startIndex, entry.endIndex, entry.newText)
     }
 }
 ```
 
+---
+
+## 2.非直感的なコードの説明
+
+隠れた２つの条件がある。
+
+1. entriesはstartIndexで昇順にソートされている
+2. 置換の前後で文字列の長さは変わりうる
+
+```cpp
+void someFunction(string& str, vector<WordReplacementEntry> entries) {
+
+    for (const auto entry in entries.reversed()) { ... 
+```
+
+もし`reversed()`がないコードでで以下を呼び出すとどうなる？
+
+```cpp
+someFunction("Unreadable", [Word～(0,3,"R"), Word～(10,11,"!")]);
+```
+
+---
+
+## 2.非直感的なコードの説明
+
+どういうコメントで書いたら良いか
+
+```cpp
+// "reversed()"を使っているのは置換エントリーが "startIndex" で
+// 昇順にソートされているため。昇順のままで処理すると、置換の前後で
+// 文字列の長さが変わる場合に、後続エントリーのインデックスがずれてしまう
+for (auto entry in entries.reversed()) { // ←なぜreversed()??
+    str.replace(entry.startIndex, entry.endIndex, entry.newText)
+}
+```
+
+実装の詳細なのでドキュメンテーション部には書けないが、必要な情報。
+もちろんGitLabのチケットや設計資料などに詳細を書いておき、それにリンクしておくのもOK
+
+---
+
+## コメントのまとめ
+
+コメントにはドキュメンテーションと非形式的なコメントの２つがある
+* **ドキュメンテーション**: 概要の理解
+    * Whatな要約記述が必須
+* **非形式的なコメント**: コード読みの補助
+    * 大きなコードを分割したり、非直感的なコードの説明に使ったり
+    * 上手に使えばコードを斜め読み出来る＆誤ったコード変更も防げる
+
+![bg 70% right:40%](assets/16-whynot_in_comments.png)
