@@ -158,7 +158,7 @@ someFunction("Unreadable", [Word～(0,3,"R"), Word～(10,11,"!")]);
 // "reversed()"を使っているのは置換エントリーが "startIndex" で
 // 昇順にソートされているため。昇順のままで処理すると、置換の前後で
 // 文字列の長さが変わる場合に、後続エントリーのインデックスがずれてしまう
-for (auto entry in entries.reversed()) { // ←なぜreversed()??
+for (auto entry in entries.reversed()) {
     str.replace(entry.startIndex, entry.endIndex, entry.newText)
 }
 ```
