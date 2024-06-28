@@ -119,7 +119,7 @@ struct WordReplacementEntry (
 /** 文字列を置換。 "foo"にWordReplacementEntry(0,2,"b")で
  *  呼び出すと 0番目から2個の要素がbに変わり、 "bbo" が得られる.
  *  entriesはstartIndexの値が昇順で並んでいること */
-void someFunction(string str, WordReplacementEntry[] entries) {
+void someFunction(string& str, WordReplacementEntry[] entries) {
 
     for (auto entry in entries.reversed()) { // ←なぜreversed()??
         str.replace(entry.startIndex, entry.endIndex, entry.newText)
