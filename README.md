@@ -77,6 +77,7 @@
 19. 2024/06/04 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
 20. 2024/06/11 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
 21. 2024/06/18 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
+22. 2024/07/02 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 
 ### 3rd group
 
