@@ -109,8 +109,9 @@ shouldUpdate = True
 
 **答：**  2 x 2 x 2 x 2 x 2 = 32。32もの状態を持っている
 
-<!-- この32種類のどこにいるかを考えないといけない。この状態で、それぞれの組み合わせで別の処理をしないといけない
-状態は少ない方が良いことが分かる -->
+<!-- この32種類のどこにいるかを考えないといけない。この状態で、それぞれの組み合わせで別の処理をしないといけない。
+現実はさらに難解で、この内のいくつかの組み合わせは存在してはならないというケースも合ったりする。それをきちんと管理できる？
+だから状態は少ない方が良いことが分かる -->
 
 <!-- ・・・とはいえ、状態はどうしても作らなければならないことがある。その状態とどう向き合うか、が長年我々が取り組んでいること -->
 
@@ -123,6 +124,8 @@ GoFのState Patternなどを使う。
 ![bg right:40% w:500](./assets/20-state-diagram.png)
 
 状態ごとに処理をクラスやモジュールに分けて、処理が混ざらないようにする
+
+→ けれども直前の$2^5$種類の状態ぶんだけサブクラスを作ることは非現実的
 
 >>> 画像は https://reactiveprogramming.io/blog/en/design-patterns/state より
 
@@ -155,4 +158,61 @@ GoFのState Patternなどを使う。
 = お互いに独立していて関連がない・変数の値が他の変数に影響を与えない。
 
 ---
+
+## 例: 保持コインの管理画面
+
+![bg fit right:40%](assets/20-sampleapp.png)
+
+### 直交しているケース:
+```cpp
+class OwnedCoinView {
+    // コイン所持量
+    int ownedCoins;
+    // 詳細履歴の表示状態
+    bool isTransactionHistoryShown;
+}
+```
+
+この２つはお互いにどのような状態であっても影響を与えない
+
+→ ２つの変数の関係は**直交である**
+
+---
+
+![bg fit right:40%](assets/20-sampleapp.png)
+
+### 非直交のケース(1):
+```cpp
+/* BAD */
+class OwnedDisplayModel {
+    // コイン所持量
+    int ownedCoins;
+    // コイン所持量を表示するときの文字列
+    std::string ownedCoinText;
+}
+```
+
+上だと`OwnedDisplayModel(3, "123 coins")`と書けてしまう
+
+→ ２つの変数の関係は**直交ではない(=非直交)**
+
+---
+
+## 例: 連絡先を管理するクラス
+
+### 非直交のケース(2):
+```cs
+/* 「ContactはEメール,住所のどちらかを持っていなければならない」を表したクラス */
+
+/* BAD */
+struct Contact {
+    var name: String
+    var emailContactInfo: String?
+    var postalContactInfo: String?
+}
+```
+
+上だと`OwnedDisplayModel("John Doe", null, null)`と書けてしまう
+
+→ ２つの変数の関係は**直交ではない(=非直交)**
 
