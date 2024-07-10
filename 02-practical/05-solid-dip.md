@@ -41,6 +41,12 @@ _Dependency Inversion Principle_
 
 ---
 
+## 各原則の関係
+
+![contain center](assets/06-relationship.png)
+
+---
+
 ## 依存関係逆転の原則とは
 
 クラス・モジュール間において単一方向の依存関係を維持したまま、<br>双方向の処理フローを実現する技術。

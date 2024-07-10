@@ -34,6 +34,12 @@ _Interface Segregation Principle_
 
 ---
 
+## 各原則の関係
+
+![contain center](assets/06-relationship.png)
+
+---
+
 ## インターフェース分離の原則
 
 異なる責務のインターフェースを安易に混ぜてはいけない

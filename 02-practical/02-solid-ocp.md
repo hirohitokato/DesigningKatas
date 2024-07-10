@@ -63,6 +63,12 @@ https://zenn.dev/naas/scraps/41ed1c120aff53
 
 ---
 
+## 各原則の関係
+
+![contain center](assets/06-relationship.png)
+
+---
+
 ## OCP実現例
 
 * プリンタ/スキャナドライバをOSに追加する仕組み
