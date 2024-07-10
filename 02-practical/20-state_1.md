@@ -165,12 +165,12 @@ GoFのState Patternなどを使う。
 
 ### 直交しているケース:
 ```cpp
-class OwnedCoinView {
+struct OwnedCoinView {
     // コイン所持量
     int ownedCoins;
     // 詳細履歴の表示状態
     bool isTransactionHistoryShown;
-}
+};
 ```
 
 この２つはお互いにどのような状態であっても影響を与えない
@@ -182,14 +182,15 @@ class OwnedCoinView {
 ![bg fit right:40%](assets/20-sampleapp.png)
 
 ### 非直交のケース(1):
+
 ```cpp
 /* BAD */
-class OwnedDisplayModel {
+struct OwnedDisplayModel {
     // コイン所持量
     int ownedCoins;
     // コイン所持量を表示するときの文字列
     std::string ownedCoinText;
-}
+};
 ```
 
 上だと`OwnedDisplayModel(3, "123 coins")`と書けてしまう
@@ -209,10 +210,71 @@ struct Contact {
     var name: String
     var emailContactInfo: String?
     var postalContactInfo: String?
-}
+};
 ```
 
 上だと`OwnedDisplayModel("John Doe", null, null)`と書けてしまう
 
 → ２つの変数の関係は**直交ではない(=非直交)**
 
+<!-- eメールの有無、住所の有無の２つの状態の掛け算なので全部で４つの状態を取りうる。
+けれどもそのうちの１つの状態：どちらも持たないという状態は仕様上あってはならない。でも書けてしまう -->
+
+---
+
+## 非直交 = 不具合の温床
+
+![bg right:30% 90%](assets/12-book.jpg)
+
+なんとかしなければならない。
+
+↓
+
+設計として非直交を回避するにはどうしたら良いか？
+
+> * **手法1**: 関数への置き換え
+> * **手法2**: 直和型での置き換え
+
+<!-- 今の２つの例で見たものは、これらのデータを扱うソースコード側で気をつけるようにすれば不具合を紛れ込ませないで済む。
+でもそれを将来に渡って絶対に守り続けることはできると言えますか？私は罪を犯したことがないと女性に石を投げ続けることができますか -->
+
+---
+
+## 手法1: 関数への置き換え
+
+複数の状態から「**従属**の関係」を導き出し、従属している状態を関数で置き換える
+
+```cpp
+/* GOOD */
+struct OwnedDisplayModel {
+    // コイン所持量
+    int ownedCoins;
+    // コイン所持量を表示するときの文字列を返す
+    std::string getOwnedCoinText() {
+        /* ownedCoinsを使い、カンマ区切り・単数形/複数形を考慮した文字列を作成する */
+    }
+};
+```
+
+→ ownedCoinTextという状態が減り、矛盾した状態を表現できないようになった
+
+---
+
+## 手法1: 関数への置き換え
+
+複数の状態から「**従属**の関係」を導き出し、従属している状態を関数で置き換える
+
+```cpp
+/* GOOD */
+struct OwnedDisplayModel {
+    const int ownedCoins;
+    const std::string ownedCoinText;
+
+    OwnedDisplayModel(int coins) {
+        this.ownedCoins = coins;
+        this.ownedCoinText = /* 文字列生成処理 */
+    }
+};
+```
+
+→ コンストラクタで生成して書き換えられないようにすることで状態を減らすことができた
