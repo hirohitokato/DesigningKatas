@@ -127,6 +127,7 @@
 16. 2024/06/19 [アーキテクチャ根底技法 10 個のまとめ](01-basics/17-enabling_techniques_wrapup.md)
 17. 2024/06/26 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [ユビキタス言語](01-basics/19-ubiquitous.md)
 18. 2024/07/03 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
+19. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 
 ### 5th group
 
@@ -151,3 +152,4 @@
 17. 2024/06/05 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md)
 18. 2024/06/19 [ユビキタス言語](01-basics/19-ubiquitous.md)
 19. 2024/07/03 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
+20. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
