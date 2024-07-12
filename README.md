@@ -52,6 +52,7 @@
 38. 2024/06/14 [[読みやすいコードの書き方]コメント(1)](02-practical/16-comment_1.md) & [[読みやすいコードの書き方]コメント(2)](02-practical/17-comment_2.md)
 39. 2024/06/21 [[読みやすいコードの書き方]コメント(3)](02-practical/18-comment_3.md)
 39. 2024/06/28 [[読みやすいコードの書き方]コメント(4)](02-practical/19-comment_4.md)
+40. 2024/07/12 [[読みやすいコードの書き方]状態(1)](02-practical/20-state_1.md)
 
 ### 2nd group
 
@@ -104,6 +105,7 @@
 18. 2024/06/07 [ユビキタス言語](01-basics/19-ubiquitous.md)
 19. 2024/06/14 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
 20. 2024/06/18 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
+21. 2024/07/12 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 
 ### 4th group
 
