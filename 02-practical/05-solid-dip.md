@@ -59,6 +59,17 @@ _Dependency Inversion Principle_
 
 ---
 
+## 疑問: これまでみんなどうしていた？
+
+この矛盾をどう解決していた？
+
+> 1. 依存関係を双方向にしてはならない
+> 2. 処理の流れはどちらの方向も存在する
+
+![center w:750px](assets/05-solid-quiz.png)
+
+---
+
 ## 前提: 安定しているアーキテクチャ
 
 ![bg 90% right:31%](assets/05-dip-goodarch.png)
@@ -210,7 +221,7 @@ class CoreLogic {
 
 const parent = new CoreLogic();
 const child = new Peripheral(parent);
-console.log(parent.calc(2, 3));  // 6を出力
+console.log(parent.calc(2, 3));  // 5を出力
 ```
 
 ---
