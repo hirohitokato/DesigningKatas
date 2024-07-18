@@ -57,10 +57,11 @@ _Code Readability_
 ![bg right:30% 90%](assets/12-book.jpg)
 
 <!-- この本ではどのような点に注意すると良いと言っているか -->
+<!-- 1は状態そのものの数を減らすという考え方、2は状態間の遷移を適切にすべきという考え方 -->
 
 ---
 
-## （説明のねらい）
+## （直交性に関する説明のねらい）
 
 * <b>状態数が多いほどプログラムは複雑になり不具合も生まれやすい</b>
     * とはいえ絶対に避けることは出来ない
@@ -163,19 +164,18 @@ struct Contact {
 
 ---
 
-## 理解: 直積型と直和型
+## 学習: 『直積型』と『直和型』
 
-### 直積型
-* データ型のすべての情報が存在していることを前提にしたデータ
-    * 複数の方の値を同時に持つ
-    * タプル、(null可能性のない)構造体やクラスなど
-
-### 直和型
-* 複数の型のうち**どれか１つだけ**選ぶようにまとめたデータ
-    * unionやenumが近いがちょっと違う
-        * union: 特定の型に強制できない、同じ型をまとめることができない
-        * enum: 違いは管理できるが、その状態に付随する値を持てない
-    * C++のstd::variant型、Swiftのenum+associated value, Kotlinのsealed classなど
+* **直積型**
+    * データ型のすべての情報が存在していることを前提にしたデータ
+        * 複数の方の値を同時に持つ
+        * タプル、(null可能性のない)構造体やクラスなど
+* **直和型**
+    * 複数の型のうち**どれか１つだけ**選ぶようにまとめたデータ
+        * unionやenumが近いがちょっと違う
+            * union: 特定の型に強制できない、同じ型をまとめることができない
+            * enum: 違いは管理できるが、その状態に付随する値を持てない
+        * C++のstd::variant型、Swiftのenum+associated value, Kotlinのsealed classなど
 
 ---
 
@@ -189,8 +189,225 @@ const point3d = {x: 1, y: 2, z: 3}; // x,y,zすべての状態を管理する
 
 ### 直和型
 
+```haskell
+-- Haskell: aというデータを持つLeft型か、bというデータを持つRight型のどちらかを持つEther型
+data Either a b = Left a | Right b
+```
 
+```swift
+// Swift: UPCコード(4つの数値を持つ)とQRコード(文字列)のどちらかのデータを持つ列挙型
+enum Barcode {
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+```
+
+<!-- どちらか一方の型としてしか存在できないので、それ以外の状態や、矛盾した状態には絶対にならないことが保証される -->
+
+---
+
+```cs
+/* 「ContactはEメール,住所のどちらかを持っていなければならない」を表したクラス */
+/* BAD */
+struct Contact {
+    var name: String
+    var emailContactInfo: String?  // どうやって「どちらか１つは非null」を
+    var postalContactInfo: String? // 安全に実現したら良い？
+};
+```
+
+|emailContactInfo|postalContactInfo|組み合わせの正当性|
+|---|---|---|
+|情報あり|情報あり|正当|
+|情報あり|情報なし|正当|
+|情報なし|情報あり|正当|
+|情報なし|情報なし|**不当**|
+
+<!-- さて、このデータ型です。どう表現したらよいでしょうか -->
+
+---
+
+## C# で直和型を表現する
+
+```cs
+/* GOOD */
+public record Contact {
+    public string Name { get; init; }
+    public ContactInfo Info { get; init; }
+    public Contact(string name, ContactInfo info) { Name = name; Info = info; }
+}
+public abstract record ContactInfo;
+
+public record EmailOnlyContact(string Email) : ContactInfo;
+public record PostalOnlyContact(string Address) : ContactInfo;
+public record BothContact(string Email, string Address) : ContactInfo;
+    :
+var emailOnly = new Contact("John", new EmailOnlyContact("john@example.com"));
+var both = new Contact("Alice", new BothContact("<email>", "<address>"));
+```
+
+<!-- C# 9.0から導入されたrecord型を使うと比較的かんたんに表現できる -->
+<!-- record型はコンストラクタとか等値性の評価とかを自動でやってくれる便利な型 -->
+
+---
+
+## Swiftで直和型を表現する
+
+```swift
+/* GOOD */
+enum ContactInfo {
+    case email(String), postal(String), both(email: String, postal: String)
+}
+
+struct Contact {
+    let name: String
+    let info: ContactInfo
+    func print() {
+        print("Name: \(self.name)")
+        switch self.info {
+        case .email(let email): print("Email: \(email)")
+        case .postal(let address): print("Address: \(address)")
+        case .both(let email, let address): print("...")
+        }
+    }
+}
+```
+
+---
+
+## C++で直和型を表現する
+
+```cpp
+#include <variant>
+struct EmailContact { std::string email; };
+struct PostalContact { std::string address; };
+struct BothContact { std::string email; std::string address; };
+// ContactInfoの型を定義
+using ContactInfo = std::variant<EmailContact, PostalContact, BothContact>;
+
+struct Contact { // コンストラクタは省略
+    std::string name;
+    ContactInfo info;
+
+    void print() {
+        std::visit([](const auto& info) {
+            using T = std::decay_t<decltype(info)>;
+            if constexpr (std::is_same_v<T, EmailContact>) {
+                 std::cout << "Email: " << info.email << std::endl;
+            } else if constexpr (std::is_same_v<T, PostalContact>) { ... } ...
+```
+
+---
+
+## C言語で直和型を表現する
+
+<!-- unionを使い、各状態にて表現する型を束ねる。さらに今どの状態を持っているかを保持しておく -->
+
+```c
+// 形状の種類を表すenum
+enum ShapeType { CIRCLE,  RECTANGLE, POINT };
+
+// 異なる形状のデータを保持するunion
+union ShapeData {
+    struct { double radius; } circle;
+    struct { double width, double height; } rectangle;
+};
+
+// 形状を表す構造体
+struct Shape {
+    enum ShapeType type;
+    union ShapeData data;
+};
+```
+
+---
+
+## C言語で直和型を表現する (続き)
+
+```c
+// 円を作成する関数
+struct Shape createCircle(double radius) {
+    struct Shape shape;
+    shape.type = CIRCLE;
+    shape.data.circle.radius = radius;
+    return shape;
+}
+
+// 長方形を作成する関数
+struct Shape createRectangle(double width, double height) {
+    struct Shape shape;
+    shape.type = RECTANGLE;
+    shape.data.rectangle.width = width;
+    shape.data.rectangle.height = height;
+    return shape;
+}
+```
+
+<!-- createPointもだいたい同じなので省略 -->
+
+---
+## C言語で直和型を表現する (続き)
+
+```c
+// 面積を計算する関数
+double calculateArea(struct Shape shape) {
+    switch (shape.type) {
+        case CIRCLE: return 3.14159 * shape.data.circle.radius * shape.data.circle.radius;
+        case RECTANGLE: return shape.data.rectangle.width * shape.data.rectangle.height;
+        case POINT: return 0.0;
+        default:
+            printf("Unknown shape type\n");
+            return -1.0;
+    }
+}
+
+int main() {
+    struct Shape circle = createCircle(5.0);
+    struct Shape rectangle = createRectangle(4.0, 3.0);
+      :
+    printf("Circle area: %f\n", calculateArea(circle));
+      :
+```
+
+<!-- C++でもだいたい同じ。コンストラクタでそれぞれの制限を載せておくのもいいし、 C++17の std::variant型を使うのでも良い -->
+<!-- 言語の優劣を話しているのではなく、こうした形式で状態を表現しておくと、間違ったプログラムが書けなくなることが強い -->
+
+---
+
+## よくある直和型の使用例 (Swift)
+
+```swift
+enum NetworkError: Error { case badURL, noData, decodingError }
+
+func fetchUser(id: Int) -> Result<String, NetworkError> {
+    // ～ネットワークごしにユーザーIDから名前情報を参照～
+    if (成功) {
+        return .success("User\(id)")
+    } else {
+        return .failure(.noData)
+    }
+}
+
+// 使用例
+let result = fetchUser(id: 123)
+switch result {
+case .success(let username): print("Fetched user: \(username)")
+case .failure(let error): print("Error: \(error)")
+}
+```
+
+<!-- 
 memo: 成功のときと失敗のときとで異なるデータがほしいことを表現する
 memo: 何かを取得するときに関数の戻りが成功か失敗かを返り値で返すのって実は悪手。失敗かどうかをチェックしないで使ってしまうことはよくある。仕様書に「失敗を返したときの戻りは不定である」って、よくよく考えるとわかりにくくない？
 memo: 値を返すときに、失敗は異常値を返すという関数も良くない。失敗かどうかの判断ができない。古臭いAPIのデザイン
     → どうしたらよいか、まずは成功と失敗とで明確に分ける。失敗は失敗で、多くの情報を返してあげる(errnoだとわかりにくいよね。例外は付随情報を多く返せる点で優れているけれど、何を投げるかが内部関数の深さ次第でわからなくなってしまうので網羅性に欠ける。けっきょく全部をまとめて受け取ってしまうことはよくある話)
+ -->
+
+<!--
+**直和型**
+複数の型のうち**どれか１つだけ**選ぶようにまとめたデータ。ありえない状態を作り出せない、状態の網羅性を高められる利点がある
+* unionやenumが近いがちょっと違う
+    * union: 特定の型に強制できない、同じ型をまとめることができない
+    * enum: 違いは管理できるが、その状態に付随する値を持てない
+* C++のstd::variant型、Swiftのenum+associated value, Kotlinのsealed classなどで表現可能
+-->
