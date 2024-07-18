@@ -80,6 +80,8 @@
 20. 2024/06/11 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
 21. 2024/06/18 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 22. 2024/07/02 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
+23. 2024/07/09 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
+24. 2024/07/16 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
 ### 3rd group
 
@@ -130,6 +132,7 @@
 17. 2024/06/26 [ジョシュアツリーの法則](01-basics/18-joshua-tree.md) & [ユビキタス言語](01-basics/19-ubiquitous.md)
 18. 2024/07/03 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
 19. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
+20. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 
 ### 5th group
 
@@ -155,3 +158,4 @@
 18. 2024/06/19 [ユビキタス言語](01-basics/19-ubiquitous.md)
 19. 2024/07/03 [[SOLID]単一責任の原則(SRP)](02-practical/01-solid-srp.md)
 20. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
+21. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
