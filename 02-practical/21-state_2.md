@@ -231,7 +231,7 @@ enum Barcode {
 struct Contact {
     var name: String
     var emailContactInfo: String?  // どうやって「どちらか１つは非null」を
-    var postalContactInfo: String? // 安全に実現したら良い？
+    var postalContactInfo: String? // 安全に実現したら…？
 };
 ```
 
@@ -240,7 +240,7 @@ struct Contact {
 |情報あり|情報あり|正当|
 |情報あり|情報なし|正当|
 |情報なし|情報あり|正当|
-|情報なし|情報なし|**不当**|
+|**情報なし**|**情報なし**|**不当**|
 
 <!-- さて、このデータ型です。どう表現したらよいでしょうか -->
 
@@ -284,8 +284,8 @@ struct Contact {
     func print() {
         print("Name: \(self.name)")
         switch self.info {
-        case .email(let email): print("Email: \(email)")
-        case .postal(let address): print("Address: \(address)")
+        case .email(let email):             print("Email: \(email)")
+        case .postal(let address):          print("Address: \(address)")
         case .both(let email, let address): print("...")
         }
     }
@@ -297,7 +297,7 @@ struct Contact {
 ## C++で直和型を表現する
 
 ```cpp
-#include <variant>
+#include <variant> ← C++17から使用可
 struct EmailContact { std::string email; };
 struct PostalContact { std::string address; };
 struct BothContact { std::string email; std::string address; };
@@ -318,9 +318,11 @@ struct Contact { // コンストラクタは省略
 
 ---
 
-## C言語で直和型を表現する
+## C言語で直和型を表現する (図形を型で表現する例)
 
 <!-- unionを使い、各状態にて表現する型を束ねる。さらに今どの状態を持っているかを保持しておく -->
+
+「タグ付きunion(Tagged Union)」という技法を用いる
 
 ```c
 // 形状の種類を表すenum
