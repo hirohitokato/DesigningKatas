@@ -357,7 +357,11 @@ class StopWatch { // [BAD]
 
 ## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス
 
-![](./assets/22-cyclic-stopwatch.png)
+クラスの状態遷移図。初期状態が変わり、`StartMeasurement()`を呼ぶとリセットされるようになった。
+
+|非巡回なStopWatch|巡回なStopWatch|
+|---|---|
+|![](./assets/22-acyclic-stopwatch.png)|![](./assets/22-cyclic-stopwatch.png)|
 
 ---
 
