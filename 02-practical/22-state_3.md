@@ -67,7 +67,103 @@ _Code Readability_
 * オブジェクト作成後に値が変化しない・
 * **変化が外から観測できない**
 
+```cpp
+class MyClass {
+  public:
+    MyClass(int val) : value{val} {}
+  private:
+    const int value;
+};
 ```
 ↓
 対象箇所は**不変性**を満たす
 
+---
+
+## 不変なクラスと可変なクラス比較(C++)
+
+```cpp
+struct MyClass { // 不変であるクラス。すべてのプロパティが再代入不可
+    MyClass(int val) : value{val} {}
+  private:
+    const int value;
+    const double double_value = 2.5;
+};
+```
+↕ 
+```cpp
+struct MyClass { // 可変であるクラス。一部のプロパティが可変ならばmutable
+    MyClass(int val) : value{val} {}
+    int value;
+    const double double_value = 2.5;
+};
+```
+
+---
+
+## 不変なクラスと可変なクラス比較(C#)
+
+```cs
+class MyClass { // 不変であるクラス。すべてのプロパティが再代入不可
+    public readonly int Value;
+    public readonly double DoubleValue = 2.5;
+    public MyClass(int val) { Value = val; }
+}
+```
+↕ 
+```cpp
+class MyClass { // 可変であるクラス。一部のプロパティが可変ならばmutable
+    public readonly int Value;
+    public double DoubleValue = 2.5;
+    public MyClass(int val) { Value = val; }
+}
+```
+
+---
+
+## 不変(immutable)と読み取り専用(read-only)の違い
+
+変更させないようにしているつもりが、変更できてしまう例
+
+```cs
+class NGSample // [BAD] C#で読み取り専用の配列を作ろうとしているが出来ていない
+{
+    private static readonly string Message1 = "hello,";
+    private static readonly string Message2 = "world!";
+    // 列挙用配列。しかし、この配列の公開はNG
+    public static readonly string[] Messages = { Message1, Message2 };
+}
+
+:
+
+NGSample.Messages[1] = "OUCH!";
+foreach (var s in NGSample.Messages) { Console.WriteLine(s); }  // hello,\nOUCH!
+```
+
+<!-- 
+ソースコード例： [[C#] 配列やList<T>を直接公開する代わりにするべきこと](https://qiita.com/laughter/items/b5e91d0eac5bac208d35)
+readonlyは、参照しているオブジェクトを変更することはできなくなるものの、その中の内容は自由に変更できてしまう。
+
+この場合は言語機能の誤解から問題が生じている。 -->
+
+---
+
+## 不変(immutable)と読み取り専用(read-only)の違い - 改善例
+
+変更できない型で公開する
+
+```cs
+class NGSample // [GOOD] C#で読み取り専用の配列を作成する
+{
+    private static readonly string Message1 = "hello,";
+    private static readonly string Message2 = "world!";
+    public static IReadOnlyList<string> Messages = new[] { Message1, Message2 };
+}
+
+:
+
+NGSample.Messages[1] = "OUCH!"; // コンパイルエラー
+```
+
+<!-- ReadOnlyListが使えない・用意されていない環境の場合には、たとえばリストそのものは見せないようにしておき、
+その要素へのアクセスにはgetterメソッドを用意しておくなどした、カスタムコレクション型にするなど -->
