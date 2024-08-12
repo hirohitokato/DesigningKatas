@@ -274,3 +274,62 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 
 要するに、冪等性は操作の外から見た性質であり、利用者が同じ操作を繰り返しても同じ結果が得られるかどうかを判断する基準です。GETメソッドは読み取り専用であるため、冪等性を満たしますし、同様にファイルの内容や通信状態を返す関数も、同じ状況において同じ結果を返すことから冪等性を満たすことになります
 -->
+
+---
+
+## 非巡回
+
+可変なオブジェクトを作る際はcのような遷移にするのが望ましい
+|a.巡回のある状態遷移|b.非巡回な状態遷移|c.自己ループを除けば<br/>非巡回な状態遷移|
+|---|---|---|
+|![](./assets/22-cyclic_state.png)|![](./assets/22-acyclic_state.png)|![](./assets/22-acyclic_state_with_selfloop.png)|
+
+---
+
+## 非巡回: 例) 非巡回なStopWatchクラス
+
+```cs
+class StopWatch {
+    private DateTime _startTime = DateTime.Now;
+    private DateTime _elapsedTime = DateTime.Now;
+
+    private State _state = State.Measuring; // Measuring/Finished
+
+    double FinishMeasurement() {
+        if (_state == State.Finished) { return _elapsedTime.TotalMilliseconds; }
+
+        _state = State.Finished;
+        _elapsedTime = DateTime.Now - _startTime;
+        return _elapsedTime.TotalMilliseconds;
+    }
+}
+```
+
+<!-- どういう使い方をするかの説明 -->
+
+---
+
+## 非巡回: 例) 非巡回なStopWatchクラス(使用例)
+
+```cs
+void RunSomeHeavyTask() {
+    var stopWatch = new StopWatch(); // 計測開始
+    : // 重い処理
+    var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+}
+
+void RunAnotherHeavyTask() {
+    var stopWatch = new StopWatch(); // 計測開始
+    : // 重い処理
+    var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+}
+```
+
+![](./assets/22-acyclic-stopwatch.png)
+
+---
+
+## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス
+
+```cs
+```
