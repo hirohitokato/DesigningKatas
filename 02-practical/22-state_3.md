@@ -332,4 +332,83 @@ void RunAnotherHeavyTask() {
 ## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス
 
 ```cs
+class StopWatch { // [BAD]
+    private DateTime _startTime = DateTime.Now;
+    private DateTime _elapsedTime = DateTime.Now;
+    private State _state = State.Stopped; // Measuring/Stopped
+
+    void StartMeasurement() { if(_state == State.Stopped) { _startTime = DateTime.Now; } }
+
+    double FinishMeasurement() {
+        if (_state == State.Stopped) { return _elapsedTime.TotalMilliseconds; }
+
+        _state = State.Finished;
+        _elapsedTime = DateTime.Now - _startTime;
+        return _elapsedTime.TotalMilliseconds;
+    }
+}
 ```
+
+再利用可能になったことで、生成コストも減って便利なクラスになった気がする
+
+<!-- これはヤバい、と思った時点で挙手してほしい。最後の人にしか当てないので、遠慮せずどんどん。 -->
+
+---
+
+## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス
+
+![](./assets/22-cyclic-stopwatch.png)
+
+---
+
+## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス(使用例)
+
+```cs
+class SomeRunner {
+    private StopWatch _stopWatch = new StopWatch();
+    public void RunSomeHeavyTask() {
+        _stopWatch.StartMeasurement(); // 計測開始
+        : // 重い処理
+        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+    }
+    public void RunAnotherHeavyTask() {
+        _stopWatch.StartMeasurement(); // 計測開始
+        : // 重い処理
+        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+    }
+}
+```
+
+<!-- 使い方もほとんど同じ -->
+
+---
+
+## 非巡回: 例) 再利用可能(=巡回)なStopWatchクラス(問題発生)
+
+```cs
+class SomeRunner {
+    ...
+    public void RunTask() {
+        _stopWatch.StartMeasurement(); // 計測開始
+
+        if (...) {
+            this.RunSomeHeavyTask(); // バグ
+        } else {
+            this.RunAnotherHeavyTask(); // バグ
+        }
+
+        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // バグ
+    }
+}
+```
+
+<!-- ((ここで最後の人に当てる)) -->
+<!-- 
+* RunSomeHeavyTask()が呼ばれるが、既にRunTask()先頭でstart～が呼ばれているので開始時刻が正しく設定されない
+* RunAnotherHeavyTask()が呼ばれるが、既にRunTask()先頭でstart～が呼ばれているので開始時刻が正しく設定されない
+* if文のどちらかでFinishMeasurementが呼ばれているので、何も計測されていない
+ -->
+
+<!-- こういうのを安全に作ろうとすると、内部設計が複雑になってしまうし、結局中身では使い捨てのインスタンスを作っていることもある。
+特別な理由がない限りはインスタンスを使い捨て可能にして状態線が循環しない設計にすると
+生成処理などを -->
