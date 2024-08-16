@@ -224,15 +224,16 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 
 冪等: 操作を１回行ったときの結果と、操作を複数回行ったときの結果が同じ
 
+→ 何回でも安心して処理を実行できる
+
 ```cs
 class GoodClosableClass {
     private bool isClosed {get; private set;} = false;
     public void Close() {
         if (isClosed) { return; }
-        isClosed = true;
+        isClosed = true; ... 
     }
 }
-
 class BadClosableClass {
     public bool isClosed {get; private set;} = false;
     public void Close() {
@@ -248,6 +249,28 @@ class BadClosableClass {
  * さらには確認を忘れた際にバグを発生させてしまう
  という問題を埋め込むことになる
   -->
+
+---
+
+## 冪等性: 内部状態の隠蔽
+
+キャッシュや遅延評価を実装するときには冪等性により内部状態を隠せる
+
+```cs
+class NumberRepository {
+    private int? _cachedValue;
+    // キャッシュを保持していようがいまいがGetValue()を呼べば良い
+    public int GetValue() {
+        if (_cachedValue) { return _cachedValue; }
+        else { return loadNewValue(); }
+    }
+    private int loadNewValue() {
+        int newValue = /* 値の読み込み処理 */
+        _cachedValue = newValue
+        return _cachedValue;
+    }
+}
+```
 
 ---
 
@@ -287,6 +310,17 @@ class BadClosableClass {
 
 要するに、冪等性は操作の外から見た性質であり、利用者が同じ操作を繰り返しても同じ結果が得られるかどうかを判断する基準です。GETメソッドは読み取り専用であるため、冪等性を満たしますし、同様にファイルの内容や通信状態を返す関数も、同じ状況において同じ結果を返すことから冪等性を満たすことになります
 -->
+
+---
+
+## 冪等性: まとめ
+
+* 冪等性とは、何回呼んでも同じ結果になること
+    * 関数を呼ぶ前のチェックが不要にできる(チェック漏れを防げる)
+* 不正な状態遷移を排除できる
+* 内部状態を隠蔽できる(キャッシュなど)
+
+呼ぶ前に相手先の状態をチェックしている箇所に注意する
 
 ---
 
