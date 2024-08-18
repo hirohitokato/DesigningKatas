@@ -41,7 +41,7 @@ _Code Readability_
 
 * 関数の責任
     * 責任の分割の基本方針
-    * コマンドとクエリの分割
+    * コマンドとクエリの分割(Command-Query Separation. CQS)
 * 関数の流れ
     * 定義指向プログラミング
     * 早期リターン
