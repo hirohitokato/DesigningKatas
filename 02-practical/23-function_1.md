@@ -107,3 +107,7 @@ fun ...(messageData: MessageData) {
 
 ---
 
+## 関数の責任: コマンドとクエリの分割(CQS$^1$)
+
+
+>>> 1. Command-Query Separation. 元はバートランド・メイヤーの1988年の本で出てきた概念。名前は後日与えられた
