@@ -37,7 +37,7 @@ _Code Readability_
 
 ---
 
-## 関数
+## 関数パートの説明内容
 
 * 関数の責任
     * 責任の分割の基本方針
@@ -46,3 +46,60 @@ _Code Readability_
     * 定義指向プログラミング
     * 早期リターン
     * 操作対象による分割
+
+---
+
+## 関数の責任
+
+基本は単一責任の原則(SRP$^1$)を守る
+
+**Q**: `queryUserData(string userId) -> UserData`という関数はどんな動きをする？
+
+
+>>> 1. Single Responsibility Principle
+
+---
+
+## 関数の責任
+
+基本は単一責任の原則(SRP$^1$)を守る
+
+**Q**: `queryUserData(string userId) -> UserData`という関数はどんな動きをする？
+
+- → ユーザーデータを取得する
+    - → データ取得にネットワークなど外部へのアクセスが含まれるかも
+* → データ削除や更新はする？何か他の処理はする？
+
+>>> 1. Single Responsibility Principle
+
+---
+
+## 関数の責任: 要約を１行で書けるかどうか
+
+```kt
+fun ...(messageData: MessageData) {
+    messageView.text = messageData.contentText
+    senderNameView.text = messageData.senderName
+    timestampView.text = messageData.sentTimeText
+}
+```
+
+→ 「メッセージデータを画面にバインドする」
+
+---
+
+## 関数の責任: 要約を１行で書けるかどうか
+
+```kt
+fun ...(messageData: MessageData) {
+    messageView.text = messageData.contentText
+    senderNameView.text = messageData.senderName
+    timestampView.text = messageData.sentTimeText
+
+    let data = getDataFromNetwork(messageData.userId)
+    setDataToDatabase(data)
+}
+```
+
+
+---
