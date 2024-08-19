@@ -53,7 +53,7 @@ _Code Readability_
 
 基本は単一責任の原則(SRP$^1$)を守る
 
-**Q**: `queryUserData(string userId) -> UserData`という関数はどんな動きをする？
+**Q**: 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
 
 
 >>> 1. Single Responsibility Principle
@@ -64,13 +64,15 @@ _Code Readability_
 
 基本は単一責任の原則(SRP$^1$)を守る
 
-**Q**: `queryUserData(string userId) -> UserData`という関数はどんな動きをする？
+**Q**: 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
 
 - → ユーザーデータを取得する
     - → データ取得にネットワークなど外部へのアクセスが含まれるかも
 * → データ削除や更新はする？何か他の処理はする？
 
 >>> 1. Single Responsibility Principle
+
+<!-- 想像から外れない実装にする。驚き最小の原則 -->
 
 ---
 
@@ -118,6 +120,12 @@ CQS: 「状態を変更するための関数(Command)」と「状態を知るた
 
 >>> 1. Command-Query Separation. 元はバートランド・メイヤーの1988年の本で出てきた概念。名前は後日与えられた
 
+<!-- CQS はC/Qのメソッドの分割パターン、 CQRS はレイヤーやモデルの（アーキテクチャレベルでの）分割パターンという解釈が良さそう。
+
+* CQS: https://martinfowler.com/bliki/CommandQuerySeparation.html
+* CQRS: https://martinfowler.com/bliki/CQRS.html
+-->
+
 ---
 
 ## 関数の責任: コマンド・クエリ分離の原則(CQS)
@@ -125,7 +133,19 @@ CQS: 「状態を変更するための関数(Command)」と「状態を知るた
 ```cs
 var a = new IntList([1, 2, 3])
 var b = new IntList([4, 5])
-var c = a + b
+var c = a.getAppended(b) // 言語はC#を想定
 ```
 
 この結果でc行を実行したときに a が `[1, 2, 3, 4, 5]` になっていたらどう思う？
+
+<!-- a<<bは演算子のオーバーロード。元は -->
+---
+
+## (補足: 驚き最小の原則)
+
+<!-- 驚き最小の原則: https://ja.wikipedia.org/wiki/%E9%A9%9A%E3%81%8D%E6%9C%80%E5%B0%8F%E3%81%AE%E5%8E%9F%E5%89%87 -->
+---
+
+## 関数の責任: CQS適用/不適用の境界
+
+「これはCommandだから戻り値は絶対にvoid」は悪手。実行後に結果をgetするメソッドを書かないといけなくなり、
