@@ -83,7 +83,8 @@
 23. 2024/07/09 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 24. 2024/07/16 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 25. 2024/07/23 [SOLID まとめ](02-practical/06-solid-wrapup.md)
-26. 2024/08/20 [なぜ配列の要素番号はゼロから始まるのか](09-techniques/02-why-index-start-with0.md)
+26. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
+
 
 ### 3rd group
 
