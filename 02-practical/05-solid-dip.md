@@ -137,6 +137,45 @@ class USBPort:
 <!-- ところが右側を同じ構造で考えると問題が出てくる。USBポートという汎用的な通信端子からUSBメモリーにデータを送る状況で、USBポートが数あるメーカーの１つのUSBメモリーの具体的な実装を知っているのは、安定しているはずのUSBポートでいちいちソースを書き換えないといけなくなってしまう。
 これをどうしたら良いか、構造化プログラミングでは答えを持っていなかった -->
 
+<!-- コールバックにしたり、PubSubの仕組みを使ったり、ポーリングしてみたり、Mutexとイベント受信スレッドを組み合わせたり。プロジェクトごとでバラバラ -->
+
+---
+ 
+## ソースコードの依存関係と「制御の流れ」
+
+![bg 100% right:30%](assets/05-dip-flow_direction.png)
+
+* **ソースコードの依存関係** : コード上の関係
+* **制御の流れ** : 処理が呼ばれるときの関係
+
+```ts
+class Peripheral {
+  constructor(parent: CoreLogic) { parent.action = this.add; }
+  add(a: number, b: number): number { return a + b; }
+}
+
+class CoreLogic {
+  action: ... = null;
+  calc(a: number, b: number): number { return this.action(a, b); }
+}
+
+const parent = new CoreLogic();
+const child = new Peripheral(parent);
+console.log(parent.calc(2, 3));  // 5を出力
+```
+
+<!-- 依存関係逆転の原則による解決策を話す前に、コールバックを例にした依存の方向と制御の流れについておさえておく -->
+<!-- ソースコードを見ると、PeripheralとCoreLogicの２つがある。
+一番下のコードを見ると、まずCoreLogic(Parent)を作って、次にPeripheral(child)を作っている。
+このchildを作る時にparentを渡していて、Peripheralのコンストラクタ内部でコールバックに設定している。
+そして親のcalcメソッドを呼ぶと、子供のaddが連鎖的に呼ばれて、足し算が実行されるという流れ。
+
+これを依存関係の視点で見ると、子供はコンストラクタで親の型を書いているので「CoreLogicを知っている」つまり「CoreLogicに依存している」という関係がある。逆はそういう記述がないので依存していない。
+一方で、処理を見ると親で呼んだ処理が子まで届いているので、CoreLogicからPeripheralへの↕が発生している。これを制御の流れという。
+
+クラス図を書く時に矢印をどういう方向で書くか、処理の流れがあるのに矢印は書かないでいいのかなどがあるけれど、この依存関係と処理の流れの矢印はしっかり意識しておくと良い。
+ -->
+
 ---
 
 ## 依存関係逆転の原則を適用する ①
@@ -198,31 +237,6 @@ C/C++等だと安定側ファイルの再コンパイルが不要になるので
 不安定な方にルールを守らせること。
 
 ![center w:1000px](assets/05-dip-intf_holder.png)
-
----
- 
-## ソースコードの依存関係と「制御の流れ」
-
-![bg 100% right:30%](assets/05-dip-flow_direction.png)
-
-* **ソースコードの依存関係** : コード上の関係
-* **制御の流れ** : 処理が呼ばれるときの関係
-
-```js
-class Peripheral {
-  constructor(parent) { parent.action = this.add; }
-  add(a, b) { return a + b; }
-}
-
-class CoreLogic {
-  action = null;
-  calc(a, b) { return this.action(a, b); }
-}
-
-const parent = new CoreLogic();
-const child = new Peripheral(parent);
-console.log(parent.calc(2, 3));  // 5を出力
-```
 
 ---
 
