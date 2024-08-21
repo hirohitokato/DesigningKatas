@@ -53,6 +53,7 @@
 39. 2024/06/21 [[読みやすいコードの書き方]コメント(3)](02-practical/18-comment_3.md)
 39. 2024/06/28 [[読みやすいコードの書き方]コメント(4)](02-practical/19-comment_4.md)
 40. 2024/07/12 [[読みやすいコードの書き方]状態(1)](02-practical/20-state_1.md)
+41. 2024/07/19 [[読みやすいコードの書き方]状態(2)](02-practical/21-state_2.md)
 
 ### 2nd group
 
@@ -138,6 +139,7 @@
 19. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 20. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 21. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
+22. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
 ### 5th group
 
@@ -165,3 +167,4 @@
 20. 2024/07/10 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 21. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 22. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
+23. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
