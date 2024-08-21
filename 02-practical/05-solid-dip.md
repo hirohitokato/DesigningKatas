@@ -170,7 +170,7 @@ class USBPort:
 
 ![center 80%](assets/05-dip-instruction3.png)
 
->>> Adaptorは不安定側の持ち物として作成
+>>> Adapterは不安定側の持ち物として作成
 
 ---
 
