@@ -113,6 +113,7 @@
 20. 2024/06/18 [[SOLID]開放閉鎖の原則(OCP)](02-practical/02-solid-ocp.md)
 21. 2024/07/12 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 22. 2024/07/19 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
+23. 2024/07/26 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
 ### 4th group
 
