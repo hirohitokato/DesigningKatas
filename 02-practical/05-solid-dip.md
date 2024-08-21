@@ -107,7 +107,7 @@ _Dependency Inversion Principle_
 
 * 下位層の変更に上位層が振り回されてしまう
     * 差し替えやバージョンアップのたびにリビルドが必要
-* 安定した処理を集めたはずなのに…
+* 機能分割を進め、安定した処理を集めたはずなのに…
 
 ![center 80%](assets/05-dip-instruction1.png)
 
