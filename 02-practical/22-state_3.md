@@ -196,7 +196,7 @@ DidcouragedMutable.MutableList.Add("d");
 foreach (var s in list) { Console.Write(s); } // abcd (Addの影響を受ける)
 
 DidcouragedMutable.ResetList();
-foreach (var s in list) { Console.Write(s); } // abcd (リセットされない)
+foreach (var s in list) { Console.Write(s); } // abcd (list変数はリセットされていない)
 
 DidcouragedMutable.MutableList.Add("e");
 foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
@@ -214,7 +214,8 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 
 * 不正な状態遷移を**起こせない**コードにする
     * そもそも状態遷移がないデータ構造を使えば、不正な状態遷移は発生しない
-* ただし言語によっては抜け穴が存在できてしまうので要注意
+* ただし言語によっては抜け穴が存在できてしまう書き方があるので要注意
+    * プリミティブな値は良いがオブジェクトには注意
 
 不変にできる部分を局所化して安全地帯を設け、それを育てるのも良い
 
@@ -254,7 +255,7 @@ class BadClosableClass {
 
 ## 冪等性: 内部状態の隠蔽
 
-キャッシュや遅延評価を実装するときには冪等性により内部状態を隠せる
+キャッシュや遅延評価を実装するときには冪等性を用いて内部状態を隠すと良い
 
 ```cs
 class NumberRepository {
@@ -272,6 +273,15 @@ class NumberRepository {
 }
 ```
 
+<!-- 逆を言うと、冪等でないにも関わらず内部状態を隠すと誤解を招くコードになりやすく、結果としてバグを生む
+その場合は、内部状態を変更しうることを名前やコメントで明示するとよい。
+このGetValue()の場合だと、GetCachedValueOrInvokeといった関数名が候補になる。
+安直ではあるものの、意図的に長い関数名にすることで注意するべき点があることを示せる。
+
+長い名前といえば、某プロジェクトで似たようなことをやった。長い名前を使うことで処理の流れを意識させ、
+さらにはあまり長い名前は使いたくないという心理を利用して、ライブラリでもあまり使ってほしくない関数に長い名前を用いるというテクニックを使った。
+・・・が、他の関数の機能が弱かったせいでそれを使わないといけない状況になってしまい、ライブラリ全体がなんか使いにくいという印象を与えてしまった。失敗だった
+ -->
 ---
 
 ## 冪等性と参照透過性と副作用
