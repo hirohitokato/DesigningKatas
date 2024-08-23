@@ -182,23 +182,23 @@ NGSample.Messages[1] = "OUCH!"; // コンパイルエラー
 
 ```cs
 // [BAD] 参照そのものと参照先のオブジェクトの両方を可変にしたせいで意図しない動作になる
-class DidcouragedMutable {
+class DiscouragedMutable {
     public static List<string> MutableList = new List<string> { "a", "b", "c" };
     public static void ResetList() { // 内容を初期値にリセット
         MutableList = new List<string> { "a", "b", "c" };
     }
 }
 
-var list = DidcouragedMutable.MutableList;
+var list = DiscouragedMutable.MutableList;
 foreach (var s in list) { Console.Write(s); } // abc
 
-DidcouragedMutable.MutableList.Add("d");
+DiscouragedMutable.MutableList.Add("d");
 foreach (var s in list) { Console.Write(s); } // abcd (Addの影響を受ける)
 
-DidcouragedMutable.ResetList();
+DiscouragedMutable.ResetList();
 foreach (var s in list) { Console.Write(s); } // abcd (list変数はリセットされていない)
 
-DidcouragedMutable.MutableList.Add("e");
+DiscouragedMutable.MutableList.Add("e");
 foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 ```
 
