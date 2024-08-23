@@ -54,7 +54,7 @@
 39. 2024/06/28 [[読みやすいコードの書き方]コメント(4)](02-practical/19-comment_4.md)
 40. 2024/07/12 [[読みやすいコードの書き方]状態(1)](02-practical/20-state_1.md)
 41. 2024/07/19 [[読みやすいコードの書き方]状態(2)](02-practical/21-state_2.md)
-42. 2024/08/23 [[読みやすいコードの書き方]状態(3️)](02-practical/22-state_3.md.md)
+42. 2024/08/23 [[読みやすいコードの書き方]状態(3️)](02-practical/22-state_3.md.md) - 不変性
 
 ### 2nd group
 
@@ -115,6 +115,7 @@
 21. 2024/07/12 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 22. 2024/07/19 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 23. 2024/07/26 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
+24. 2024/08/23 [SOLID まとめ](02-practical/06-solid-wrapup.md)
 
 ### 4th group
 
