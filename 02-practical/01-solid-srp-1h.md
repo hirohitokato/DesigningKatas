@@ -54,7 +54,7 @@ _Single Responsibility Principle_
 
 ---
 
-## 質問： 「SOLID(堅牢)なアーキテクチャ」とは？
+## 質問： 「SOLID(堅牢)なソフトウェア/アーキテクチャ」とは？
 
 ---
 
@@ -174,7 +174,7 @@ _Single Responsibility Principle_
 
 ---
 
-## 演習問題 ①
+## 演習問題 ②
 
 **スマホアプリ版**の電子メトロノームのアーキテクチャを考えてみよう
 
@@ -185,7 +185,7 @@ _Single Responsibility Principle_
 * 状態を液晶で確認できる
 * 音を鳴らせる
 
-![bg right contain 60%](assets/01-srp-metronome_app.png)
+![bg right contain 50%](assets/01-srp-metronome_app.png)
 
 <!-- オシレータ・シーケンサー・シンセサイザー -->
 
