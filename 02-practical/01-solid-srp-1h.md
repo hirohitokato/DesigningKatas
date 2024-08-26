@@ -9,6 +9,8 @@ paginate: true
 -->
 <!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
+<!-- 1時間向け -->
+
 # SOLID #1 単一責任の原則(SRP)
 _Single Responsibility Principle_
 
@@ -182,7 +184,7 @@ _Single Responsibility Principle_
 
 * テンポ(bpm)を設定できる
 * リズムや拍子を指定できる
-* 状態を液晶で確認できる
+* 状態を画面上で確認できる
 * 音を鳴らせる
 
 ![bg right contain 50%](assets/01-srp-metronome_app.png)
