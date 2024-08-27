@@ -145,6 +145,8 @@
 21. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 22. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
+--- 5th groupと合流 → 7th groupで管理 ---
+
 ### 5th group
 
 <!-- PSB -->
@@ -173,7 +175,14 @@
 22. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 23. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
+--- 4th groupと合流 → 7th groupで管理 ---
+
 ### 6th group
 
 1. 2024/08/27 [[SOLID]単一責任の原則(SRP) - 1h版](02-practical/01-solid-srp-1h.md)
 
+### 7th group
+
+<!-- AC & PSB -->
+
+1. 2024/08/28 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md)
