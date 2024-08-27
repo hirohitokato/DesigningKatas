@@ -85,7 +85,8 @@
 23. 2024/07/09 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 24. 2024/07/16 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 25. 2024/07/23 [SOLID まとめ](02-practical/06-solid-wrapup.md)
-26. 2024/04/26 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
+26. 2024/08/20 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
+27. 2024/08/27 [YAGNI](01-basics/20-yagni.md)
 
 
 ### 3rd group
@@ -171,3 +172,8 @@
 21. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 22. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 23. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
+
+### 6th group
+
+1. 2024/08/27 [[SOLID]単一責任の原則(SRP) - 1h版](02-practical/01-solid-srp-1h.md)
+
