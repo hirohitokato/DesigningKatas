@@ -87,6 +87,7 @@
 25. 2024/07/23 [SOLID まとめ](02-practical/06-solid-wrapup.md)
 26. 2024/08/20 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
 27. 2024/08/27 [YAGNI](01-basics/20-yagni.md)
+28. 2024/09/03 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md)
 
 
 ### 3rd group
