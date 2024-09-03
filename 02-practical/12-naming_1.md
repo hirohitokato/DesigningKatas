@@ -136,7 +136,7 @@ class DragActionEvent: UserActionEvent { … }
 class MouseOverActionEvent: UserActionEvent { … }
 ```
 ```cpp
-// ✕ 見た目の統一感を優先した姿
+// ✕ 宣言箇所での見た目の統一感を優先した姿
 class UserActionEventClick: UserActionEvent { … }
 class UserActionEventDrag: UserActionEvent { … }
 class UserActionEventMouesOver: UserActionEvent { … }
