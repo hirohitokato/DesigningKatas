@@ -95,6 +95,8 @@ OSみたいな大きなプログラムだけがメリットを享受するわけ
 1. 1988年にバートランド・メイヤーが提唱したOCP
 2. 1996年頃にロバート・C・マーチン(Bobおじさん)らが提唱したOCP
 
+２つを区別できると、拡張性に対して解像度を高められる
+
 ![bg opacity:0.3](assets/02-ocp-portrait_BertrandMeyer.jpg)
 ![bg opacity:0.3](assets/02-ocp-portrait_uncleBob.jpg)
 
@@ -187,7 +189,7 @@ if (target == OutputType::Printer) { // プリンターで印刷するとき
 
 ## 解決策
  
-ポリモーフィズムを意識した設計を心がける。
+インターフェースによる抽象を意識する。
  
 ```cs
 interface IOutputtable {
