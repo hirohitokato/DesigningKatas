@@ -89,3 +89,102 @@ _抽象を意識したプログラミングの実践技法_
 
 ---
 
+## 多態性(ポリモーフィズム)
+
+乱暴に言ってプラグインを実現する仕組み。
+
+* 仕様に準拠していれば、中身を変えても同じように使える
+* 使う側のロジックをシンプルにできる  
+
+```cpp
+struct Runnable { virtual void run() = 0; };
+struct Car: public Runnable { void run() {...} };
+struct Dog: public Runnable { void run() {...} };
+
+Runnable *a = new Car();
+a->run(); // Carのrun()が呼ばれる
+delete a;
+a = new Dog();
+a->run();  // Dogのrun()が呼ばれる
+```
+
+---
+
+## 多態性とクラスや親子関係の有無は別問題
+
+呼び出し側が「同じと認識してよい」と見立てたものに対して、複数種類の実体がある点に着目した概念
+
+* JavaScriptやPythonのように型チェックしない書き方ができる言語
+    * 同じ名前のメソッドがあれば問題なく呼び出せる（ダックタイピング）
+* C++においては「型」が見立ての基準になっているだけ
+
+```js
+// JavaScriptの例。dogとcatに継承関係はない
+dog = {"howl": ()=>{console.log("bow")}};
+cat = {"howl": ()=>{console.log("meow")}};
+pet = dog; // catも代入できる
+pet.howl(); // bow or meow
+```
+---
+
+## 継承/汎化
+
+他のオブジェクトの特性を引き継ぐこと
+
+```cpp
+struct Base {
+    virtual ~Base() {}
+    int state = 193;
+    void methodA() {}
+    virtual void methodB() {} // 派生クラスでの上書きを許可
+};
+struct Derived: public Base {
+    virtual ~Derived() {}
+    void methodB() override { std::cout<<state; } // 親クラスの処理を上書き
+    void methodC() {} // 新しいメソッドを定義
+};
+
+Base *obj = new Derived();
+obj->methodB(); // → 193
+```
+
+---
+
+## 抽象クラス / インターフェース
+
+```cpp
+// 抽象クラス。実処理が(一部)書かれている。
+struct AbstractBase {
+    virtual ~AbstractBase() {} // 仮想デストラクタ
+    int state = 193;
+    void methodA() {...} // 実処理を持つ
+    virtual void methodB() = 0; // 実処理を持たない
+};
+
+// インターフェースクラス。一切の実装を持たない
+struct SomeInterface {
+    virtual ~SomeInterface(){} // 仮想デストラクタ
+    virtual void methodA() = 0;
+    virtual void methodB() = 0;
+}
+```
+
+---
+
+## 問題
+
+## 継承・汎化をするため
+
+## 差分プログラミング・サブタイピングをするため
+
+---
+
+## 継承と汎化
+
+### 継承
+* 
+
+### 汎化
+
+---
+## 差分プログラミング・サブタイピング
