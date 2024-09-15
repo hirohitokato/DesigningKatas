@@ -255,3 +255,24 @@ struct SomeInterface {
 * **has-a**を継承にしない
 * **is-a**は継承で良い
 
+継承は必ずしも悪ではない
+
+---
+
+## 他言語には実装を持てない型(**インターフェース**)がある
+
+C++の純粋仮想関数のみ使ったもの
+
+```cpp
+// C++
+struct Foo {
+    virtual int calc(int a, int b) = 0;
+};
+  ↕ 同じ
+// Java
+public interface FooInterface {
+    int calc(int a, int b);
+}
+```
+
+なぜ他言語ではあえてinterface型を用意しているのか考えてみよう
