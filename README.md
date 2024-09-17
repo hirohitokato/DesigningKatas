@@ -88,7 +88,7 @@
 26. 2024/08/20 [ボーイスカウトの規則 & 最適化のルール](01-basics/21-boyscout_optimize.md)
 27. 2024/08/27 [YAGNI](01-basics/20-yagni.md)
 28. 2024/09/03 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md)
-
+29. 2024/09/17 [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md)
 
 ### 3rd group
 
@@ -180,6 +180,7 @@
 ### 6th group
 
 1. 2024/08/27 [[SOLID]単一責任の原則(SRP) - 1h版](02-practical/01-solid-srp-1h.md)
+2. 2024/09/10 [[SOLID]開放閉鎖の原則(OCP) - 1h版](02-practical/02-solid-ocp-1h.md)
 
 ### 7th group
 
