@@ -181,6 +181,7 @@
 
 1. 2024/08/27 [[SOLID]単一責任の原則(SRP) - 1h版](02-practical/01-solid-srp-1h.md)
 2. 2024/09/10 [[SOLID]開放閉鎖の原則(OCP) - 1h版](02-practical/02-solid-ocp-1h.md)
+3. 2024/09/17 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
 
 ### 7th group
 
