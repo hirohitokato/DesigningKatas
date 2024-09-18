@@ -91,6 +91,8 @@ void showUserList(bool shouldShowDialogOnError) { … }
 void showUserList(bool isCalledFromLandingScreen) { … }
 ```
 
+<!-- ◯とはいえ、引数で処理を変えるというのは、複数の制御が結合している制御結合になっているかもしれないことに注意。 -->
+
 ---
 
 ## 例2: 関数の名前
