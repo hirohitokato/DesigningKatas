@@ -121,6 +121,7 @@
 23. 2024/07/26 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 24. 2024/08/23 [SOLID まとめ](02-practical/06-solid-wrapup.md)
 25. 2024/08/30 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md)
+26. 2024/09/20 [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md) & [エンジニアが覚えておくと良いかもしれない10個の法則](10-humor\12-ten_engineers_laws.md)
 
 ### 4th group
 

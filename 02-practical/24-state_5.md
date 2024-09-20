@@ -113,7 +113,7 @@ void RunSomeHeavyTask() {
 void RunAnotherHeavyTask() {
     var stopWatch = new StopWatch(); // 計測開始
     : // 重い処理
-    var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+    var elapsedTimeInMs = _stopwatch.FinishMeasurement(); // 計測終了
 }
 ```
 
@@ -225,7 +225,7 @@ class SomeRunner {
 * 状態に巡回構造があると実装が複雑になりやすい
     * 再帰的に呼び出されたり、再利用のタイミングを意識しなければならない
 * 単方向のオブジェクトを使い捨てる設計にする
-    * 必要に応じて巡回構造に再設計する
+    * 必要に応じて非巡回構造に再設計する
 * 消せない巡回構造は局所化する
 
 ---
