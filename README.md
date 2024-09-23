@@ -91,6 +91,7 @@
 27. 2024/08/27 [YAGNI](01-basics/20-yagni.md)
 28. 2024/09/03 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md)
 29. 2024/09/17 [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md)
+30. 2024/09/24 [[読みやすいコードの書き方]命名(3)](02-practical/14-naming_3.md)
 
 ### 3rd group
 
@@ -185,7 +186,7 @@
 1. 2024/08/27 [[SOLID]単一責任の原則(SRP) - 1h版](02-practical/01-solid-srp-1h.md)
 2. 2024/09/10 [[SOLID]開放閉鎖の原則(OCP) - 1h版](02-practical/02-solid-ocp-1h.md)
 3. 2024/09/17 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
-
+4. 2024/09/24 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md) ＆ [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 ### 7th group
 
 <!-- AC & PSB -->
