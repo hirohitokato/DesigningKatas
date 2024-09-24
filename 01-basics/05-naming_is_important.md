@@ -119,7 +119,6 @@ def clear_cache_and_load_data():
 
 <!-- exinf:extended information, tskatr:task attributes, task: function pointer of task, itskpri: task priority(iは?) -->
 
-ad
 
 ---
 

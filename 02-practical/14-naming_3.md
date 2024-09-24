@@ -94,6 +94,25 @@ _Code Readability_
 
 ---
 
+## クイズ([名前重要](../01-basics\05-naming_is_important.md)から再掲)
+
+適切な関数名・変数名を考えてみよう
+
+```py
+def regist_cust(name, pwd):
+    ...
+
+def cre_task(exinf, tskatr, task, itskpri, …):
+    ...
+
+def clear_cache_and_load_data():
+    ...
+```
+
+<!-- exinf:extended information, tskatr:task attributes, task: function pointer of task, itskpri: task priority(iは?) -->
+
+---
+
 ## より曖昧さの少ない単語を探すには
 
 （業務ドメインを意識しつつ）辞書や類語辞典を利用する。それでもうまく見つけられない場合、同じ単語を使う別の状況を想定して比較するのも良い。
