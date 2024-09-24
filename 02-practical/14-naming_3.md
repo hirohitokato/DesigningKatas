@@ -92,24 +92,6 @@ _Code Readability_
 
 比較対象の有無・条件を満たしているかどうかに着目。oldが範囲を示す場合は`before`/`until`/`by`も候補になる
 
----
-
-## クイズ([名前重要](../01-basics\05-naming_is_important.md)から再掲)
-
-適切な関数名・変数名を考えてみよう
-
-```py
-def regist_cust(name, pwd):
-    ...
-
-def cre_task(exinf, tskatr, task, itskpri, …):
-    ...
-
-def clear_cache_and_load_data():
-    ...
-```
-
-<!-- exinf:extended information, tskatr:task attributes, task: function pointer of task, itskpri: task priority(iは?) -->
 
 ---
 
