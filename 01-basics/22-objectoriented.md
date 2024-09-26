@@ -247,7 +247,7 @@ struct SomeInterface {
 
 ---
 
-## 継承より委譲
+## 「継承より委譲」をもっと解像度高く
 
 ![bg right:40% 80%](assets/22-oo-invalid_inheritance.png)
 「差分プログラミングより委譲」として覚える。サブタイピングとしての継承は善
