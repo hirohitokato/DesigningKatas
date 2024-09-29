@@ -39,21 +39,29 @@ _Code Readability_
 
 ## 関数パートの説明内容
 
-* 関数の責任
+1. 関数の責任
     * 責任の分割の基本方針
     * コマンドとクエリの分割(Command-Query Separation. CQS)
-* 関数の流れ
+1. 関数の流れ
     * 定義指向プログラミング
     * 早期リターン
     * 操作対象による分割
 
 ---
 
+# 1. 関数の責任
+
+---
+
 ## 関数の責任
 
-基本は単一責任の原則(SRP$^1$)を守る
+関数においても単一責任の原則(SRP$^1$)を守る。責任範囲の曖昧な処理のまとまりを作らない。
 
-**Q**: 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
+<b>複数の責任を持っている</b>
+→ **抽象的に理解しづらくなる・再利用性が低下する**
+
+> **問題**:
+> 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
 
 
 >>> 1. Single Responsibility Principle
@@ -62,9 +70,8 @@ _Code Readability_
 
 ## 関数の責任
 
-基本は単一責任の原則(SRP$^1$)を守る
-
-**Q**: 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
+> **問題**:
+> 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
 
 - → ユーザーデータを取得する
     - → データ取得にネットワークなど外部へのアクセスが含まれるかも
@@ -76,9 +83,10 @@ _Code Readability_
 
 ---
 
-## 関数の責任: 要約を１行で書けるかどうか
+## 責任分割の良し悪し ∋ **処理の要約を１行で書けるかどうか**
 
 ```kt
+// [GOOD]
 fun ...(messageData: MessageData) {
     messageView.text = messageData.contentText
     senderNameView.text = messageData.senderName
@@ -93,6 +101,7 @@ fun ...(messageData: MessageData) {
 ## 関数の責任: 要約を１行で書けるかどうか
 
 ```kt
+// [BAD]
 fun ...(messageData: MessageData) {
     messageView.text = messageData.contentText
     senderNameView.text = messageData.senderName
@@ -109,14 +118,36 @@ fun ...(messageData: MessageData) {
 
 ---
 
+## 関数の責任: 要約を１行で書けるかどうか
+
+改善後のコード：
+
+```kt
+// [GOOD]
+fun ...(messageData: MessageData) {
+    messageView.text = messageData.contentText
+    senderNameView.text = messageData.senderName
+    timestampView.text = messageData.sentTimeText
+}
+
+ ＆
+
+fun ...(userId: String) {
+    let data = getDataFromNetwork(userId)
+    setDataToDatabase(data)
+}
+```
+
+---
+
 ## 関数の責任: コマンド・クエリ分離の原則(CQS$^1$)
 
-CQS: 「状態を変更するための関数(Command)」と「状態を知るための関数(Query)」とは別にする
+「<b>状態を変更するための関数(Command)</b>」と「<b>状態を知るための関数(Query)</b>」とを別にする
 
 - <b>コマンド</b>: 呼ばれたオブジェクトや実引数、外部の状態を変化させる関数。戻り値は持たない
 - <b>クエリ</b>: 戻り値によって情報を取得する関数。呼ばれたオブジェクトや実引数、外部の状態は変化させない
 
-この原則を守ると可読性や頑健性を高められる
+この原則を守ると可読性や頑健性を高めやすい。
 
 >>> 1. Command-Query Separation. 元はバートランド・メイヤーの1988年の本で出てきた概念。名前は後日与えられた
 
@@ -124,6 +155,32 @@ CQS: 「状態を変更するための関数(Command)」と「状態を知るた
 
 * CQS: https://martinfowler.com/bliki/CommandQuerySeparation.html
 * CQRS: https://martinfowler.com/bliki/CQRS.html
+-->
+
+---
+
+## 関数の責任: コマンド・クエリ分離の原則(CQS)
+
+* コマンド
+    * ユーザー情報を更新する、 設定変更する、 HTTP POST/UPDATE、…
+* クエリ
+    * オブジェクトが保持しているデータを返す、 HTTP GET、 …
+
+<!-- データ送信の場合などで、送信するからコマンドなのかなと一括りで考えないようにする。
+相手側の状態を変えるものであればコマンド(POST)、変えなければクエリ(GET)とか。
+組込プログラミングの場合だと、何かの値を取得するための処理として
+
+    1. ある命令を相手に送信して、相手の状態を送信状態に変更する
+    2. 送信状態になった相手からデータが送られてくる
+    3. 必要なデータを受け取ったら命令を送信して、相手のデータ送信モードを解除する
+
+といった手順を踏むことがある。この場合、値の取得処理であっても
+相手の状態を変更することがあるのでコマンドなのかクエリなのか分からなくなることがあるかもしれない。
+この場合は、1-3をひとまとめにした処理として見て、処理が終わったあとに相手の状態が変化していないからクエリ、
+という視点もできる。（ファイルから読み込むときもファイルをオープンして読んでクローズして…と状態変化するし）
+
+なのでコマンド・クエリというのを考える時には１つ１つを細かくして考えず、責任範囲の前後において
+どうなっているかを考えると良い
 -->
 
 ---
