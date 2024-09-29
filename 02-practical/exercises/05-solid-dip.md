@@ -69,5 +69,92 @@ int main() {
 * 依存性注入を使用して、外部から依存オブジェクトを提供できるようにする。
 
 ```cpp
+#include <iostream>
+#include <memory>
 
+// 抽象クラス（インターフェース）
+class ITemperatureSensor {
+public:
+    virtual float readTemperature() = 0;
+    virtual ~ITemperatureSensor() = default; // デストラクタを仮想化していないと親クラスで確保したリソースが破棄されない問題に繋がる
+};
+
+class IHeater {
+public:
+    virtual void turnOn() = 0;
+    virtual void turnOff() = 0;
+    virtual ~IHeater() = default;
+};
+
+// 具体的な実装クラス
+class ConcreteTemperatureSensor : public ITemperatureSensor {
+public:
+    float readTemperature() override {
+        // 実際のセンサーから温度を読み取る処理
+        return 25.0f;  // サンプル値
+    }
+};
+
+class ConcreteHeater : public IHeater {
+public:
+    void turnOn() override {
+        std::cout << "ヒーターをオンにしました" << std::endl;
+    }
+
+    void turnOff() override {
+        std::cout << "ヒーターをオフにしました" << std::endl;
+    }
+};
+
+// 高レベルモジュール
+class TemperatureController {
+private:
+    std::unique_ptr<ITemperatureSensor> sensor;
+    std::unique_ptr<IHeater> heater;
+    float targetTemperature;
+
+public:
+    TemperatureController(std::unique_ptr<ITemperatureSensor> s, 
+                          std::unique_ptr<IHeater> h, 
+                          float target)
+        : sensor(std::move(s)), heater(std::move(h)), targetTemperature(target) {}
+
+    void controlTemperature() {
+        float currentTemperature = sensor->readTemperature();
+        if (currentTemperature < targetTemperature) {
+            heater->turnOn();
+        } else {
+            heater->turnOff();
+        }
+    }
+};
+
+int main() {
+    auto sensor = std::make_unique<ConcreteTemperatureSensor>();
+    auto heater = std::make_unique<ConcreteHeater>();
+    TemperatureController controller(std::move(sensor), std::move(heater), 23.0f);
+    controller.controlTemperature();
+    return 0;
+}
 ```
+
+この解答例では、以下の点で依存関係逆転の原則を適用しています：
+
+* 抽象化の導入：
+    * ITemperatureSensor と IHeater というインターフェース（抽象基底クラス）を導入
+    * 具体的な実装クラス（ConcreteTemperatureSensor, ConcreteHeater）はこれらのインターフェースを実装
+* 依存関係の逆転：
+    * TemperatureController（高レベルモジュール）は、具体的な実装ではなく抽象インターフェースに依存するように
+    * 高レベルモジュールと低レベルモジュールの両方が抽象に依存するようになった
+* 依存性注入：
+    * TemperatureController のコンストラクタで、センサーとヒーターのインターフェースを受け取るように変更
+    * 外部から依存オブジェクトを注入できるようになり、柔軟性が向上しました。
+* スマートポインタの使用：
+    * std::unique_ptr を使用して、リソース管理を改善し、メモリリークを防止
+
+### 改善後コードの利点：
+
+* 拡張性：新しい種類のセンサーやヒーターを追加する際、既存のコードを変更せずに新しいクラスを追加できます。
+* テスト容易性：モックオブジェクトを使用して、TemperatureController を容易にテストできます。
+* 柔軟性：実行時に異なる種類のセンサーやヒーターを使用できます。
+* 疎結合：高レベルモジュールと低レベルモジュールの間の依存関係が弱くなり、システムの保守性が向上します。
