@@ -269,4 +269,68 @@ var c = a.getAppended(b) // 言語はC#を想定
 
 ---
 
-## ネスト
+## 要改善パターン① : ネスト (例1)
+
+```cs
+[BAD]
+someView.ShowDialogOnError(                   // (もし取得失敗したらエラーダイアログ表示)
+    presenter.UpdateSelfProfileView(          // 2.得られたモデルをプロフィール画面に反映
+        userRepository.queryUserModel(userId) // 1.ユーザーIDに紐づくデータを取得
+    )
+);
+```
+
+* 問題
+    * どこが重要なコードなのか分かりにくい
+    * 戻り値の意味/内容が読み取りにくい
+
+---
+
+## 要改善パターン① : ネスト (例1)
+
+```cs
+[BAD]
+someView.ShowDialogOnError(                   // (もし取得失敗したらエラーダイアログ表示)
+    presenter.UpdateSelfProfileView(          // 2.得られたモデルをプロフィール画面に反映
+        userRepository.queryUserModel(userId) // 1.ユーザーIDに紐づくデータを取得
+    )
+);
+```
+↓
+```cs
+[GOOD]
+try {
+    var userModel = userRepository.queryUserModel(userId); // いちど変数に定義
+    presenter.UpdateSelfProfileView(userModel);
+}
+catch (Exception e) { // エラーを変数に定義
+    someView.ShowDialogOnError(e);
+}
+```
+
+---
+
+## 要改善パターン① : ネスト (例2)
+
+```cs
+[BAD]
+if (messageModelList.HasValidModel(messageId)) {
+    if (messageListPresenter.IsMessageShown(messageId)) {
+        if (requestQueue.Contains(messageId)) {
+            view.ShowStatusText("送信中です");
+        }
+    }
+} // ↓↓↓↓ これを定義指向プログラミングで書き換えて見ようとした結果… ↓↓↓↓
+```
+```cs
+[NOT GOOD] // なぜNOT GOODかを考えてみよう
+var isMessageValid = messageModelList.HasValidModel(messageId);
+var isMessageViewShown = messageListPresenter.IsMessageShown(messageId);
+var isMessageSengingOngoing = requestQueue.Contains(messageId);
+
+if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
+    view.ShowStatusText("送信中です");
+}
+```
+
+---
