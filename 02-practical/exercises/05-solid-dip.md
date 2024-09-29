@@ -9,16 +9,13 @@
 ```cpp
 #include <iostream>
 
-class TemperatureSensor {
+class TemperatureSensorAndHeater {
 public:
     float readTemperature() {
         // 実際のセンサーから温度を読み取る処理
         return 25.0f;  // サンプル値
     }
-};
 
-class Heater {
-public:
     void turnOn() {
         std::cout << "ヒーターをオンにしました" << std::endl;
     }
@@ -30,19 +27,18 @@ public:
 
 class TemperatureController {
 private:
-    TemperatureSensor sensor;
-    Heater heater;
+    TemperatureSensorAndHeater sensors;
     float targetTemperature;
 
 public:
     TemperatureController(float target) : targetTemperature(target) {}
 
     void controlTemperature() {
-        float currentTemperature = sensor.readTemperature();
+        float currentTemperature = sensors.readTemperature();
         if (currentTemperature < targetTemperature) {
-            heater.turnOn();
+            sensors.turnOn();
         } else {
-            heater.turnOff();
+            sensors.turnOff();
         }
     }
 };
@@ -56,9 +52,10 @@ int main() {
 
 このコードには以下の問題があります：
 
-* TemperatureController クラスが TemperatureSensor と Heater クラスに直接依存している
+* TemperatureController クラスが TemperatureSensorAndHeater クラスに直接依存している
     * 高レベルのモジュール（TemperatureController）が低レベルのモジュール（TemperatureSensor, Heater）に依存している
     * 不安定の連鎖がTemperatureControllerにまで広がっていて、TemperatureControllerも不安定なクラスになっている
+* TemperatureSensorAndHeaterの役割が２つある
 * システムの拡張性や柔軟性が低く、例えば別の種類のセンサーやヒーターに交換することが難しい
 
 
