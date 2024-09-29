@@ -334,3 +334,25 @@ if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
 ```
 
 ---
+
+## 要改善パターン① : ネスト (例2)
+
+定義先を変数ではなく関数とすると良い（こともある）
+
+```cs
+[GOOD]
+bool _IsValidMessage(messageId) => messageModelList.HasValidModel(messageId);
+bool _IsViewShownFor(messageId) => messageListPresenter.IsMessageShown(messageId);
+bool _IsUnderSending(messageId) => requestQueue.Contains(messageId);
+︙
+if (_IsValidMessage(messageId) &&
+    _IsViewShownFor(messageId) &&
+    _IsUnderSending(messageId))
+{
+    view.ShowStatusText("送信中です");
+}
+```
+
+---
+
+## 要改善パターン① : ネスト (例3)
