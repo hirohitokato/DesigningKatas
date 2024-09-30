@@ -2,7 +2,7 @@
 
 次のコードの問題点を調べ、依存関係逆転の原則を適用したコードに改善しよう。
 
-検証先リンク: https://paiza.io/ja/projects/new
+検証先リンク: https://paiza.io/ja/projects/new?language=cpp
 
 ## 改善前
 
