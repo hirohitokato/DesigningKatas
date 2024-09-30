@@ -1,4 +1,4 @@
-# Dependency Inversion Principle演習
+# Dependency Inversion Principle演習1
 
 次のコードの問題点を調べ、依存関係逆転の原則を適用したコードに改善しよう。
 
