@@ -356,3 +356,93 @@ if (_IsValidMessage(messageId) &&
 ---
 
 ## 要改善パターン① : ネスト (例3)
+
+![bg right:30% 90%](assets/25-for_nest.png)
+
+ネストだからと何でも削れば良いわけではない。
+
+```cs
+[BAD]
+void ...(List<MessageListPage> messageListPages) {
+    // ページのまとまりからメッセージを順に取り出し格納する
+    for (messageListPage in messageListPages) {
+        for (messageListChunk in messageListPage) {
+            for (messageModel in messageListChunk) {
+                repository.storeMessage(messageModel);
+            }
+        }
+    }
+}
+```
+
+---
+
+## 要改善パターン① : ネスト (例3)
+かえって読みにくくなってしまっている。
+```cs
+[BAD] /* スペースの都合でfor文の括弧を省いているので注意 */
+void ...(List<MessageListPage> messageListPages) {
+    for (messageListPage in messageListPages)
+        this.storeMessageForPage(messageListPage);
+}
+
+private void storeMessageForPage(MessageListPage page) {
+    for (chunk in page)
+        storeMessageForChunk(chunk);
+}
+
+private void storeMessageForChunk(MessageListChunk chunk) {
+    for (messageModel in chunk)
+        repository.storeMessage(messageModel);
+}
+```
+
+---
+
+## 要改善パターン① : ネスト (例3)
+
+**[対象を取り出す処理]** と **[対象に対して行う処理]** とで分割する
+
+```cs
+[GOOD]
+private void forEachMessage(List<MessageListPage> pages, Action<MessageModel> action) {
+    // スペースの都合でfor文の括弧を省いているので注意
+    for (page in pages)
+        for (chunk in page)
+            for(messageModel in chunk)
+                action(messageModel);
+}
+```
+```cs
+// 使用方法
+void ...(List<MessageListPage> messageListPages) {
+    forEachMessage(messageListPages, (messageModel) => {
+        repository.storeMessage(messageModel);
+    }
+}
+```
+
+---
+
+## 要改善パターン② : メソッドチェーン
+
+メソッドチェーン： メソッドの戻り値をレシーバとして、さらに別のメソッドを呼び出す書き方。
+
+```swift
+let label = UILabel()              // [Swift]ラベルオブジェクトを作成して
+    .size(width: 100, height: 40)  // 幅と高さを設定し、
+    .backgroundColor(.red)         // 背景色を赤にして、
+    .text("テキスト")               // 表示する文字は「テキスト」
+    .textColor(.white)             // 文字色は白(にしたものをlabelに代入)
+self.view.addSubview(label) // 作成したラベルを画面に表示
+```
+```cs
+var query = someList                // [C#]リスト構造のデータ
+            .Where(x => x % 2 == 0) // 偶数の要素のみ取り出し
+            .OrderBy(x => x)        // 昇順でソートして
+            .Select(x => x * 3);    // 各値を３倍(したものをqueryに代入)
+```
+
+---
+## 要改善パターン② : メソッドチェーンのメリット/デメリット
+
