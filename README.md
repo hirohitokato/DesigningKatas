@@ -192,6 +192,7 @@
 2. 2024/09/10 [[SOLID]開放閉鎖の原則(OCP) - 1h版](02-practical/02-solid-ocp-1h.md)
 3. 2024/09/17 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
 4. 2024/09/24 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md) ＆ [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
+5. 2024/10/01 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 
 ### 7th group
 
