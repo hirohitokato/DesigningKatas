@@ -455,3 +455,21 @@ var query = someList                // [C#]リスト構造のデータ
 * どこに重要なコードがあるのか分かりにくい
 * 途中の処理を受けているオブジェクト(レシーバ)が分かりにくい
 * デバッグしにくい（ブレークポイントが文の途中で設定できるものは一部のみ）
+
+→ 何もかもメソッドチェーンだけで書こうとしない。途中で分ける
+
+---
+
+## 要改善パターン② : メソッドチェーン
+
+→ 重要な部分でメソッドチェーンをいちど切る
+
+```kt
+val friendProfileBitmaps = userModelList
+    .filter { userModel -> userModel.isFriend }
+    .map { userModel -> userModel.profileBitmap }
+
+friendProfileBitmaps
+    .forEach { bitmap → imageGridView.addImage(bitmap) }
+```
+
