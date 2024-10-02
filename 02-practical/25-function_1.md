@@ -515,11 +515,12 @@ true, false // booleanリテラル
 >>> 1. 整数や文字列などのプリミティブなデータ型で、名前のついていないリテラルのこと
 
 ---
+## 要改善パターン③ : リテラル
 
-## 悪いマジックナンバーの解像度を上げる
+「悪いマジックナンバー」の解像度も上げよう
 
 **[問題]**
-このマジックナンバーが悪い理由を言語化してみよう。
+このマジックナンバーが悪い理由を言語化してください。
 
 ```cs
 const int TEN_THOUSAND = 10000;
@@ -527,10 +528,12 @@ const int TEN_THOUSAND = 10000;
 
 ---
 
-## 悪いマジックナンバーの解像度を上げる
+## 要改善パターン③ : リテラル
+
+「悪いマジックナンバー」の解像度も上げよう
 
 **[問題]**
-このマジックナンバーが悪い理由を言語化してみよう。
+このマジックナンバーが悪い理由を言語化してください。
 
 ```cs
 const int TEN_THOUSAND = 10000;
@@ -542,12 +545,77 @@ const int TEN_THOUSAND = 10000;
 * 名前による意味付けができていない
 * 目的を絞れていない
 
+>→ **同じ値が別の目的で使われないよう、マジックナンバーを定義・命名する**
+
 ---
 
-## ネスト・メソッドチェーン・リテラルに定義指向プログラミングを持ち込む
+## クラス内でメソッド分割を行うときの注意点
 
+メンバ変数(プロパティ)を扱うメソッドを局所化する。
 
+```cs
+[BAD]
+class SomeClass {
+    private View userNameTextView;
+    private View profileImageView;
 
->>> 定義指向プログラミング: 処理の途中を名前のついた変数・関数・クラスで定義していくプログラミングスタイル
+    SomeClass() {
+        userNameTextView = new View();
+        /* …userNameTextViewに対する長い初期化処理… */
 
-<!-- ほかだとオブジェクト指向～、アスペクト指向～、データ指向～ -->
+        profileImageView = new View();
+        /* …profileImageViewに対する長い初期化処理… */
+    }
+}
+```
+
+---
+## クラス内でメソッド分割を行うときの注意点
+
+```cs
+[BAD]
+class SomeClass {
+    private View userNameTextView;
+    private View profileImageView;
+    SomeClass() {
+        this.InitializeUserNameTextView();
+        this.InitializeProfileImageView();
+    }
+
+    private void InitializeUserNameTextView() {
+        userNameTextView = new View();
+        /* …userNameTextViewに対する長い初期化処理… */
+    }
+    private void InitializeProfileImageView() {
+        profileImageView = new View();
+        /* …profileImageViewに対する長い初期化処理… */
+    }
+}
+```
+
+---
+## クラス内でメソッド分割を行うときの注意点
+
+```cs
+[GOOD]
+class SomeClass {
+    private View userNameTextView;
+    private View profileImageView;
+    SomeClass() {
+        userNameTextView = this.CreateUserNameTextView();
+        profileImageView = this.CreateProfileImageView();
+    }
+
+    private View CreateUserNameTextView() { // 名前がInitialize～からCreate～に変わった点も注目
+        var view = new View();
+        /* …userNameTextViewに対する長い初期化処理… */
+        return view; // ローカル変数で作ったビューを返している(＝メンバー変数に触れていない)
+    }
+    private View CreateProfileImageView() {
+        var view = new View();
+        /* …profileImageViewに対する長い初期化処理… */
+        return view;
+    }
+}
+```
+---
