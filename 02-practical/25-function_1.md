@@ -639,7 +639,27 @@ class SomeClass {
 
 ---
 
-TOOD: ここにサンプルコードを書く（BAD & GOOD）
+## 早期リターンができていない例
+
+```py
+[BAD]
+if is_network_available():
+    query_result = query_to_server()
+    if query_result.is_valid:
+        # ...ハッピーパスの実装...
+    else:
+        show_invalid_response_dialog() # アンハッピーパス１
+else:
+    show_network_unavailable_dialog() # アンハッピーパス２
+```
+
+---
+
+## 早期リターンによる改善例
+
+```py
+
+```
 
 ---
 
