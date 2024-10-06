@@ -654,3 +654,5 @@ TOOD: ここにサンプルコードを書く（BAD & GOOD）
 ---
 
 ## 操作対象による関数分割(_split by object, not condition_)
+
+大きくなった、責務が混在した関数を分割するときは
