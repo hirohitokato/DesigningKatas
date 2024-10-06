@@ -646,30 +646,48 @@ class SomeClass {
 if is_network_available():
     query_result = query_to_server()
     if query_result.is_valid:
-        # ...ハッピーパスの実装...
+        result_str = query_result.parse()
+        if result_str != "":
+            # ...ハッピーパスの実装...
     else:
-        show_invalid_response_dialog() # アンハッピーパス１
+        show_invalid_response_dialog() # アンハッピーパス２
 else:
-    show_network_unavailable_dialog() # アンハッピーパス２
+    show_network_unavailable_dialog() # アンハッピーパス１
 ```
+
+…３つ目のif文がelseを持っていないのに気づきましたか？アンハッピーパスの記述順がチェック順と異なっているのに気が付きましたか？
 
 ---
 
 ## 早期リターンによる改善例
 
 ```py
+[GOOD]
+if not is_network_available:
+    show_network_unavailable_dialog() # アンハッピーパス１
+    return
 
+query_result = query_to_server()
+if not query_result.is_valid:
+    show_invalid_response_dialog() # アンハッピーパス２
+    return
+
+result_str = query_result.parse()
+if result_str == "":
+    return # アンハッピーパス３
+
+# ...ハッピーパスの実装...
 ```
 
 ---
 
-## 早期リターンのアンチパターン①： 分かりにくいリターン
-TOOD: ここにサンプルコードを書く（BAD & GOOD）
+## 早期リターンのコツ
 
----
-
-## 早期リターンのアンチパターン②： 不要なアンハッピーパス
-TOOD: ここにサンプルコードを書く（BAD & GOOD）
+* 早期リターンのまとまりを明確にする
+    * switch文の一部にreturnが紛れていたりすると可読性が落ちる
+* アンハッピーパスの妥当性に注意する
+    * コードが離れるためハッピーパスの仕様変更に追従しづらくなる
+    * 不要なチェックまで残りがちなのでハッピーパスと共に管理するよう気をつける
 
 ---
 
