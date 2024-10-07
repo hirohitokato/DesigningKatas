@@ -94,6 +94,7 @@
 29. 2024/09/17 [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md)
 30. 2024/09/24 [[読みやすいコードの書き方]命名(3)](02-practical/14-naming_3.md)
 31. 2024/10/01 [[読みやすいコードの書き方]命名(4)](02-practical/15-naming_4.md)
+32. 2024/10/08 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
 
 ### 3rd group
 
@@ -193,6 +194,7 @@
 3. 2024/09/17 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
 4. 2024/09/24 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md) ＆ [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 5. 2024/10/01 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
+6. 2024/10/08 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md) ＆ [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md)
 
 ### 7th group
 
