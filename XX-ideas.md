@@ -9,3 +9,9 @@
         * https://www.oreilly.co.jp/books/9784873119762/
         * Observer, Decorator, Factory, Singleton, Command, Adapter/Facade, Template Method, Iterator/Composite, State, Proxy, Compound(?)/State
             * 紹介されていない： Bridge,Builder,Chain of Responsibility, Flyweight, Interpreter, Mediator, Memento, Prototype, Visitor
+
+* ヌル許容型について書いたらヌルの歴史を公開する
+https://qiita.com/bigwheel/items/c4d60d91b3bbd7e6e130 null安全の観点から見たnull非許容型、null許容非安全型、null許容安全型の比較
+    > 端的に書くと、null許容非安全型の利用をやめて実行時例外が発生する危険をなくそう、というものになります。
+    > しかし、JavaやObjective-C, C#などでは言語デフォルトの型がnull許容非安全型であるためnull許容非安全型を使わないことは不可能です。
+    > そのためKotlinやSwift, TypeScriptなど言語デフォルトの型がnull許容安全型であるような言語への移行が2019年現在進んでいます。
