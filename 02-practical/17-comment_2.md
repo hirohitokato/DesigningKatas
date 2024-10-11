@@ -44,7 +44,7 @@ _Code Readability_
     * Python(PyDoc): `""" 〜 """`, C++/C#系: `/** 〜 */`で括られたコメント
 * APIリファレンスや、エディタ上でのクイックヒントなどに使われる
 
-![center 30%](assets/16-docucomment_swift.png)
+![center 25%](assets/16-docucomment_swift.png)
 
 ---
 
