@@ -104,7 +104,7 @@ _Code Readability_
 * データのソース：既に持っている値を返すか・計算で取得するか・ネットワークを使うか
 * 状態の変更を伴うか：何も変更しないか・キャッシュするか・元のデータを削除するか
 
-→ `find`,`search`,`pop`,`calculate`,`fetch`,`query`,`load`が思いつける
+→ `find`,`search`,`pop`,`calculate`,`fetch`,`query`,`load`などを連想できる
 
 <!-- ただし語彙力も重要。若かりし日の過ちを打ち明けると、「工場出荷リセットしてもずっと保持し続ける情報の格納庫」に
 EternalDataStoreと名付けてしまった。永久の/無限にはちょっと意味が大きすぎる。PersistentDataStore,FactoryResetSafeDataStoreにしておくべきだった。 -->
