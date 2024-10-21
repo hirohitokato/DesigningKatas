@@ -169,6 +169,8 @@ fun ...(userId: String) {
 
 ## 関数の責任: コマンド・クエリ分離の原則(CQS)
 
+たとえばこんなコードがあったとして…
+
 ```cs
 var a = new IntList([1, 2, 3])
 var b = new IntList([4, 5])
@@ -198,8 +200,9 @@ var c = a.getAppended(b) // 言語はC#を想定。リストaにbを追加した
 
 <!-- よくある例だと
 * アプリのショートカットキーが独特
-* Webページでリンク先をクリックしたときに広告が表示されたり、Backボタンで戻っているはずなのに「こんな記事もおすすめ」と別のページが挟まれて出てきたりする
-のが驚き最小の原則に違反している例 -->
+* Webページでリンク先をクリックしたときに広告が表示されたり、Backボタンで戻っているはずなのに
+「こんな記事もおすすめ」と別のページが挟まれて出てきたりする
+といったものが驚き最小の原則に違反している例 -->
 
 ---
 
@@ -233,7 +236,27 @@ var c = a.getAppended(b) // 言語はC#を想定。リストaにbを追加した
 
 「これはCommandだから戻り値は絶対にvoid」は悪手。実行後に結果をgetするメソッドを書かないといけない処理は不具合の温床になる。
 
-→ 関数の戻り値が主となる結果か、副次的な結果(メタデータ)かで判断する
+```kt
+[BAD]
+class UserModelRepository {
+    private var latestOperationResult: Int = ...
+
+    fun store(userModel: UserModel) {
+        ... // UserModelを保存する処理
+        latestOperationResult = (保存処理の結果)
+    }
+
+    fun wasLatestOperationSuccessful(): Boolean {
+        return latestOperationResult == 0
+    }
+}
+```
+
+---
+
+## 関数の責任: CQS適用/不適用の境界
+
+CQS適用/不適用 ← 関数の戻り値が主となる結果か、副次的な結果(メタデータ)かで判断する
 
 * <b>主となる結果</b>:
     * `toInt()`や`splitByComma()`などの変換関数の変換後の値、算術演算の計算結果、ファクトリ関数で作成されたインスタンス
@@ -242,3 +265,21 @@ var c = a.getAppended(b) // 言語はC#を想定。リストaにbを追加した
     * 失敗するかもしれない関数のエラー種別
     * → **CQSを適用しなくてよい**(クエリ系でも状態更新して良い)
 
+---
+
+## 関数の責任: CQS適用/不適用の境界
+
+改善例。CQSの範疇で結果を直ちに返すようにしている。
+
+```kt
+[GOOD]
+class UserModelRepository {
+    // 与えられたuserModelをストレージに保存する
+    //
+    // 保存処理は失敗する可能性があり、失敗した場合は非ゼロを返す(0=成功)
+    fun store(userModel: UserModel): Int {
+        ... // UserModelを保存する処理
+        return (保存処理の結果)
+    }
+}
+```
