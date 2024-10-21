@@ -199,6 +199,7 @@
 5. 2024/10/01 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
 6. 2024/10/08 [[読みやすいコードの書き方]命名(1)](02-practical/12-naming_1.md) ＆ [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md)
 7. 2024/10/15 [[読みやすいコードの書き方]命名(3)](02-practical/14-naming_3.md) ＆ [[読みやすいコードの書き方]命名(4)](02-practical/15-naming_4.md)
+8. 2024/10/22 [[読みやすいコードの書き方]関数(1)](02-practical/25-function_1.md) - 関数の責任 ＆ [[読みやすいコードの書き方]関数(2)](02-practical/26-function_2.md) - 関数の流れ
 
 ### 7th group
 
