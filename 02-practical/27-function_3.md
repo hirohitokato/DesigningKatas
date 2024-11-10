@@ -380,14 +380,16 @@ def create_header(message_type) -> Data: ...
     # タイプによるヘッダーの作成
     if message_type == MessageType.REGISTER_USER: ...
     elif message_type == MessageType.GET_STATUS: ...
+    return data 生成したデータを返す
 
 def create_body(message_type) -> Data: ...
 def create_footer(message_type) -> Data: ...
 ```
 
----
-
-## さらなるリファクタリング
+<!-- ポイントは２つある。
+* メインになるシーケンスを残しているため、何をしている処理なのかがわかりやすい
+* create_header()/body()/footer()などの処理が参照透過性を持っていること
+ -->
 
 ---
 
