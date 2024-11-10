@@ -318,12 +318,35 @@ if result_str == "":
 
 ---
 
-## 操作対象による関数分割
+## 関数分割のコツ: メインシーケンスを複数作らない
 
-|操作対象\条件|プレミアム<br/>アカウント|無料アカウント|
-|---|---|---|
-|背景色|赤色|灰色|
-|アイコン画像|ライオン|ひよこ|
+```py
+[BAD]
+class MessageType(Enum):
+    REGISTER_USER, GET_STATUS, ...
+
+def create_postdata(message_type: MessageType) # 送信データを生成
+    # データ先頭部の作成
+    if message_type == MessageType.REGISTER_USER: ...
+    elif message_type == MessageType.GET_STATUS: ...
+    elif ...
+
+    # データ本体部のレイアウト更新
+    if message_type == MessageType.REGISTER_USER: ...
+    elif message_type == MessageType.GET_STATUS: ...
+    elif ...
+    ：
+```
+
+>>> 本では「操作対象による分割」と表現しています
+
+---
+
+## 関数分割のコツ
+
+* `create_postdata()`を見ただけでは何をするか分からない
+* すべての分岐先で網羅性を担保できない
+    * 新しいデータ要素を追加: `MessageType.GET_STATUS`だけ更新忘れ
 
 ---
 
