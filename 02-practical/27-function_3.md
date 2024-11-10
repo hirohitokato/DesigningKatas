@@ -322,21 +322,20 @@ if result_str == "":
 
 ```py
 [BAD]
-class MessageType(Enum):
-    REGISTER_USER, GET_STATUS, ...
+class MessageType(Enum): REGISTER_USER, GET_STATUS, ...
 
 # この関数が肥大化しているので分割したい
-def create_postdata(message_type: MessageType): # 送信データを生成
+def send_message(message_type: MessageType, peer: URL): # データを生成し送信
     # データ先頭部の作成
     if message_type == MessageType.REGISTER_USER: ...
     elif message_type == MessageType.GET_STATUS: ...
     elif ...
-
     # データ本体部のレイアウト更新
     if message_type == MessageType.REGISTER_USER: ...
     elif message_type == MessageType.GET_STATUS: ...
     elif ...
     ：
+    send_to(peer, self.data)
 ```
 
 >>> 本では「操作対象による分割」と表現しています
@@ -347,7 +346,7 @@ def create_postdata(message_type: MessageType): # 送信データを生成
 
 ```py
 [BAD]
-def create_postdata(message_type: MessageType): # 送信データを生成
+def send_message(message_type: MessageType, peer: URL): # データを生成し送信
     # タイプによるデータの作成
     if message_type == MessageType.REGISTER_USER:
         create_postdata_for_registeruser()
@@ -355,11 +354,40 @@ def create_postdata(message_type: MessageType): # 送信データを生成
         create_postdata_for_getstatus()
     elif message_type == MessageType.…:
         :
+
+    send_to(peer, self.data)
 ```
 
 * `create_postdata()`を見ただけでは具体的な処理が分からない
 * すべての分岐先で網羅性を担保できない
     * 新しいデータ要素を追加: `MessageType.GET_STATUS`だけ更新忘れ
+
+---
+
+## 関数分割のコツ: メインシーケンスを１つにする
+
+```py
+[GOOD]
+def send_message(message_type: MessageType, peer: URL): # データを生成し送信
+    # データ生成
+    data = create_header(message_type)
+    data.append(create_body(message_type))
+    data.append(create_footer(message_type))
+    
+    send_to(peer, data)
+
+def create_header(message_type) -> Data: ...
+    # タイプによるヘッダーの作成
+    if message_type == MessageType.REGISTER_USER: ...
+    elif message_type == MessageType.GET_STATUS: ...
+
+def create_body(message_type) -> Data: ...
+def create_footer(message_type) -> Data: ...
+```
+
+---
+
+## さらなるリファクタリング
 
 ---
 
