@@ -325,7 +325,8 @@ if result_str == "":
 class MessageType(Enum):
     REGISTER_USER, GET_STATUS, ...
 
-def create_postdata(message_type: MessageType) # 送信データを生成
+# この関数が肥大化しているので分割したい
+def create_postdata(message_type: MessageType): # 送信データを生成
     # データ先頭部の作成
     if message_type == MessageType.REGISTER_USER: ...
     elif message_type == MessageType.GET_STATUS: ...
@@ -344,7 +345,19 @@ def create_postdata(message_type: MessageType) # 送信データを生成
 
 ## 関数分割のコツ
 
-* `create_postdata()`を見ただけでは何をするか分からない
+```py
+[BAD]
+def create_postdata(message_type: MessageType): # 送信データを生成
+    # タイプによるデータの作成
+    if message_type == MessageType.REGISTER_USER:
+        create_postdata_for_registeruser()
+    elif message_type == MessageType.GET_STATUS:
+        create_postdata_for_getstatus()
+    elif message_type == MessageType.…:
+        :
+```
+
+* `create_postdata()`を見ただけでは具体的な処理が分からない
 * すべての分岐先で網羅性を担保できない
     * 新しいデータ要素を追加: `MessageType.GET_STATUS`だけ更新忘れ
 
