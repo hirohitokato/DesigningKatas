@@ -112,7 +112,7 @@ c = calculate_sqrt(a_square + b_square)
 
 ---
 
-## 要改善パターン① : ネスト (例1)
+## 定義指向プログラミング適用例① : ネスト (例1)
 
 ```cs
 [BAD]
@@ -129,7 +129,7 @@ someView.ShowDialogOnError(                   // (もし取得失敗したらエ
 
 ---
 
-## 要改善パターン① : ネスト (例1)
+## 定義指向プログラミング適用例① : ネスト (例1)
 
 ```cs
 [BAD]
@@ -153,7 +153,7 @@ catch (Exception e) { // エラーを変数に定義
 
 ---
 
-## 要改善パターン① : ネスト (例2)
+## 定義指向プログラミング適用例① : ネスト (例2)
 
 ```cs
 [BAD]
@@ -178,7 +178,7 @@ if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
 
 ---
 
-## 要改善パターン① : ネスト (例2)
+## 定義指向プログラミング適用例① : ネスト (例2)
 
 定義先を変数ではなく関数とすると良い（こともある）
 
@@ -198,7 +198,7 @@ if (_IsValidMessage(messageId) &&
 
 ---
 
-## 要改善パターン① : ネスト (例3)
+## 定義指向プログラミング適用例① : ネスト (例3)
 
 ![bg right:30% 90%](assets/25-for_nest.png)
 
@@ -220,7 +220,7 @@ void ...(List<MessageListPage> messageListPages) {
 
 ---
 
-## 要改善パターン① : ネスト (例3)
+## 定義指向プログラミング適用例① : ネスト (例3)
 かえって読みにくくなってしまっている。
 ```cs
 [BAD] /* スペースの都合でfor文の括弧を省いているので注意 */
@@ -249,7 +249,7 @@ private void storeMessageForChunk(MessageListChunk chunk) {
  -->
 ---
 
-## 要改善パターン① : ネスト (例3)
+## 定義指向プログラミング適用例① : ネスト (例3)
 
 **[対象を取り出す処理]** と **[対象に対して行う処理]** とで分割する
 
