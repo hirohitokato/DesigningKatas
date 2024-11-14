@@ -141,7 +141,7 @@ someView.ShowDialogOnError(                   // (もし取得失敗したらエ
 ```cs
 [GOOD]
 try {
-    var userModel = userRepository.queryUserModel(userId); // いちど変数に定義
+    var userModel = userRepository.queryUserModel(userId); // 変数にいったん定義
     presenter.UpdateSelfProfileView(userModel);
 }
 catch (Exception e) { // エラーを変数に定義
