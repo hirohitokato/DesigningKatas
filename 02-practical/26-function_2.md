@@ -108,6 +108,8 @@ b_square = func_a(b, 2)
 c = calculate_sqrt(a_square + b_square)
 ```
 
+`#define M_PI 3.14159`,`const NAME_KEY="name"`なども同じ
+
 ---
 
 ## 要改善パターン① : ネスト (例1)
