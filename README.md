@@ -6,7 +6,7 @@
 
 各スライドは[Marp](https://marp.app/)を使って作成しています。手元の環境でもスライド形式で閲覧したい場合、Marp で PDF 等に変換するか、Visual Studio Code の[Marp for VS Code 拡張機能](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)をインストールして vscode 上でご覧ください。
 
-※カスタムテーマや閲覧設定は[.vscode/settings.json](.vscode/settings.json)で設定済みです。
+※Marpのカスタムテーマや閲覧時設定は[.vscode/settings.json](.vscode/settings.json)で設定済みです。
 
 ## 勉強会の実施履歴
 
@@ -132,6 +132,7 @@
 26. 2024/09/20 [[読みやすいコードの書き方]命名(2)](02-practical/13-naming_2.md) & [エンジニアが覚えておくと良いかもしれない10個の法則](10-humor\12-ten_engineers_laws.md)
 27. 2024/09/27 [[読みやすいコードの書き方]命名(3)](02-practical/14-naming_3.md)
 28. 2024/10/11 [[読みやすいコードの書き方]命名(4)](02-practical/15-naming_4.md)
+29. 2024/11/15 [もう一度学ぶオブジェクト指向](01-basics/22-objectoriented.md)
 
 ### 4th group
 
