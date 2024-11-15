@@ -154,7 +154,7 @@ obj->methodB(); // → 193
 
 ---
 
-## 抽象クラス / インターフェース
+## 補足:抽象クラス / インターフェース
 
 ```cpp
 // 抽象クラス。実処理が(一部)書かれている。
@@ -165,7 +165,7 @@ struct AbstractBase {
     virtual void methodB() = 0; // 実処理を持たない
 };
 
-// インターフェースクラス。一切の実装を持たない
+// インターフェース型。一切の実装を持たない
 struct SomeInterface {
     virtual ~SomeInterface(){} // 仮想デストラクタ
     virtual void methodA() = 0;
