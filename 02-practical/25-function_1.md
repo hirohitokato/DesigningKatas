@@ -283,3 +283,7 @@ class UserModelRepository {
     }
 }
 ```
+
+---
+
+## ここまでのまとめ
