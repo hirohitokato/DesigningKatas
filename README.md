@@ -160,7 +160,8 @@
 20. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 21. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 22. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
-23. --- 5th groupと合流 → 7th groupで管理 ---
+
+--- 5th groupと合流 → 以降は7th groupで実施 ---
 
 ### 5th group
 
@@ -189,7 +190,8 @@
 21. 2024/07/17 [[SOLID]リスコフの置換原則(LSP)](02-practical/03-solid-lsp.md)
 22. 2024/07/24 [[SOLID]インターフェース分離の原則(ISP)](02-practical/04-solid-isp.md)
 23. 2024/08/21 [[SOLID]依存関係逆転の原則(DIP)](02-practical/05-solid-dip.md)
-24. --- 4th groupと合流 → 7th groupで管理 ---
+
+--- 4th groupと合流 → 以降は7th groupで実施 ---
 
 ### 6th group
 
