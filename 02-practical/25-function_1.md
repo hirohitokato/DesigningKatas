@@ -279,3 +279,8 @@ class UserModelRepository {
 ---
 
 ## ここまでのまとめ
+
+関数の責任は単一であるべきで、コマンド系とクエリ系とを分けるようにする
+
+* 責任の分割の基本方針
+* コマンドとクエリの分割(Command-Query Separation. CQS)
