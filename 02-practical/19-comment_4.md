@@ -151,11 +151,11 @@ fun ...() { // [BETTER]
 struct WordReplacementEntry (
     int startIndex;
     int endIndex;
-    int newText;
+    std::string newText;
 )
 
 /** 文字列を置換。 "foo"にWordReplacementEntry(0,2,"b")で
- *  呼び出すと 0番目から2個の要素がbに変わり、 "bbo" が得られる.
+ *  呼び出すと 0番目から2個の要素がbに変わり、 "bo" が得られる.
  *  entriesはstartIndexの値が昇順で並んでいること */
 void someFunction(string& str, WordReplacementEntry[] entries) {
 
@@ -183,7 +183,7 @@ void someFunction(string& str, vector<WordReplacementEntry> entries) {
 もし`reversed()`がないコードでで以下を呼び出すとどうなる？
 
 ```cpp
-someFunction("Unreadable", [Word～(0,3,"R"), Word～(10,11,"!")]);
+someFunction("Unreadable.", [Word～(0,3,"R"), Word～(10,11,"!")]);
 ```
 
 ---
