@@ -72,10 +72,10 @@ _Code Readability_
 コードが長くても別クラスや関数に抽出・分割しないほうが良いケースもある。
 
 ```kt
-fun ...() {
+fun ...() { // [NOT GOOD]
     val messageCache = ...
-    val messageKey = ...
      ︙(何行か処理が続く)
+    val messageModel = messageCache.query(...)
 
      if (messageModel == null || ...) { ... }
      ︙(何行か処理が続く)
@@ -88,11 +88,11 @@ fun ...() {
 コードが長くても別クラスや関数に抽出・分割しないほうが良いケースもある。
 
 ```kt
-fun ...() {
+fun ...() { // [GOOD]
     // メッセージモデルをキャッシュから取得する
     val messageCache = ...
-    val messageKey = ...
      ︙
+    val messageModel = messageCache.query(...)
 
      // メッセージモデルのキャッシュが存在しないなら、データベースから取得する
      if (messageModel == null || ...) { ... }
@@ -112,6 +112,27 @@ fun ...() {
     * その関数の再利用性は低い
 * 時間的凝集の改善方法
     * 実装を機能的凝集の関数（単一の機能を処理する関数）に切り出す。 -->
+
+<!-- リファクタリングの気付きにもなる(p84)。 messageModel == null ってどういう状態というのが
+分かりにくいから「キャッシュが存在しないなら」とコメントに書かなければならない。だから -->
+
+---
+
+## 非形式的なコメント: 1.大きなコードの分割
+
+コメントがリファクタリングのヒントを与えることもある
+
+```kt
+fun ...() { // [BETTER]
+    // メッセージモデルをキャッシュから取得する
+    val messageCache = ...
+     ︙
+    val cachedMessageModel = messageCache.query(...) // messageModelから変更
+
+     // 必要ならデータベースから取得する
+     if (cachedMessageModel == null || ...) { ... }
+     ︙
+```
 
 ---
 
