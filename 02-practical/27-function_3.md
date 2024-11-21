@@ -98,6 +98,13 @@ var query = someList                // [C#]リスト構造のデータ
 → 重要な部分でメソッドチェーンをいちど切る
 
 ```kt
+[BAD]
+userModelList.filter { userModel -> userModel.isFriend }
+             .map { userModel -> userModel.profileBitmap }
+             .forEach { bitmap → imageGridView.addImage(bitmap) }
+```
+
+```kt
 [GOOD]
 val friendProfileBitmaps = userModelList
     .filter { userModel -> userModel.isFriend }
