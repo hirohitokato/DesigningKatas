@@ -160,7 +160,7 @@ struct WordReplacementEntry (
 void someFunction(string& str, WordReplacementEntry[] entries) {
 
     for (auto entry in entries.reversed()) { // ←なぜreversed()??
-        str.replace(entry.startIndex, entry.endIndex, entry.newText)
+        str.replace(entry.startIndex, entry.endIndex, entry.newText);
     }
 }
 ```
@@ -171,7 +171,7 @@ void someFunction(string& str, WordReplacementEntry[] entries) {
 
 隠れた２つの条件がある。
 
-1. entriesはstartIndexで昇順にソートされている
+1. entriesは何故startIndexで昇順にソートされているか
 2. 置換の前後で文字列の長さは変わりうる
 
 ```cpp
@@ -183,7 +183,7 @@ void someFunction(string& str, vector<WordReplacementEntry> entries) {
 もし`reversed()`がないコードでで以下を呼び出すとどうなる？
 
 ```cpp
-someFunction("Unreadable.", [Word～(0,3,"R"), Word～(10,11,"!")]);
+someFunction("Unreadable.", [Word～(0,2,"R"), Word～(10,11,"!")]);
 ```
 
 ---
