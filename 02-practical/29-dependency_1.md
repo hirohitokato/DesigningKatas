@@ -155,21 +155,38 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ---
 
-## 内容結合
+## 内容結合: アンチパターン①
 
 ```cs
-[BAD]
+[BAD] // 内容結合を破れる、不正な使い方が可能なコード
 class Calculator {
     int Result = -1;
     void Prepare(int lhs, int rhs) { … } // 計算の準備をする
     void Calculate(…) { … } // 計算する
     void TearDown(…) { … } // 計算の後始末をする
 }
-// 使い方
-calculator.prepare(3, 5);
+// 使い方。Prepare→Calculate→TearDownの順に呼び、Resultを読む
+calculator.Prepare(3, 5);
 calculator.Calculate();
 calculator.TearDown();
 Console.WriteLine(calculator.Result);
+```
+
+Quiz: 内容結合を破る使い方を考えてみよう
+
+---
+
+## 内容結合: アンチパターン①
+
+内容結合を破るコードの例
+
+```cs
+[BAD]
+// 依存先のコードを変更する
+calculator.Result = 42;
+
+// 依存先の内部のコードに直接ジャンプする
+calculator.Calculate(); // Prepare()を呼ばずに実行
 ```
 
 ---
