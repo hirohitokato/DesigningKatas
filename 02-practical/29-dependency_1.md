@@ -162,8 +162,8 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 class Calculator {
     int Result = -1;
     void Prepare(int lhs, int rhs) { … } // 計算の準備をする
-    void Calculate(…) { … } // 計算する
-    void TearDown(…) { … } // 計算の後始末をする
+    void Calculate() { … } // 計算する
+    void TearDown() { … } // 計算の後始末をする
 }
 // 使い方。Prepare→Calculate→TearDownの順に呼び、Resultを読む
 calculator.Prepare(3, 5);
@@ -188,6 +188,71 @@ calculator.Result = 42;
 // 依存先の内部のコードに直接ジャンプする
 calculator.Calculate(); // Prepare()を呼ばずに実行
 ```
+
+---
+
+## 内容結合: アンチパターン①
+
+内容結合を破るコードの例
+
+```cs
+[BAD] // 内容結合を破るコードの例 1
+// 依存先のコードを変更する
+calculator.Result = 42;
+
+// 依存先の内部のコードに直接ジャンプする
+calculator.Calculate(); // Prepare()を呼ばずに実行
+```
+
+---
+
+## 内容結合: アンチパターン①
+
+```cs
+[BAD] // 内容結合を破るコードの例 2
+void CalculateCells() {
+    calculator.Prepare(…); // calculatorは共通とする
+    calculator.Calculate();
+    calculator.TearDown
+
+    CalculateAnotherCell();
+    Console.WriteLine(calculator.Result); // 意図したコード？
+}
+
+void CalculateAnotherCell() {
+    calculator.Prepare(…);
+    calculator.Calculate();
+    calculator.TearDown
+}
+```
+
+---
+
+## アンチパターン①の緩和策: 依存元に対する制約の最小化
+
+```cs
+[GOOD]
+class Calculator {
+    int Calculate(int lhs, int rhs) {
+        this.Prepare(lhs, rhs);
+        // ... 元のCalculateの処理 ...
+        this.TearDown();
+        return result;
+    }
+    // 見せる必要のないものはprivateに変更
+    private int result = -1;
+    private void Prepare(int lhs, int rhs) { … } // 計算の準備をする
+    private void TearDown(…) { … } // 計算の後始末をする
+}
+```
+
+---
+
+## 内容結合: アンチパターン②
+
+内部状態を共有するコード
+
+TODO
 
 ---
 
