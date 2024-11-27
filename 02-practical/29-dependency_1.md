@@ -142,6 +142,7 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 >>> 注： 外部結合の定義は文献によって全く異なるため原典を明記しています
 
 ---
+
 ## 内容結合
 
 隠蔽されるべきコードの詳細に依存するもの
@@ -150,9 +151,26 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 - 依存先に隠蔽された変数を、外部から参照する
 - 依存先の内部のコードに直接ジャンプする
 
+→ そんなコード書ける？ … 書けます。
+
 ---
 
-TODO
+## 内容結合
+
+```cs
+[BAD]
+class Calculator {
+    int Result = -1;
+    void Prepare(int lhs, int rhs) { … } // 計算の準備をする
+    void Calculate(…) { … } // 計算する
+    void TearDown(…) { … } // 計算の後始末をする
+}
+// 使い方
+calculator.prepare(3, 5);
+calculator.Calculate();
+calculator.TearDown();
+Console.WriteLine(calculator.Result);
+```
 
 ---
 
