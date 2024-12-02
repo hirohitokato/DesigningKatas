@@ -178,7 +178,7 @@ Console.WriteLine(calculator.Result);
 
 ## 内容結合: アンチパターン①: 内容結合を破るコード
 
-クイズの回答(一例)
+クイズの回答
 
 ```cs
 [BAD]
@@ -193,20 +193,7 @@ calculator.Calculate(); // Prepare()を呼ばずに実行
 
 ## 内容結合: アンチパターン①
 
-内容結合を破るコードの例
-
-```cs
-[BAD] // 内容結合を破るコードの例 1
-// 依存先のコードを変更する
-calculator.Result = 42;
-
-// 依存先の内部のコードに直接ジャンプする
-calculator.Calculate(); // Prepare()を呼ばずに実行
-```
-
----
-
-## 内容結合: アンチパターン①
+別回答。自分自身で結合してしまっている。
 
 ```cs
 [BAD] // 内容結合を破るコードの例 2
@@ -225,6 +212,8 @@ void CalculateAnotherCell() {
     calculator.TearDown
 }
 ```
+
+<!-- 重ねて使っていることにより、本来守るべき一連の行動が崩れてしまい、処理の途中で別の処理を結合してしまっている。 -->
 
 ---
 
@@ -248,21 +237,88 @@ class Calculator {
 
 ---
 
-## 内容結合: アンチパターン②
-
-内部状態を共有するコード
+## 内容結合: アンチパターン②: 内部状態を共有するコード
 
 ```cs
+[BAD]
 class Foo {
-    public IList<string> Users;
-    public Foo(IList<string> users) {
-
-    }
+    private IList<string> Users;
+    public Foo(IList<string> users) { Users = users; }
+    // :
+    // Usersを使った処理。変更したときはFooから通知を飛ばす
+    // :
 }
+
+var users = new List<string>();
+var foo = new Foo(users);
+
+users.Apped("new user"); // fooは変更を検知できない！
 ```
 
 <!-- Dependency Injectionでやりがち -->
 
+---
+
+## 内容結合: アンチパターン②: 内部状態を共有するコード
+
+```cs
+class Foo {
+    private IList<string> Users;
+    public Foo(IList<string> users) { Users = users; }
+    // Usersを変えた時には通知を飛ばす
+}
+
+class Bar {
+    private IList<string> Users;
+    public Bar(IList<string> users) { Users = users; }
+    public void Add(string name) { Users.Append(name); }
+}
+
+var users = new List<string>();
+var foo = new Foo(users);
+var bar = new Bar(users);
+bar.Add("new user"); // fooは変更を検知できない！
+```
+
+<!-- Dependency Injectionでやりがち -->
+
+---
+
+## アンチパターン②の緩和策: 責任の明確化
+
+### 1.通知がUsersの変更を意味する
+
+リストを管理するクラスを別に用意する
+→ リスト操作APIを用意し、通知処理をその中で実装する
+
+### 2.リストの変更ができるのはFooクラスのみ
+
+BarクラスにはIReadOnlyListを渡す
+→ Barクラスでの変更が不可能になり、想定外の変更を避けられる
+
+---
+
+## アンチパターン②の緩和策: 責任の明確化
+
+### 1.通知がUsersの変更を意味する → リストのクラス化
+
+```cs
+class UserList {
+    private List<string> users = new List<string>();
+    void Append(string newUser) { ... }
+    string Get(int index) { ... }
+}
+```
+
+
+### 2.リストの変更ができるのはFooクラスのみ → Barは読み取り専用で使う
+
+```cs
+class Bar {
+    private IReadOnlyList<string> Users;
+    public Bar(IList<string> users) { Users = users; }
+}
+```
 ---
 
 ## 共通結合 ＆ 外部結合
