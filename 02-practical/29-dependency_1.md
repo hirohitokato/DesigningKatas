@@ -155,12 +155,12 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ---
 
-## 内容結合: アンチパターン①
+## 内容結合: アンチパターン①: 内容結合を破れるコード
 
 ```cs
 [BAD] // 内容結合を破れる、不正な使い方が可能なコード
 class Calculator {
-    int Result = -1;
+    int Result = -1; // Calculate()の結果を保持する
     void Prepare(int lhs, int rhs) { … } // 計算の準備をする
     void Calculate() { … } // 計算する
     void TearDown() { … } // 計算の後始末をする
@@ -172,13 +172,13 @@ calculator.TearDown();
 Console.WriteLine(calculator.Result);
 ```
 
-Quiz: 内容結合を破る使い方を考えてみよう
+**Quiz**: 内容結合を破る使い方を考えてみよう
 
 ---
 
-## 内容結合: アンチパターン①
+## 内容結合: アンチパターン①: 内容結合を破るコード
 
-内容結合を破るコードの例
+クイズの回答(一例)
 
 ```cs
 [BAD]
@@ -252,7 +252,16 @@ class Calculator {
 
 内部状態を共有するコード
 
-TODO
+```cs
+class Foo {
+    public IList<string> Users;
+    public Foo(IList<string> users) {
+
+    }
+}
+```
+
+<!-- Dependency Injectionでやりがち -->
 
 ---
 
