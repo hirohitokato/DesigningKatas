@@ -274,7 +274,6 @@ var both = new Contact("Alice", new BothContact("<email>", "<address>"));
 enum ContactInfo {
     case email(String), postal(String), both(email: String, postal: String)
 }
-
 struct Contact {
     let name: String
     let info: ContactInfo
@@ -287,6 +286,8 @@ struct Contact {
         }
     }
 }
+
+let contact = ContactInfo.email("foobar@example.com")
 ```
 
 ---
@@ -434,7 +435,7 @@ memo: 値を返すときに、失敗は異常値を返すという関数も良�
 
 ## まとめ
 
-1. プログラムは状態だらけ。できるだけ数を減らしたい
+1. プログラムは状態だらけ。できるだけ仕組みを単純にしたい
 2. 状態について、安全に管理できる状況を設計時から作り出したい
 
 # 　
