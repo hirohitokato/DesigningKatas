@@ -335,7 +335,40 @@ class Bar {
 
 ---
 
-TODO
+## 共通結合＆外部結合のアンチパターンと回避策
+
+### グローバル変数を使って値を受け渡し
+
+関数の引数と戻り値を使って値の受け渡しを行う
+
+### 可変なシングルトンの使用
+
+DI(Dependency Injection/依存性注入)を使う
+
+---
+
+## 可変なシングルトン使用の緩和策: DI
+
+```cs
+[BAD]
+public static class UserModelRepository {
+    public static UserModelRepository SharedInstance() { ... }
+};
+
+// 色々なクラス/場所で UserModelRepository.SharedInstance() を使用...
+```
+
+```cs
+[GOOD]
+class SomeClass {
+    private UserModelRepository _userModelRepository;
+    SomeClass(UserModelRepository repository) { _userModelRepository = repository; }
+
+    // repositoryを介して使用
+}
+```
+
+コンストラクタの呼び出し元がインスタンスの生存期間や参照を管理できる
 
 ---
 
