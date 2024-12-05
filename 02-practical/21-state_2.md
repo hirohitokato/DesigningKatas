@@ -287,7 +287,7 @@ struct Contact {
     }
 }
 
-let contact = ContactInfo.email("foobar@example.com")
+let contact = Contact("John", ContactInfo.email("foobar@example.com"))
 ```
 
 ---
