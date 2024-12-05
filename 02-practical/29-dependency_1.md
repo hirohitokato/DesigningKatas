@@ -368,8 +368,27 @@ class SomeClass {
 }
 ```
 
-コンストラクタの呼び出し元がインスタンスの生存期間や参照を管理できる
+↑コンストラクタの呼び出し元がインスタンスの生存期間や参照を管理できる
 
+---
+
+## 念のため…身近に潜む共通結合
+
+クラス内でも共通結合は起こせる。
+
+```cs
+[BAD]
+class Klass {
+    private int _result = -1; // 関数を跨いだ結合になっている
+    public void Calculate(int lhs, int rhs) {
+        _result = lhs + rhs;
+    }
+
+    public int GetResult() {
+        return _result;
+    }
+}
+```
 ---
 
 ## 制御結合
