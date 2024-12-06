@@ -123,6 +123,24 @@ fun ...() { // [GOOD]
 コメントがリファクタリングのヒントを与えることもある
 
 ```kt
+fun ...() { // [GOOD] だけど…
+    // メッセージモデルをキャッシュから取得する
+    val messageCache = ...
+     ︙
+    val messageModel = messageCache.query(...)
+
+     // メッセージモデルのキャッシュが存在しないなら、データベースから取得する
+     if (messageModel == null || ...) { ... }
+     ︙
+```
+
+`messageModel==null`＝「キャッシュが存在しない」は少し強引ではないか…？ 🤔
+
+---
+
+## 非形式的なコメント: 1.大きなコードの分割
+
+```kt
 fun ...() { // [BETTER]
     // メッセージモデルをキャッシュから取得する
     val messageCache = ...
@@ -133,6 +151,8 @@ fun ...() { // [BETTER]
      if (cachedMessageModel == null || ...) { ... }
      ︙
 ```
+
+「簡便にコメントが書けないのはコードが臭いせいかも…🤔」と疑ってみよう
 
 ---
 
