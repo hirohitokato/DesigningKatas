@@ -161,22 +161,114 @@ class Klass {
 
 ## 制御結合
 
-フラグなどにより複数の処理を分岐させている
+フラグなどにより複数の処理を分岐させている。分岐なので悪とは言い切れない。
+
 ただし、
 
-- 不必要に条件分岐の粒度が大きい
+- 条件分岐の粒度が不必要に大きい
 - 条件分岐間での動作の関連性が薄い
 
-という状態。
+という状態に注意する。
 
 ---
+
+## 制御結合のアンチパターン①: 条件分岐の粒度が不必要に大きい
+
+**✕各条件分岐内の操作対象が同じにも関わらず大きな範囲で条件分岐している**
 
 ```cs
+[BAD]
+void UpdateView(bool isError) {
+    if (isError) { // エラー発生を画面に表示する
+        _resultView.Visible = false;
+        _errorView.Visible = true;
+        _iconView.Image = CROSS_MARK_IMAGE;
+    } else { // 正常時は結果を画面に表示する
+        _resultView.Visible = true;
+        _errorView.Visible = false;
+        _iconView.Image = CHECK_MARK_IMAGE;
+    }
+}
 ```
+* 分岐の全てを読まないと「何をしているか」が分からない、仕様変更に弱い
 
 ---
 
-TODO
+## アンチパターン①の緩和策: 操作対象による分割
+
+条件ではなく操作対象ごとにコードを分割する
+
+```cs
+[GOOD]
+void UpdateView(bool isError) {
+    _resultView.Visible = !isError;
+    _errorView.Visible = isError;
+    _iconView.Image = GetIconImage(isError);
+}
+
+Image GetIconImage(bool isError) {
+    return isError ? CROSS_MARK_IMAGE : CHECK_MARK_IMAGE;
+}
+```
+
+✔ 関数の流れが単純になり、制御結合をより細かい範囲に限定/隠蔽出来ている
+
+---
+
+## 制御結合のアンチパターン②: 条件分岐間での動作の関連性が薄い
+
+```cs
+[BAD]
+void UpdateUserView(DataType dataType) {
+    switch(dataType) {
+    case DataType.UserName: // データ種別がユーザー名の場合
+        _userNameView.Text = GetUserName(userId);
+        break;
+    case DataType.BirthDate: // データ種別が誕生日の場合
+        _birthDateView.Text = GetBirthDate(userId);
+        break;
+    case DataType.ProfileImage: // プロフィール画像を更新
+        _profileImageView.Image = FetchProfileImage(userId);
+        ...
+    }
+}
+```
+
+* 抽象化しないと網羅表現できない
+* dataTypeは依存元でも条件分岐で決めているかもしれない(分岐の重複)
+
+---
+
+## アンチパターン②の緩和策: 不必要な条件分岐の消去
+
+```cs
+void UpdateUserNameView() {
+    _userNameView.Text = GetUserName(userId);
+}
+
+void UpdateBirthDateView() {
+    _birthDateView.Text = GetBirthDate(userId);
+}
+
+void UpdateProfileImageView() {
+    _profileImageView.Image = FetchProfileImage(userId);
+}
+```
+
+無駄なポータルサイト(Facade)を作ろうとしない。
+
+>>> ただし各関数内での処理多い場合には重複コードが増えて管理コストが爆発するので、ポリモーフィズムや関数テーブルの適用を考える
+
+---
+
+## 制御結合のまとめ
+
+* 条件分岐によって
+    * 分割すべき視点/範囲を誤って表現していないか
+    * 関係のない処理を１つにまとめていないか
+* 対策
+    * 操作対象による分割で細かい範囲に限定/隠蔽する
+    * 内部の条件分岐が必要かどうか考える
 
 ---
 
