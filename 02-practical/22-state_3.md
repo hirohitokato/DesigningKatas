@@ -210,12 +210,37 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 
 ---
 
+## 不変性: 局所的な不変性
+
+値のライフサイクルが異なるものを混ぜない
+
+```cs
+[BAD]
+class UserDataModel {
+    string Name;
+    string Identifier;
+    bool IsOnline; // これだけ頻繁に更新される = ライフサイクルが異なる
+}
+   ↓
+[GOOD]
+class UserStatus { bool IsOnline; ... }
+class UserInformation {
+    string Name; ...
+    UserStatus Status;
+}
+```
+
+状態変化に伴う不具合の発生箇所を限定できる
+
+---
+
 ## 不変性のまとめ
 
 * 不正な状態遷移を**起こせない**コードにする
     * そもそも状態遷移がないデータ構造を使えば、不正な状態遷移は発生しない
 * ただし言語によっては抜け穴が存在できてしまう書き方があるので要注意
     * プリミティブな値は良いがオブジェクトには注意
-
-不変にできる部分を局所化して安全地帯を設け、それを育てるのも良い
+    * 自分の使う言語の仕様にも詳しくなろう
+* 不変にできる部分を局所化して安全地帯を設ける
+    * 不具合発生箇所をコントロールする考え方を持とう
 
