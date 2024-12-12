@@ -58,7 +58,7 @@ class Y { // 依存先クラス
  
  ## 理想的な依存関係
 
-* 依存関係が弱い
+* 依存関係が弱い（≠依存関係がない）
 * 循環依存や重複した依存がない
 * 明示的な依存関係になっている
 
@@ -107,11 +107,11 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ### グローバル変数を使って値を受け渡し
 
-関数の引数と戻り値を使って値の受け渡しを行う
+→ 関数の引数と戻り値を使って値の受け渡しを行う
 
 ### 可変なシングルトンの使用
 
-DI(Dependency Injection/依存性注入)を使う
+→ DI(Dependency Injection/依存性注入)を使う
 
 ---
 
