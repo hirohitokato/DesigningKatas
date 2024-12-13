@@ -17,30 +17,30 @@ paginate: true
 
 ## ここまでの内容
 
-* [銀の弾などない(No silver bullet)](./01-no_silver_bullets.md)
-* [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
-* [KISS(Keep It Simple, Stupid)](./03-kiss.md)
-* [DRY(Don't Repeat Yourself)](./04-dry.md)
-* [名前重要](./05-naming_is_important.md)
-* [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
-* [参照の一点性](./07-single_point_of_reference.md)
-* [７つの設計原理](./08-seven_design_principles.md)
-* [PIE(Program Intently and Expressively)](./09-pie.md)
-* [TMTOWTDI](./10-tmtowtdi.md)
-* [なぜ配列の要素番号はゼロから始まるのか](../09-techniques/02-why-index-start-with0.md)
+- [銀の弾などない(No silver bullet)](./01-no_silver_bullets.md)
+- [分割と統治(Divide and Conquer)](./02-divide_and_conquer.md)
+- [KISS(Keep It Simple, Stupid)](./03-kiss.md)
+- [DRY(Don't Repeat Yourself)](./04-dry.md)
+- [名前重要](./05-naming_is_important.md)
+- [SLAP(Single Level of Abstraction Principle)](./06-slap.md)
+- [参照の一点性](./07-single_point_of_reference.md)
+- [７つの設計原理](./08-seven_design_principles.md)
+- [PIE(Program Intently and Expressively)](./09-pie.md)
+- [TMTOWTDI](./10-tmtowtdi.md)
+- [なぜ配列の要素番号はゼロから始まるのか](../09-techniques/02-why-index-start-with0.md)
 
 ---
 
 ## 書籍『プリンシプル オブ プログラミング』による原則の分類$^1$
 
-* **前提** 〜プログラミングの変わらぬ真実〜
-    * 普遍的な事実であり、前提知識
-* **原則** 〜プログラミングのガイドライン〜
-    * 多くの場合に適用されるべき基本的な決まりごと。鉄則よりは若干弱い
-* **思想** 〜プログラミングのイデオロギー〜
-    * 過去のプログラミングにおいて影で支えてきた文化・哲学・価値観。思想的な下支え
-* **習慣** 〜ルーティーン〜
-    * 良いコードを書くプログラマが日常的に行っていること、心がけていること
+- **前提** 〜プログラミングの変わらぬ真実〜
+    - 普遍的な事実であり、前提知識
+- **原則** 〜プログラミングのガイドライン〜
+    - 多くの場合に適用されるべき基本的な決まりごと。鉄則よりは若干弱い
+- **思想** 〜プログラミングのイデオロギー〜
+    - 過去のプログラミングにおいて影で支えてきた文化・哲学・価値観。思想的な下支え
+- **習慣** 〜ルーティーン〜
+    - 良いコードを書くプログラマが日常的に行っていること、心がけていること
 
 >>> 1: これ以外にも書籍では視点・習慣・手法・法則がある（今後登場します!）
 

@@ -18,8 +18,8 @@ _Acyclic Dependencies Principle_
 ## タネ本
 
 ### 『クリーンアーキテクチャ<br>　 ― 達人に学ぶソフトウェアの構造と設計』
-* Robert C. Martin(著), 角征典, 髙木正弘(訳)
-* アスキードワンゴ刊
+- Robert C. Martin(著), 角征典, 髙木正弘(訳)
+- アスキードワンゴ刊
 ![bg right:30% 90%](assets/07-cleanarchitecture.jpg)
 
 ---
@@ -77,9 +77,9 @@ b.a_instance = a # 循環参照の発生。a,bの参照を外してもメモリ�
 
 ## 非循環依存関係の原則(ADP)まとめ
 
-* 循環依存・循環参照はソフトウェア開発では常に悪
-    * 何１つメリットがない
-    * 依存関係逆転の原則(DIP),共通部分の切り出しで矢印の流れを整理する
+- 循環依存・循環参照はソフトウェア開発では常に悪
+    - 何１つメリットがない
+    - 依存関係逆転の原則(DIP),共通部分の切り出しで矢印の流れを整理する
 
 
 <!--現実世界でも同じ。共依存という言葉を知っていますか？
@@ -100,7 +100,7 @@ b.a_instance = a # 循環参照の発生。a,bの参照を外してもメモリ�
 共依存カップル、循環依存の関係は帰り道のない地獄の旅行と同じとも言われています。モジュールがお互いを甘やかしている状態なんです。
 今日学んだADP, 非循環依存関係の原則を使って、みなさんも共依存から抜け出していきましょう
 
-* https://oggi.jp/6703280
-* https://heart-door.jp/blog/counseling/2655/
-* https://monjiro-official.com/kyouizon/
+- https://oggi.jp/6703280
+- https://heart-door.jp/blog/counseling/2655/
+- https://monjiro-official.com/kyouizon/
 -->

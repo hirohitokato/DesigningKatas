@@ -23,9 +23,9 @@ paginate: true
 
 ## Dead Beef / Ate Bad Beef 
 
-* メモリ破壊が起きていないかチェックする際に、事前に書き込んでおく値の一種
-* 派生として`0x8BADF00D`や他にもたくさんある$^1$
-    * MSVC++のデバッグランタイムだとスタック領域を`0xCCCCCCCC`で埋めている。
+- メモリ破壊が起きていないかチェックする際に、事前に書き込んでおく値の一種
+- 派生として`0x8BADF00D`や他にもたくさんある$^1$
+    - MSVC++のデバッグランタイムだとスタック領域を`0xCCCCCCCC`で埋めている。
 
 >>> 参考: https://en.wikipedia.org/wiki/Magic_number_(programming)#Debug_values
 
@@ -33,4 +33,4 @@ paginate: true
 
 ## 0xCAFEBABE
 
-* Javaソースコードをコンパイルしたときにできあがるクラスファイルの先頭に連なる４バイト
+- Javaソースコードをコンパイルしたときにできあがるクラスファイルの先頭に連なる４バイト

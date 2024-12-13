@@ -95,5 +95,5 @@ paginate: true
 
 ## 参考
 
-* 「ソフトウェアに関わる人が知っておくといいかもしれない法則10個」Publickey,2024/1/24
-    * https://www.publickey1.jp/blog/24/10_13.html
+- 「ソフトウェアに関わる人が知っておくといいかもしれない法則10個」Publickey,2024/1/24
+    - https://www.publickey1.jp/blog/24/10_13.html

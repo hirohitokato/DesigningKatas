@@ -18,8 +18,8 @@ _Code Readability_
 ## タネ本
 
 ### 『読みやすいコードのガイドライン<br>　 持続可能なソフトウェア開発のために』
-* 石川宗寿(著)
-* 技術評論社 2022/11/4初版
+- 石川宗寿(著)
+- 技術評論社 2022/11/4初版
 
 ![bg right:30% 90%](assets/12-book.jpg)
 
@@ -37,7 +37,7 @@ _Code Readability_
 
 コードだけでは高い可読性を維持できるとは限らないため
 
-* 命名の工夫、簡潔なコードでも伝えられない事柄がある
+- 命名の工夫、簡潔なコードでも伝えられない事柄がある
 
 ![bg 70% right:40%](assets/16-whynot_in_comments.png)
 >>> 画像は https://twitter.com/t_wada/status/904916106153828352 より。[PIEの説明](../01-basics/09-pie.md)でも登場しました。
@@ -51,9 +51,9 @@ _Code Readability_
 
 ## ドキュメンテーションコメントと非形式的なコメント
 
-* **ドキュメンテーションコメント**: 形式的な説明。クラス/関数/変数の宣言や定義に使う
-    * pydoc, Documentation Comment, Doxygen, etc.によりドキュメントを自動生成、ツールで表示(下図)
-* **非形式的なコメント**: 定義・宣言に限らずコードのあらゆる場所に書かれる
+- **ドキュメンテーションコメント**: 形式的な説明。クラス/関数/変数の宣言や定義に使う
+    - pydoc, Documentation Comment, Doxygen, etc.によりドキュメントを自動生成、ツールで表示(下図)
+- **非形式的なコメント**: 定義・宣言に限らずコードのあらゆる場所に書かれる
 
 ![center](assets/16-docucomment_swift.png)
 
@@ -74,11 +74,11 @@ _Code Readability_
 
 ```kotlin
 /** <<BAD>>
- * キーワードとその説明文のペア [newData] を追加する。
+ - キーワードとその説明文のペア [newData] を追加する。
  *
- * 追加した定義は [getDescription] メソッドで参照できる。
- * もしキーワードが追加済ならば、何もせずに `false` を返す。
- * それ以外の場合の追加処理は成功し、 `true` を返す。
+ - 追加した定義は [getDescription] メソッドで参照できる。
+ - もしキーワードが追加済ならば、何もせずに `false` を返す。
+ - それ以外の場合の追加処理は成功し、 `true` を返す。
  */
 fun add(newData: Pair<String, String>): Boolean
 ```
@@ -89,18 +89,18 @@ fun add(newData: Pair<String, String>): Boolean
 
 ```kotlin
 /** <<BAD>>
- * キーワードとその説明文のペア [newData] を追加する。
+ - キーワードとその説明文のペア [newData] を追加する。
  *
- * 追加した定義は [getDescription] メソッドで参照できる。
- * もしキーワードが追加済みならば、何もせずに `false` を返す。
- * それ以外の場合の追加処理は成功し、 `true` を返す。
+ - 追加した定義は [getDescription] メソッドで参照できる。
+ - もしキーワードが追加済みならば、何もせずに `false` を返す。
+ - それ以外の場合の追加処理は成功し、 `true` を返す。
  */
 fun add(newData: Pair<String, String>): Boolean
 ```
 
-* `add`というメソッド名の意味が実際の動作と比べて広すぎる
-* `newData`という仮引数名の情報量が少ない
-* 追加済みの場合の挙動が一般的ではない
+- `add`というメソッド名の意味が実際の動作と比べて広すぎる
+- `newData`という仮引数名の情報量が少ない
+- 追加済みの場合の挙動が一般的ではない
 
 ---
 
@@ -108,9 +108,9 @@ fun add(newData: Pair<String, String>): Boolean
 
 ```kt
 /** <<GOOD>>
- * キーワード[keyword]に対する説明[description]を新規に登録、もしくは上書きする
+ - キーワード[keyword]に対する説明[description]を新規に登録、もしくは上書きする
  *
- * 登録された定義は、[getDescription]によって取得できる。
+ - 登録された定義は、[getDescription]によって取得できる。
  */
 fun registerDescription(keyword: String, description: String)
 ```
@@ -119,13 +119,13 @@ fun registerDescription(keyword: String, description: String)
 
 ## その他のコメントの目的
 
-* 統合開発環境(IDE)やエディタのためのコメント
-    * `// TODO: 〜`, `//FIXME: 〜`, `#region 〜 #endregion` など
-* メタプログラミングを行うためのコメント
-    * `#!/bin/sh` と書くなど$^1$
-* 型や制約の検証・解析をするためのコメント
-    * Pythonの型コメント(PEP484)、Closure compilerの型アノテーションなど
-* 継続的インテグレーション
+- 統合開発環境(IDE)やエディタのためのコメント
+    - `// TODO: 〜`, `//FIXME: 〜`, `#region 〜 #endregion` など
+- メタプログラミングを行うためのコメント
+    - `#!/bin/sh` と書くなど$^1$
+- 型や制約の検証・解析をするためのコメント
+    - Pythonの型コメント(PEP484)、Closure compilerの型アノテーションなど
+- 継続的インテグレーション
 >>> 1: UNIXスクリプトで１行目にインタプリタを指定する方法。shebang。
 
 ---
@@ -144,10 +144,10 @@ fun registerDescription(keyword: String, description: String)
 
 コード中の宣言や定義に対して決められた書式で書くコメントのこと
 
-* 関数・クラス・ファイルやパッケージなど
-* プログラミング言語やドキュメンテーションツールによって異なる
-    * Python(PyDoc): `""" 〜 """`, C++/C#系: `/** 〜 */`で括られたコメント
-* APIリファレンスや、エディタ上でのクイックヒントなどに使われる
+- 関数・クラス・ファイルやパッケージなど
+- プログラミング言語やドキュメンテーションツールによって異なる
+    - Python(PyDoc): `""" 〜 """`, C++/C#系: `/** 〜 */`で括られたコメント
+- APIリファレンスや、エディタ上でのクイックヒントなどに使われる
 
 ![center 25%](assets/16-docucomment_swift.png)
 
@@ -170,15 +170,15 @@ fun registerDescription(keyword: String, description: String)
 
 ```kt
 /**
- * キーワードとそれに対応する説明を、それぞれ文字列として保持する辞書クラス
+ - キーワードとそれに対応する説明を、それぞれ文字列として保持する辞書クラス
  *
- * ...(詳細：基本的な使い方などを書く)...
+ - ...(詳細：基本的な使い方などを書く)...
  */
  class Dictionary {
     /**
-     * [registerDescription]で登録済みの[keyword]に対する説明を取得する。
+     - [registerDescription]で登録済みの[keyword]に対する説明を取得する。
      *
-     * ...(詳細：未定義のkeywordだった場合にどうなるかなどを書く)...
+     - ...(詳細：未定義のkeywordだった場合にどうなるかなどを書く)...
      */
     fun getDescription(keyword: String): String { ... }
  }
@@ -205,8 +205,8 @@ fun registerDescription(keyword: String, description: String)
 
 ```kt
 /** <<BAD>>
- * @param keyword
- * @return
+ - @param keyword
+ - @return
  */
 fun getDescription(keyword: String): String { … }
 ```
@@ -215,7 +215,7 @@ fun getDescription(keyword: String): String { … }
 
 ```kt
 /** <<BAD>>
- * [keyword] に対する説明を取得する。
+ - [keyword] に対する説明を取得する。
  */
 fun getDescription(keyword: String): String { … }
 ```
@@ -226,8 +226,8 @@ fun getDescription(keyword: String): String { … }
 
 ```kt
 /** <<BAD>>
- * もし`conditionA`が成り立つなら[doA]を呼び出す。
- * そうでないなら[doB]を呼び出し、さらにもし`conditionC`が成り立つなら …<snip>
+ - もし`conditionA`が成り立つなら[doA]を呼び出す。
+ - そうでないなら[doB]を呼び出し、さらにもし`conditionC`が成り立つなら …<snip>
  */
 fun getDescription(keyword: String): String {
     if (conditionA) {
@@ -245,7 +245,7 @@ fun getDescription(keyword: String): String {
 
 ```kt
 /** <<BAD>>
- * 与えられた[keyword]が空文字の場合は、例外を投げる。
+ - 与えられた[keyword]が空文字の場合は、例外を投げる。
  */
 fun getDescription(keyword: String): String { … }
 ```
@@ -254,7 +254,7 @@ fun getDescription(keyword: String): String { … }
 
 ```kt
 /** <<BAD>>
- * プライベートメンバーの[dictionary]が保持している文字列を返す。
+ - プライベートメンバーの[dictionary]が保持している文字列を返す。
  */
 fun getDescription(keyword: String): String { … }
 ```
@@ -265,8 +265,8 @@ fun getDescription(keyword: String): String { … }
 
 ```kt
 /** <<BAD>>
- * ・・・(概要)・・・
- * この関数は[UserProfilePresenter]によって使用される。
+ - ・・・(概要)・・・
+ - この関数は[UserProfilePresenter]によって使用される。
  */
 fun getDescription(keyword: String): String { … }
 ```
@@ -275,9 +275,9 @@ fun getDescription(keyword: String): String { … }
 
 ## ではドキュメンテーションコメントに何を書けば良いのか
 
-* コードが何であるのか・何をするのかを最初に要約部で簡潔に説明する
-    * 詳細部で具体的な内容に言及する
-* 抽象度や粒度をコードよりも高く保つ
-* 実装の詳細やコードを使う側には言及しない
+- コードが何であるのか・何をするのかを最初に要約部で簡潔に説明する
+    - 詳細部で具体的な内容に言及する
+- 抽象度や粒度をコードよりも高く保つ
+- 実装の詳細やコードを使う側には言及しない
 
 <!-- 和田卓人氏が「コードコメントにはWhy notを書こう」という話をしたが、ドキュメンテーションにその記述は不要。何であるか、どういう使い方が出来るのかを説明するのが役割なので。 -->

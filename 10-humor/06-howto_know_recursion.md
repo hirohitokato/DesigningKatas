@@ -23,13 +23,13 @@ paginate: true
 
 # 似たような言葉
 
-* GNU _(GNU is Not UNIX)_
-* cURL _(Curl URL Request Library)_
-* PHP _(PHP: Hypertext Preprocessor)_
-* PIP _(PIP Installs Packages)_
-* PNG _(正式には"Portable Network Graphics"、非公式には"PNG's not GIF")_
-* VISA _(Visa International Service Association)_
-* 「TTPプロジェクトの『TTP』って何の略？」→「The TTP Project」([ディルバート](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%AB%E3%83%90%E3%83%BC%E3%83%88)という米の漫画の１コマ)
+- GNU _(GNU is Not UNIX)_
+- cURL _(Curl URL Request Library)_
+- PHP _(PHP: Hypertext Preprocessor)_
+- PIP _(PIP Installs Packages)_
+- PNG _(正式には"Portable Network Graphics"、非公式には"PNG's not GIF")_
+- VISA _(Visa International Service Association)_
+- 「TTPプロジェクトの『TTP』って何の略？」→「The TTP Project」([ディルバート](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%AB%E3%83%90%E3%83%BC%E3%83%88)という米の漫画の１コマ)
 
 言語学的にはこれを「[**再帰的頭字語**(Recursive acronym)](https://ja.wikipedia.org/wiki/%E5%86%8D%E5%B8%B0%E7%9A%84%E9%A0%AD%E5%AD%97%E8%AA%9E)」または**自己言及型頭字語**と言います。
 

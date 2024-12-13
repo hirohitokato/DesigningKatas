@@ -42,15 +42,15 @@ _Code Readability_
 
 ```kt
 /**
- * キーワードとそれに対応する説明を、それぞれ文字列として保持する辞書クラス。
+ - キーワードとそれに対応する説明を、それぞれ文字列として保持する辞書クラス。
  *
- * ...(詳細: 基本的な使い方などを書く)...
+ - ...(詳細: 基本的な使い方などを書く)...
  */
 class Dictionary {
     /**
-     * [registerDescription] で登録済みの [keyword] に対する説明を取得する。
+     - [registerDescription] で登録済みの [keyword] に対する説明を取得する。
      *
-     * ...(詳細: 未定義の場合どうするかなどを書く)...
+     - ...(詳細: 未定義の場合どうするかなどを書く)...
      fun getDescription(keyword: String): String { ... }
 ```
 
@@ -64,21 +64,21 @@ class Dictionary {
 
 １行で概要を記述。ただし完全な形の文章にする必要はなく主語がなくても良い。
 
-* **クラス・変数**: 名詞句を使う
-    * _"A Generic ordered collection of elements."_ (Kotlin:`List`)
-    * _"A single-precision, floating-point value type."_ (Swift:`Float`)
+- **クラス・変数**: 名詞句を使う
+    - _"A Generic ordered collection of elements."_ (Kotlin:`List`)
+    - _"A single-precision, floating-point value type."_ (Swift:`Float`)
 
-* **関数・メソッド**: 三人称単数形の動詞から始まり、主語を省略した不完全な文
-    * _"Adds a new element at the end of the array."_ (Swift:`Array.append()`)
-    * _"Returns a list containing all elements that are not null."_<br>(Kotlin:`filterNotNull()`)
+- **関数・メソッド**: 三人称単数形の動詞から始まり、主語を省略した不完全な文
+    - _"Adds a new element at the end of the array."_ (Swift:`Array.append()`)
+    - _"Returns a list containing all elements that are not null."_<br>(Kotlin:`filterNotNull()`)
 
 <!-- ドキュメンテーションツールだけでなく、このプログラミング言語だったらこう書くべきという指針が書かれていることもあるのでそれを守るようにする -->
 <!-- いくつかのドキュメンテーションツールが最初に登場するピリオドを終点としてあつかい、そこまでを要約と扱っている -->
 <!-- 英語の例を読むと分かりやすいので紹介します。 -->
 
 <!-- いくつかテクニックがあるので活用しましょう。
- * テクニック1: 重要なコードを見つける
- * テクニック2: コードの共通点を見つける -->
+ - テクニック1: 重要なコードを見つける
+ - テクニック2: コードの共通点を見つける -->
 
 ---
 
@@ -117,7 +117,7 @@ fun ...(user: UserModel) {
 重要な部分をまず記述する
 ```kt
 /**<NOT SO BAD>
- * プロフィール画像を表示する。
+ - プロフィール画像を表示する。
  */
 ```
 
@@ -125,7 +125,7 @@ fun ...(user: UserModel) {
 
 ```kt
 /** <GOOD>
- * 与えられたユーザー[user]に対応するプロフィール画像を、円形にトリミングして表示する。
+ - 与えられたユーザー[user]に対応するプロフィール画像を、円形にトリミングして表示する。
  */
 ```
 
@@ -137,7 +137,7 @@ fun ...(user: UserModel) {
 
 ```kt
 /**
- * ここに何を書く？
+ - ここに何を書く？
  */
 fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
     contentTextView.text = receivedMessage.contentText // 本文テキスト
@@ -154,7 +154,7 @@ fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
 
 ```kt
 /**<BAD>
- * 受信したメッセージ[receivedMessage]の本文テキストをビューに表示する
+ - 受信したメッセージ[receivedMessage]の本文テキストをビューに表示する
  */
 ```
 
@@ -162,8 +162,8 @@ fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
 
 ```kt
 /**<GOOD>
- * 受信したメッセージ[receivedMessage]で、表示レイアウト
- * (本文テキスト・送信者名・送信時刻)をビューに表示する
+ - 受信したメッセージ[receivedMessage]で、表示レイアウト
+ - (本文テキスト・送信者名・送信時刻)をビューに表示する
  */
 ```
 
@@ -173,10 +173,10 @@ fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
 
 必須ではないが、要約で説明が不足する場合には追加する。
 
-* 基本的な使い方
-* 関数/変数の使い方
-* 戻り値の補足
-* 制約やエラー時の動作
+- 基本的な使い方
+- 関数/変数の使い方
+- 戻り値の補足
+- 制約やエラー時の動作
 
 要約と異なり完全な文を書く。日本語の場合は常体・敬体や句読点の形式を要約に合わせること。
 
@@ -188,11 +188,11 @@ fun ...(receivedMessage: MessageModel) { // 関数名はわざと省略
 
 ```kt
 /**<GOOD>
- * メッセージの内容(本文テキスト・送信者名・送信時刻)をレイアウトに
- * バインドして表示するプレゼンテーションクラス。
+ - メッセージの内容(本文テキスト・送信者名・送信時刻)をレイアウトに
+ - バインドして表示するプレゼンテーションクラス。
  *
- * メッセージのモデル[MessageModel]を[updateLayout]メソッドに渡すと、
- * すべての表示内容が更新される。
+ - メッセージのモデル[MessageModel]を[updateLayout]メソッドに渡すと、
+ - すべての表示内容が更新される。
  */
 class MessageViewPresenter(messageLayout: Layout)
 ```
@@ -207,9 +207,9 @@ class MessageViewPresenter(messageLayout: Layout)
 
 ```kt
 /**
- * 与えられた文字列をカンマ `","` 区切りで分解し、文字列のリストとして返す。
+ - 与えられた文字列をカンマ `","` 区切りで分解し、文字列のリストとして返す。
  *
- * 例えば`"a, bc ,,d"`を引数として与えると`listOF("a","bc","","d")`を返す。
+ - 例えば`"a, bc ,,d"`を引数として与えると`listOF("a","bc","","d")`を返す。
  */
 fun splitByComma(string: String): List<String> { ... }
 ```
@@ -229,14 +229,14 @@ fun setSelectedState(isSelected: Boolean): Boolean {...} ←この戻り値の�
 
 ```kt
  /**<GOOD>
-  * ...
-  * 戻り値は、この関数が呼ばれる前の選択状態を表す。
+  - ...
+  - 戻り値は、この関数が呼ばれる前の選択状態を表す。
   */
 ```
 ```kt
  /**<GOOD>
-  * ...
-  * 返される値は 0.0≦x<1.0 の範囲である。
+  - ...
+  - 返される値は 0.0≦x<1.0 の範囲である。
   */
 ```
 
@@ -250,13 +250,13 @@ fun setSelectedState(isSelected: Boolean): Boolean {...} ←この戻り値の�
 
 ```kt
 /** <GOOD>
- * ...(要約)...
+ - ...(要約)...
  *
- * ...(再生方法についての詳細を先に書く)...
- * [play]や[seek]を呼び出す前には[prepare]で動画ファイルをロードしておくこと。
- * 
- * [prepare]せずに[play]/[seek]を呼び出した場合は、
- * 例外[ResourceNotReadyException]を投げる。
+ - ...(再生方法についての詳細を先に書く)...
+ - [play]や[seek]を呼び出す前には[prepare]で動画ファイルをロードしておくこと。
+ - 
+ - [prepare]せずに[play]/[seek]を呼び出した場合は、
+ - 例外[ResourceNotReadyException]を投げる。
  */
 class VideoPlayer(videoPath: String) { ... }
 ```
@@ -265,18 +265,18 @@ class VideoPlayer(videoPath: String) { ... }
 
 ## その他、詳細に書くべきこと
 
-* インスタンスが有効な生存期間
-* 関数呼び出し時のスレッド
-* 再入可能性や実行後の再呼び出し
-* 実行時間・消費メモリ・その他の使用リソース
-* 外部環境とのインタラクション(ネットワーク・ローカルストレージなど)
+- インスタンスが有効な生存期間
+- 関数呼び出し時のスレッド
+- 再入可能性や実行後の再呼び出し
+- 実行時間・消費メモリ・その他の使用リソース
+- 外部環境とのインタラクション(ネットワーク・ローカルストレージなど)
 
 ---
 
 ## ドキュメンテーションのまとめ
 
-* ドキュメンテーションとは形式的な説明。クラス/関数/変数の宣言や定義に使う
-    * 要約と詳細によってその概要や補足事項を説明する
-* 内部コードを読まなくても理解できる内容を書く
-    * 重要な処理、抽象化した処理
-    * 使い方/戻り値の補足/制約やエラー時の動作
+- ドキュメンテーションとは形式的な説明。クラス/関数/変数の宣言や定義に使う
+    - 要約と詳細によってその概要や補足事項を説明する
+- 内部コードを読まなくても理解できる内容を書く
+    - 重要な処理、抽象化した処理
+    - 使い方/戻り値の補足/制約やエラー時の動作
