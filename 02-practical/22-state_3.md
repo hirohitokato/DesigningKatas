@@ -156,7 +156,7 @@ readonlyは、参照しているオブジェクトを変更することはでき
 
 ---
 
-## 不変性: 不変(immutable)と読み取り専用(read-only)の違い - 改善例
+## 不変性: 不変と読み取り専用の違い - 改善例
 
 変更できない型を正しく使って公開する
 
@@ -210,12 +210,59 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 
 ---
 
+## 不変性: 値と参照の可変性 - 改善例
+
+1. 参照を読み取り専用にし、オブジェクトは更新可能にする
+2. 参照を書き込み可能にして、オブジェクトそのものを読み取り専用にする
+
+```cs
+[GOOD] 改善例1
+class CouragedList {
+    private List<int> _list = []; // 更新可能。ただしprivate
+    public IReadOnlyList<int> List { get => _list; } // 読み取り専用のリストを返す
+}
+
+[GOOD] 改善例2
+class ListProvider {
+    private IReadOnlyList<int> _list = [1,2,3,4]; // 値は常に固定
+    // 書き込み可能だがオリジナルとは別物を返すことを明記
+    public IList<int> MutableCopy { get => new List<int>(_list); }
+}
+```
+
+---
+
+## 不変性: 局所的な不変性
+
+値のライフサイクルが異なるものを混ぜない
+
+```cs
+[BAD]
+class UserDataModel {
+    string Name;
+    string Identifier;
+    bool IsOnline; // これだけ頻繁に更新される = ライフサイクルが異なる
+}
+   ↓
+[GOOD]
+class UserStatus { bool IsOnline; ... }
+class UserInformation {
+    string Name; ...
+    UserStatus Status;
+}
+```
+
+状態変化に伴う不具合の発生箇所を限定できる
+
+---
+
 ## 不変性のまとめ
 
 * 不正な状態遷移を**起こせない**コードにする
     * そもそも状態遷移がないデータ構造を使えば、不正な状態遷移は発生しない
 * ただし言語によっては抜け穴が存在できてしまう書き方があるので要注意
     * プリミティブな値は良いがオブジェクトには注意
-
-不変にできる部分を局所化して安全地帯を設け、それを育てるのも良い
+    * 自分の使う言語の仕様にも詳しくなろう
+* 不変にできる部分を局所化して安全地帯を設ける
+    * 不具合発生箇所をコントロールする考え方を持とう
 
