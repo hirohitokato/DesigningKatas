@@ -8,6 +8,9 @@ default:
 # Functions that should be executed before the build script is run
 before_script:
   - npm ci
+  - apt-get update
+  - apt-get install -y --no-install-recommends rsync
+
 pages:
   script:
     - npm run gen:all
