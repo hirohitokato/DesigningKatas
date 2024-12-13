@@ -5,8 +5,8 @@
   "scripts": {
     "gen:all": "npm run convert && npm run gen:html && npm run copy:assets",
     "convert": "node ./script/convert.js",
-    "gen:html": "marp --theme .marp-themes/katas.css --input-dir ./ --output ./gen",
-    "copy:assets": "for dir in ./*/; do if [ -d \"$dir/assets\" ]; then rsync -a \"$dir/assets/\" \"./gen/${dir%/}/assets/\"; fi; done"
+    "gen:html": "marp --theme .marp-themes/katas.css --input-dir ./ --output ./public",
+    "copy:assets": "for dir in ./*/; do if [ -d \"$dir/assets\" ]; then rsync -a \"$dir/assets/\" \"./public/${dir%/}/assets/\"; fi; done"
   },
   "author": "",
   "license": "UNLICENSED",

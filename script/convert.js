@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const markdownIt = require('markdown-it');
 const inputFilePath = 'README.md';
-const outputDir = './gen';
+const outputDir = './public';
 const outputFilePath = path.join(outputDir, 'index.html');
 
 // Markdown-itのインスタンスを作成

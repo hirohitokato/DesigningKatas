@@ -30,7 +30,7 @@ jobs:
     - uses: actions/upload-pages-artifact@v3
       id: deployment
       with:
-        path: gen
+        path: public
 
   deploy:
     runs-on: ubuntu-latest
