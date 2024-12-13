@@ -1,0 +1,21 @@
+
+default:
+  image: node:lts
+  tags:
+    - easy
+    - linux
+
+# Functions that should be executed before the build script is run
+before_script:
+  - npm ci
+pages:
+  script:
+    - npm run gen:all
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
