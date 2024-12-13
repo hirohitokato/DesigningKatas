@@ -2,7 +2,6 @@
 marp: true
 math: mathjax
 theme: katas
-fragment: false
 ---
 <!-- 
 size: 16:9
@@ -21,11 +20,11 @@ _Single Responsibility Principle_
 
 > ### SOLID(堅牢)なアーキテクチャを作る５原則を集めたバクロニム$^1$
 
-* S: 単一責任の原則: Single Responsibility Principle(SRP)
-* O: 開放閉鎖の原則: Open/Closed Principle(OCP)
-* L: リスコフの置換原則: Liskov Substitution Principle(LSP)
-* I: インターフェース分離の原則: Interface Segregation Principle(ISP)
-* D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
+- S: 単一責任の原則: Single Responsibility Principle(SRP)
+- O: 開放閉鎖の原則: Open/Closed Principle(OCP)
+- L: リスコフの置換原則: Liskov Substitution Principle(LSP)
+- I: インターフェース分離の原則: Interface Segregation Principle(ISP)
+- D: 依存関係逆転の原則: Dependency Inversion Principle(DIP)
 
 <!-- これらを実践することで堅牢なアーキテクチャを持つソフトウェアができる。 -->
 <!-- 待って、そもそもアーキテクチャって？ -->
