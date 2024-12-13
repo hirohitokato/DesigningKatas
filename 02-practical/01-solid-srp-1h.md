@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+fragment: false
 ---
 <!-- 
 size: 16:9
