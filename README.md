@@ -6,7 +6,7 @@
 
 ### オンライン
 
-GitHub Pages/GitLab Pagesでご覧ください。
+[GitHub Pages](https://hirohitokato.github.io/DesigningKatas/)またはGitLab Pagesでご覧ください。
 
 ### Visual Studio Codeで表示
 
