@@ -13,7 +13,7 @@
 - [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
 - [名前重要](01-basics/05-naming_is_important.md)
 - [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
-- [PIE(Program Intently and Expressively)](01_basics/09-pie.md)
+- [PIE(Program Intently and Expressively)](01-basics/09-pie.md)
 - [YAGNI](01-basics/20-yagni.md)
 
 ### プログラミングの考え方
