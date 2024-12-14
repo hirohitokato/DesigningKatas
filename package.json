@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "設計・プログラミングに関する大事な考え方やコードへの応用例を説明します。",
   "scripts": {
-    "gen:all": "npm run convert && npm run gen:html && npm run copy:assets",
-    "convert": "node ./script/convert.js",
+    "gen:all": "npm run gen:html && npm run convert && npm run copy:assets",
     "gen:html": "marp --theme .marp-themes/katas.css --input-dir ./ --output ./public",
+    "convert": "node ./script/convert.js index.md index.html && node ./script/convert.js activity.md activity.html",
     "copy:assets": "for dir in ./*/; do if [ -d \"$dir/assets\" ]; then rsync -a \"$dir/assets/\" \"./public/${dir%/}/assets/\"; fi; done"
   },
   "author": "",

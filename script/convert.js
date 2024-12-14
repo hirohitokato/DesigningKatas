@@ -1,9 +1,20 @@
+/**
+ * ルートディレクトリにあるMarkdownファイルをHTMLファイルに変換する。
+ * 
+ * - ファイル内でリンク先に定義している.mdファイルへのリンクは拡張子をhtmlに変えるのみ
+ */
 const fs = require('fs');
 const path = require('path');
 const markdownIt = require('markdown-it');
-const inputFilePath = 'README.md';
 const outputDir = './public';
-const outputFilePath = path.join(outputDir, 'index.html');
+
+// コマンドライン引数をパース
+if (process.argv.length != 4) {
+  console.error("Invalid arguments.");
+  process.exit(1);
+}
+const inputFilePath = process.argv[2];
+const outputFilePath = path.join(outputDir, process.argv[3]);
 
 // Markdown-itのインスタンスを作成
 const md = new markdownIt();
