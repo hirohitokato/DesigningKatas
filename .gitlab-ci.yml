@@ -1,16 +1,24 @@
-
+# easy,linuxのタグが付いたランナー上で動かす。そのときのDockerのイメージは
+# node:ltsを使用する
 default:
   image: node:lts
   tags:
     - easy
     - linux
 
-# Functions that should be executed before the build script is run
+# ランナーで本処理が走る前に行っておく前処理。ここでは依存パッケージをインストールし、
+# スライドの画像をフォルダごとGitLab Pagesで公開する先のフォルダにコピーするための
+# rsyncコマンドをインストールしている
 before_script:
   - npm ci
   - apt-get update
   - apt-get install -y --no-install-recommends rsync
 
+# 本処理。「pages」で記述した処理はGitLab Pagesのコンテンツ生成処理として
+# 自動的に扱われ、artifactsで記述したパス下のファイルを公開することになる。
+#
+# ここではpackage.jsonに書かれたgen:all処理を実行し、処理中に生成された
+# ファイル群(アーティファクト)はpublicフォルダに保存する処理を行っている
 pages:
   script:
     - npm run gen:all
