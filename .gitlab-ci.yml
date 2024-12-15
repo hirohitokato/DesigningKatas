@@ -14,8 +14,8 @@ before_script:
   - apt-get update
   - apt-get install -y --no-install-recommends rsync
 
-# 本処理。「pages」で記述した処理はGitLab Pagesのコンテンツ生成処理として
-# 自動的に扱われ、artifactsで記述したパス下のファイルを公開することになる。
+# 本処理。GitLab Pagesで公開する場合は、ジョブの名前がpagesでないといけない。
+# artifactsで記述したパス下のファイルを公開することになる。
 #
 # ここではpackage.jsonに書かれたgen:all処理を実行し、処理中に生成された
 # ファイル群(アーティファクト)はpublicフォルダに保存する処理を行っている
@@ -24,7 +24,9 @@ pages:
     - npm run gen:all
   artifacts:
     paths:
-      # The folder that contains the files to be exposed at the Page URL
+      # 以下のページによるとGitLab Pagesで公開するにはフォルダ名が public
+      # でないといけないようなので注意
+      # https://docs.gitlab.com/ee/user/project/pages/getting_started/pages_ui.html
       - public
   rules:
     # This ensures that only pushes to the default branch will trigger
