@@ -1,5 +1,9 @@
 # 実施履歴
 
+これまで実施してきた記録です。復習などにご利用ください。
+
+※演習で使用したpptxファイルはGitLab/GitHubリポジトリの各パートにある`exercises/`フォルダを参照してください。
+
 ## 1st group
 
 1. 2023/10/06 [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
