@@ -286,7 +286,6 @@ void UpdateProfileImageView() {
 ## スタンプ結合 ＆ データ結合の例
 
 引数はデータ結合、返り値はスタンプ結合になった例。
-結合が強い方に従うのでこの関数はスタンプ結合相当になる。
 
 ```cs
 UserModel QueryUserModel(string userName, string userId) {
@@ -296,18 +295,55 @@ UserModel QueryUserModel(string userName, string userId) {
 }
 ```
 
+→ 結合が強い方に従うのでこの関数はスタンプ結合相当になる。
+
 ---
 
 ## スタンプ結合よりもデータ結合が良いわけではない
 
 ```cs
-void ShowUserProfile(string userName, string profileImageUrl) {
+[BAD]
+// ...データ結合になるよう引数を必要なプリミティブ型だけに限定 💪
+public void ShowUserProfile(string userName, string profileImageUrl) {
     // `userName`と `profileImageUrl`を使って「メッセージ送信者」を
     // 画面に表示するコード
     ...
 }
+
+// UserDataのプロパティを取り出し渡す
+ShowUserProfile(userData1.name, userData1.imageUrl);
 ```
-TODO
+**クイズ**: このコードに起こり得る問題を考えてみよう
+
+---
+
+## 情報の粒度を考える
+
+```cs
+[BAD]
+// 問題の例
+ShowUserProfile(userData1.name, otherUserData.imageUrl); // 別ユーザーが混じる
+ShowUserProfile(userData1.imageUrl, otherUserData.name); // 名前とURLが逆
+// その他 userData の中身を直接操作(userDataの操作責任が分散)
+```
+
+```cs
+[BETTER] -- ただし常に良いわけではない
+void ShowUserProfile(UserData userData) { ... }
+```
+<!-- 必要なデータだけ、プリミティブなデータだけ無理に取り出そうとしない。 この場合は同一のユーザーであることが確定しているので、引き離す必要がない-->
+<!-- この解答の一方で、UserDataをどこでも引き回すようになると、神オブジェクトに変化していってしまうし、呼ぶ側も呼ばれる側もUserDataを引き回さないといけないので、奥深くの処理になっているときは扱いづらくなってしまう。 -->
+<!-- あらゆる使い方をされてしまうことに思いを馳せること。 -->
+
+---
+
+## スタンプ結合＆データ結合のまとめ
+
+* 値の受け渡しに関数の引数や戻り値を使う
+    * 比較的弱い結合。無理にこれ以上弱くする必要はない
+* スタンプ結合: 構造体やクラスの授受 / データ結合: プリミティブな値の授受
+* 一応 スタンプ結合<データ結合 だが、常にデータ結合の方が良いわけでもない
+
 
 ---
 
