@@ -226,6 +226,7 @@
 7. 2024/11/13 [[読みやすいコードの書き方]コメント(2)](02-practical/18-comment_2.md)
 8. 2024/11/20 [[読みやすいコードの書き方]コメント(3)](02-practical/19-comment_3.md)
 9. 2024/12/11 [[読みやすいコードの書き方]状態(1)](02-practical/20-state_1.md) & [NULLポインタの歴史](09-techniques\03-history_of_nullptr.md)
+10. 2024/12/18 [[読みやすいコードの書き方]状態(2)](02-practical/21-state_2.md)
 
 ## その他
 
