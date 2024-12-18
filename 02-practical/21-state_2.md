@@ -100,6 +100,43 @@ _Code Readability_
 > - **手法1**: 関数への置き換え
 > - **手法2**: 直和型での置き換え
 
+---
+
+![bg fit right:40%](assets/20-sampleapp.png)
+
+## 非直交のケース(1):
+
+```cpp
+/* BAD */
+struct OwnedDisplayModel {
+    // コイン所持量
+    int ownedCoins;
+    // コイン所持量を表示するときの文字列
+    std::string ownedCoinText;
+};
+```
+
+上だと`OwnedDisplayModel(3, "123 coins")`と書けてしまう
+
+→ ２つの変数の関係は**直交ではない(=非直交)**。どうしたらいい？
+
+---
+
+## 非直交のケース(2):
+```cs
+/* 「ContactはEメール,住所のどちらかを持っていなければならない」を表したクラス */
+
+/* BAD */
+struct Contact {
+    var name: String
+    var emailContactInfo: String?
+    var postalContactInfo: String?
+};
+```
+
+上だと`Contact("John Doe", null, null)`と書けてしまう
+
+→ ２つの変数の関係は**直交ではない(=非直交)**。どうしたらいい？
 
 ---
 
