@@ -81,7 +81,7 @@ _Code Readability_
 ## 非巡回: 例) 非巡回なStopWatchクラス
 
 ```cs
-class StopWatch {
+class StopWatch { // [GOOD]
     private DateTime _startTime = DateTime.Now;
     private DateTime _elapsedTime = DateTime.Now;
 
