@@ -129,12 +129,15 @@ class StopWatch { // [BAD]
     private DateTime _elapsedTime = DateTime.Now;
     private State _state = State.Stopped; // Measuring/Stopped
 
-    void StartMeasurement() { if(_state == State.Stopped) { _startTime = DateTime.Now; } }
+    void StartMeasurement() {
+        if(_state == State.Stopped) { _startTime = DateTime.Now; } 
+        _state = State.Measuring;
+    }
 
     double FinishMeasurement() {
         if (_state == State.Stopped) { return _elapsedTime.TotalMilliseconds; }
 
-        _state = State.Finished;
+        _state = State.Stopped;
         _elapsedTime = DateTime.Now - _startTime;
         return _elapsedTime.TotalMilliseconds;
     }
@@ -165,12 +168,12 @@ class SomeRunner {
     public void RunSomeHeavyTask() {
         _stopWatch.StartMeasurement(); // 計測開始
         : // 重い処理
-        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+        var elapsedTimeInMs = _stopwatch.FinishMeasurement(); // 計測終了
     }
     public void RunAnotherHeavyTask() {
         _stopWatch.StartMeasurement(); // 計測開始
         : // 重い処理
-        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 計測終了
+        var elapsedTimeInMs = _stopwatch.FinishMeasurement(); // 計測終了
     }
 }
 ```
