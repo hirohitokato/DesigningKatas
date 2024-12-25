@@ -361,10 +361,96 @@ void ShowUserProfile(UserData userData) { ... }
 
 ## メッセージ結合
 
+関数の引数や戻り値による情報の受け渡しをしない、単に関数を呼び出すだけの関係。非常に弱い結合。
+
+- イベント発生の通知
+- リソースの解放(デストラクタなど)
+
+```cs
+void CloseConnection() { // メッセージ結合の例。引数も戻り値も使っていない
+    this._file.close();
+    ...
+}
+
+CloseConnection();
+```
+
+…とはいえ、大局的に見た時にむしろ強い依存関係を作ることがある
+
 ---
 
-TODO
+## 一見メッセージ結合だが実質は共通結合
+
+```cs
+class SomeUIClass { // [BAD]
+    private UserListPresenter _presenter = ...;
+    void UpdateUserList(IList<User> users) {
+        _presenter.Users = users;
+        _presenter.NotifyUserListUpdated(); // ←一見メッセージ結合
+    }
+```
+
+- `NotifyUserListUpdated()`だけ見るとメッセージ結合
+- 実際は呼ばれる前に`Users`が更新されていることを想定
+    - 広義の共通結合(=共有されたデータ構造を介した受け渡し)
 
 ---
 
+## 一見メッセージ結合だが実質は共通結合: 解決策
 
+```cs
+class SomeUIClass { // [BAD]
+    private UserListPresenter _presenter = ...;
+    void UpdateUserList(IList<User> users) {
+        _presenter.Users = users;
+        _presenter.NotifyUserListUpdated(); // ←一見メッセージ結合
+    }
+```
+↓
+```cs
+class SomeUIClass { // [GOOD]
+    private UserListPresenter _presenter = ...;
+    void UpdateUserList(IList<User> users) {
+        _presenter.NotifyUserListUpdated(users); // ←良いデータ結合
+    }
+```
+---
+
+## メッセージ結合のまとめ
+
+- 関数の引数や戻り値による情報の受け渡しをせず関数を呼び出すだけ
+    - 非常に弱い結合。
+    - イベント送信やリソース解放などで登場
+- 関数呼び出しの前に条件設定が必要な場合、見えない強結合が生まれていることがあるので注意する
+    - メッセージ結合にこだわらず関数引数や戻り値を用いる
+        - スタンプ結合・データ結合
+
+---
+
+## 結合度
+
+|指標|結合度|状態|
+|---|---|---|
+|内容結合|強|隠すべき内容に依存している|
+|共通結合|↓|他者も読み書きできる場所で値を受け渡し(データ構造)|
+|外部結合|↓|〃(Primitive値)|
+|制御結合|↓|動作を決める情報を渡して内部処理を切り替え|
+|スタンプ結合|↓|関数の引数や戻り値を使って値を受け渡し(データ構造)|
+|データ結合|↓|〃(Primitive値)|
+|メッセージ結合|弱|引数/戻り値を持たない関数の呼び出し|
+
+---
+
+## 結合度
+
+|指標|緩和策|
+|---|---|
+|内容結合|依存元に対する制約の最小化・責任範囲の明確化|
+|共通結合|引数/戻り値を使った受け渡し・依存性注入の活用|
+|外部結合|〃|
+|制御結合|操作対象で分割・不要な条件分岐の除去・Strategyパターン|
+|スタンプ結合|情報の不必要な細分化に注意する|
+|データ結合|〃|
+|メッセージ結合|隠れた依存関係の作り込みに注意する|
+
+<!-- いずれの結合度においても、現代のモダンなプログラミング言語を使っていたとしても違反しうるものなので、注意 -->
