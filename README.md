@@ -20,7 +20,7 @@
 
 ## 勉強会の実施履歴
 
-[activity.md](./activity.md) を参照
+[ACTIVITIES.md](./ACTIVITIES.md) を参照
 
 ## ライセンス
 
