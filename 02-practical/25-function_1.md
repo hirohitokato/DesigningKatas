@@ -67,7 +67,7 @@ _Code Readability_
 
 <!-- 
 単一責任の原則(SRP) - 1時間バージョン
-https://easy-pages.apo.epson.net/engineeringworkshop/designingkatas/02-practical/01-solid-srp-1h.html
+https://hirohitokato.github.io/DesigningKatas/02-practical/01-solid-srp-1h.html
  -->
 
 ---
