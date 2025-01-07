@@ -63,8 +63,12 @@ _Code Readability_
 > **問題**:
 > 関数`queryUserData(string userId) -> UserData`はどんな振る舞いを予想する？
 
-
 >>> 1. Single Responsibility Principle
+
+<!-- 
+単一責任の原則(SRP) - 1時間バージョン
+https://easy-pages.apo.epson.net/engineeringworkshop/designingkatas/02-practical/01-solid-srp-1h.html
+ -->
 
 ---
 
