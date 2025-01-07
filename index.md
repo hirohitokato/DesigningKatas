@@ -84,7 +84,7 @@
     - [関数(3)](02-practical/27-function_3.md) - 関数の流れ(定義指向プログラミング)
     - [関数(4)](02-practical/28-function_4.md) - 関数の流れ(早期リターン＆関数分割のコツ)
     - [依存関係(1)](02-practical/29-dependency_1.md) - 依存関係(結合度)
-    - [依存関係(2)](02-practical/30-dependency_2.md) - 依存関係(共通結合～)
+    - [依存関係(2)](02-practical/30-dependency_2.md) - 依存関係(共通結合～) 書きかけ
 
 ## C.その他(ネタ,ウンチクなど)
 
