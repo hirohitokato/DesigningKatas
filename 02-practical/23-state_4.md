@@ -71,14 +71,14 @@ _Code Readability_
 → 何回でも安心して処理を実行できる
 
 ```cs
-class GoodClosableClass {
+class GoodClosableClass { // GOOD
     private bool isClosed {get; private set;} = false;
     public void Close() {
         if (isClosed) { return; }
         isClosed = true; ... 
     }
 }
-class BadClosableClass {
+class BadClosableClass { // BAD
     public bool isClosed {get; private set;} = false;
     public void Close() {
         if (isClosed) { /*例外を投げる*/}
@@ -147,7 +147,7 @@ class NumberRepository {
 
 - **冪等性**: 処理を何回実行しても同じ結果になること
 - **参照透過性**: 処理を同じ引数で実行すると同じ結果になること
-- **副作用**: 結果が引数以外に依存して決まる処理のこと
+- (**副作用**: 結果が引数以外に依存して決まる処理のこと)
 
 <!--
 参照透過性： 足し算、引き算もそうだが、変数の再代入やグローバル変数の参照が処理内になければ、処理内では変数の参照について心配する必要がないので、参照が透過的と言える
