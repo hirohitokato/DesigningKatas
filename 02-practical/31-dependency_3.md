@@ -91,7 +91,7 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ## 制御結合
 
-フラグなどにより複数の処理を分岐させている。分岐なので悪とは言い切れない。
+フラグなどにより複数の処理を分岐させている。分岐はプログラミングの本質の１つであり悪とは言い切れない。
 
 ただし、
 
@@ -130,13 +130,13 @@ void UpdateView(bool isError) {
 
 ```cs
 [GOOD]
-void UpdateView(bool isError) {
+public void UpdateView(bool isError) {
     _resultView.Visible = !isError;
     _errorView.Visible = isError;
     _iconView.Image = GetIconImage(isError);
 }
 
-Image GetIconImage(bool isError) {
+private Image GetIconImage(bool isError) { 
     return isError ? CROSS_MARK_IMAGE : CHECK_MARK_IMAGE;
 }
 ```
@@ -165,7 +165,7 @@ void UpdateUserView(DataType dataType) {
 ```
 
 - 抽象化しないと網羅表現できない
-- dataTypeは依存元でも条件分岐で決めているかもしれない(分岐の重複)
+- 使用者側がdataTypeの値を決める際にも同じ条件分岐を書いているかも(分岐の重複)
 
 ---
 
