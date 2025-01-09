@@ -9,7 +9,7 @@ paginate: true
 -->
 <!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
-# 読みやすいコードの作り方 - 依存関係(2)
+# 読みやすいコードの作り方 - 依存関係(3)
 
 _Code Readability_
 
@@ -108,16 +108,16 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ```cs
 [BAD]
-void UpdateView(bool isError) {
-    if (isError) { // エラー発生を画面に表示する
+void UpdateView(ErrorType errorType) {
+    if (errorType == ...) { // 〇〇時はエラー発生を画面に表示する
         _resultView.Visible = false;
         _errorView.Visible = true;
         _iconView.Image = CROSS_MARK_IMAGE;
-    } else { // 正常時は結果を画面に表示する
+    } else if(errorType == ...) { // 〇〇時は結果を画面に表示する
         _resultView.Visible = true;
         _errorView.Visible = false;
         _iconView.Image = CHECK_MARK_IMAGE;
-    }
+    } else if(errorType == ...) { ... }
 }
 ```
 - 分岐の全てを読まないと「何をしているか」が分からない、仕様変更に弱い
@@ -191,14 +191,39 @@ void UpdateProfileImageView() {
 
 ---
 
+## アンチパターン②の緩和策: 不必要な条件分岐の消去(失敗例)
+
+操作対象が共通なものを別の関数で定義しない。保守性の悪化
+
+```cs
+[BAD]
+void UpdateErrorView() { // エラー発生を画面に表示する
+    _resultView.Visible = false;
+    _errorView.Visible = true;
+    _iconView.Image = CROSS_MARK_IMAGE;
+}
+void UpdateResultView() { // 結果を画面に表示する
+    _resultView.Visible = true;
+    _errorView.Visible = false;
+    _iconView.Image = CHECK_MARK_IMAGE;
+}
+void Update〇〇View() { ... }
+void Update〇〇View() { ... }
+...
+```
+
+---
+
 ## 制御結合のまとめ
 
 - 条件分岐によって以下の罠にハマっていないか
     - 分割すべき視点/範囲を誤って表現していないか
     - 関係のない処理を１つにまとめていないか
+    - 様々な場所で同じ条件分岐が存在している
 - 対策
     - 操作対象による分割で細かい範囲に限定/隠蔽する
     - 内部の条件分岐が必要かどうか考える
+    - ポリモーフィズム/Strategy Patternなどを考える
 
 ---
 
