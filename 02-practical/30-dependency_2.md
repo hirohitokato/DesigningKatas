@@ -333,7 +333,7 @@ ShowUserProfile(userData1.name, userData1.imageUrl);
 
 ```cs
 [BAD]
-// 問題の例
+// 起こり得る問題の例
 ShowUserProfile(userData1.name, otherUserData.imageUrl); // 別ユーザーが混じる
 ShowUserProfile(userData1.imageUrl, otherUserData.name); // 名前とURLが逆
 // その他 userData の中身を直接操作(userDataの操作責任が分散)
