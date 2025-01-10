@@ -132,14 +132,16 @@ void UpdateView(ErrorType errorType) {
 
 ```cs
 [GOOD]
-public void UpdateView(bool isError) {
-    _resultView.Visible = !isError;
-    _errorView.Visible = isError;
-    _iconView.Image = GetIconImage(isError);
+public void UpdateView(ErrorType errorType) {
+    _resultView.Visible = errorType == ...;
+    _errorView.Visible = errorType != ...;
+    _iconView.Image = GetIconImage(errorType);
 }
 
-private Image GetIconImage(bool isError) { 
-    return isError ? CROSS_MARK_IMAGE : CHECK_MARK_IMAGE;
+private Image GetIconImage(ErrorType errorType) { 
+    if (errorType == ...) { return isError ? CROSS_MARK_IMAGE }
+    ...
+    else { return CHECK_MARK_IMAGE; }
 }
 ```
 
@@ -167,7 +169,7 @@ void UpdateUserView(DataType dataType) {
 ```
 
 - 抽象化しないと網羅表現できない
-- 使用者側がdataTypeの値を決める際にも同じ条件分岐を書いているかも(分岐の重複)
+- 使う側がdataType値を決める際も同じ条件分岐を書いているかも(分岐の重複)
 
 ---
 
@@ -227,204 +229,3 @@ void Update〇〇View() { ... }
     - 内部の条件分岐が必要かどうか考える
     - ポリモーフィズム(State/Strategyパターンなど)を考える
 
----
-
-## スタンプ結合 ＆ データ結合
-
-値の受け渡しに関数の引数や戻り値を使い、制御結合ではない状態。弱い結合。
-
-- 関数の引数や戻り値を使って値を受け渡し
-- 引数に渡したデータ構造の一部のみ使う(スタンプ結合)
-
->>> ※両者の違い: <b>スタンプ結合</b>:構造体やクラスなどの構造的なデータの受け渡し / <b>データ結合</b>:プリミティブな値の受け渡し<br/>データ構造に対する依存がないぶんスタンプ結合の方が弱い結合だが、大差なし
-
----
-
-## スタンプ結合 ＆ データ結合の例
-
-引数はデータ結合、返り値はスタンプ結合になった例。
-
-```cs
-UserModel QueryUserModel(string userName, string userId) {
-    // グローバル変数やクラスのメンバー変数を使わず
-    // 引数として渡した値やデータ構造のみ使用してデータ取得
-    return UserModel;
-}
-```
-
-→ 結合が強い方に従うのでこの関数はスタンプ結合相当になる。
-
----
-
-## スタンプ結合よりもデータ結合が良いわけではない
-
-```cs
-[BAD]
-// ...データ結合になるよう引数を必要なプリミティブ型だけに限定 💪
-public void ShowUserProfile(string userName, string profileImageUrl) {
-    // `userName`と `profileImageUrl`を使って「メッセージ送信者」を
-    // 画面に表示するコード
-    ...
-}
-
-// UserDataのプロパティを取り出し渡す
-ShowUserProfile(userData1.name, userData1.imageUrl);
-```
-**クイズ**: このコードに起こり得る問題を考えてみよう
-
----
-
-## 情報の粒度を考える
-
-```cs
-[BAD]
-// 起こり得る問題の例
-ShowUserProfile(userData1.name, otherUserData.imageUrl); // 別ユーザーが混じる
-ShowUserProfile(userData1.imageUrl, otherUserData.name); // 名前とURLが逆
-// その他 userData の中身を直接操作(userDataの操作責任が分散)
-```
-
-```cs
-[BETTER] -- ただし常に良いわけではない(UserDataの神クラス化を招く)
-void ShowUserProfile(UserData userData) { ... }
-```
-<!-- 必要なデータだけ、プリミティブなデータだけ無理に取り出そうとしない。 この場合は同一のユーザーであることが確定しているので、引き離す必要がない-->
-<!-- この解答の一方で、UserDataをどこでも引き回すようになると、神オブジェクトに変化していってしまうし、呼ぶ側も呼ばれる側もUserDataを引き回さないといけないので、奥深くの処理になっているときは扱いづらくなってしまう。 -->
-<!-- あらゆる使い方をされてしまうことに思いを馳せること。 -->
-
----
-
-## コードの外で定義されたデータ構造
-
-外部(サーバー,別デバイス,ドライバー)との通信で使用するデータ構造を内部まで持ち込まない。界面で内部のデータ構造に変換して使用する **← 関心の分離**
-
-- データフレーム、パケット、エラー型や分類など
-
-![center](./assets/30-datascope.png)
-
-- 逆視点でも同じ。内部のデータ構造を外部通信にそのまま使わない
-
----
-
-## スタンプ結合＆データ結合のまとめ
-
-* 値の受け渡しに関数の引数や戻り値を使う
-    * 比較的弱い結合。無理にこれ以上弱くする必要はない
-* スタンプ結合: 構造体やクラスの授受 / データ結合: プリミティブな値の授受
-* 一応 スタンプ結合<データ結合 だが、常にデータ結合の方が良いわけでもない
-
-
----
-
-## メッセージ結合
-
-関数の引数や戻り値による情報の受け渡しをしない、単に関数を呼び出すだけの関係。非常に弱い結合。
-
-- イベント発生の通知
-- リソースの解放(デストラクタなど)
-
-```cs
-void CloseConnection() { // メッセージ結合の例。引数も戻り値も使っていない
-    this._file.close();
-    ...
-}
-
-CloseConnection();
-```
-
-…とはいえ、大局的に見た時にむしろ強い依存関係を作ることがある
-
----
-
-## 一見メッセージ結合だが実質は共通結合
-
-```cs
-class SomeUIClass { // [BAD]
-    private UserListPresenter _presenter = ...;
-    void UpdateUserList(IList<User> users) {
-        _presenter.Users = users;
-        _presenter.NotifyUserListUpdated(); // ←一見メッセージ結合
-    }
-```
-
-- `NotifyUserListUpdated()`だけ見るとメッセージ結合
-- 実際は呼ばれる前に`Users`が更新されていることを想定
-    - 広義の共通結合(=共有されたデータ構造を介した受け渡し)
-
----
-
-## 一見メッセージ結合だが実質は共通結合: 解決策
-
-```cs
-class SomeUIClass { // [BAD]
-    private UserListPresenter _presenter = ...;
-    void UpdateUserList(IList<User> users) {
-        _presenter.Users = users;
-        _presenter.NotifyUserListUpdated(); // ←一見メッセージ結合
-    }
-```
-↓
-```cs
-class SomeUIClass { // [GOOD]
-    private UserListPresenter _presenter = ...;
-    void UpdateUserList(IList<User> users) {
-        _presenter.NotifyUserListUpdated(users); // ←良いデータ結合
-    }
-```
----
-
-## メッセージ結合のまとめ
-
-- 関数の引数や戻り値による情報の受け渡しをせず関数を呼び出すだけ
-    - 非常に弱い結合。
-    - イベント送信やリソース解放などで登場
-- 関数呼び出しの前に条件設定が必要な場合、見えない強結合が生まれていることがあるので注意する
-    - メッセージ結合にこだわらず関数引数や戻り値を用いる
-        - スタンプ結合・データ結合
-
----
-
-## 結合度
-
-|指標|結合度|状態|
-|---|---|---|
-|内容結合|強|隠すべき内容に依存している|
-|共通結合|↓|他者も読み書きできる場所で値を受け渡し(データ構造)|
-|外部結合|↓|〃(Primitive値)|
-|制御結合|↓|動作を決める情報を渡して内部処理を切り替え|
-|スタンプ結合|↓|関数の引数や戻り値を使って値を受け渡し(データ構造)|
-|データ結合|↓|〃(Primitive値)|
-|メッセージ結合|弱|引数/戻り値を持たない関数の呼び出し|
-
----
-
-## 結合度
-
-|指標|緩和策|
-|---|---|
-|内容結合|依存元に対する制約の最小化・責任範囲の明確化|
-|共通結合|引数/戻り値を使った受け渡し・依存性注入の活用|
-|外部結合|〃|
-|制御結合|操作対象で分割・不要な条件分岐の除去・Strategyパターン|
-|スタンプ結合|情報の不必要な細分化に注意する|
-|データ結合|〃|
-|メッセージ結合|隠れた依存関係の作り込みに注意する|
-
-<!-- いずれの結合度においても、現代のモダンなプログラミング言語を使っていたとしても違反しうるものなので、注意 -->
-
----
-
-## [補足]凝集度
-
-タネ本では意図的に凝集度(モジュール強度)を紹介していない。
-
-> - 元はモジュール間の関係性を表したもの
->     - １モジュール内に関係のない要素を含めるべきでない
-> - タネ本の視点での「モジュール」は「関数/メソッド」
->     - → クラス内でメンバー変数を使用することも凝集度の低下につながる
->     - 「全メンバーもメソッドもpublicなので凝集度最高！」 🤔?
->     - 凝集度の論理的強度を高めるためには関数を分割すると、呼び出し側で制御結合が生まれる
-
-**凝集度を見るには大域的な必要＆凝集度にどのような定義を与えるかが重要**…なので独自定義を避けるために凝集度は紹介していない
-
-<!-- そういう考え方もあるということを理解しておく -->
