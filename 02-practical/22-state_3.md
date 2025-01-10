@@ -131,15 +131,15 @@ var mutableList = new List<int>();
 var list = mutableList;
 
 mutableList.Append(193);
-Console.WriteLine(list.Count); // "193"が出力される
+Console.WriteLine(list.Count); // 0ではなく1が出力される
 ```
 
 編集権を渡すつもりがない場合はコピーを渡すか、変更できない方でバインドする
 
 ```cs
 var mutableList = new List<int>();
-var list1 = new List<int>(mutableList);
-IReadOnlyList<int> list2 = mutableList;
+var list1 = new List<int>(mutableList); // 別リストとして管理
+IReadOnlyList<int> list2 = mutableList; // 編集権は獲得しないことを明示
 ```
 
 
@@ -186,7 +186,7 @@ class NGSample // [GOOD] C#で読み取り専用の配列を作成する
 {
     private static readonly string Message1 = "hello,";
     private static readonly string Message2 = "world!";
-    public static IReadOnlyList<string> Messages = new[] { Message1, Message2 };
+    public static readonly IReadOnlyList<string> Messages = new[] { Message1, Message2 };
 }
 
 :
@@ -240,7 +240,7 @@ foreach (var s in list) { Console.Write(s); } // abcd (abceにならない)
 [GOOD] 改善例1
 class CouragedList {
     private List<int> _list = []; // 更新可能。ただしprivate
-    public IReadOnlyList<int> List { get => _list; } // 読み取り専用のリストを返す
+    public readonly IReadOnlyList<int> List { get => _list; } // 読み取り専用のリストを返す
 }
 
 [GOOD] 改善例2
