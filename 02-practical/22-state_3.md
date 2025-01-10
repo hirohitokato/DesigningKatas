@@ -124,6 +124,27 @@ class MyClass { // 可変であるクラス。一部のプロパティが可変�
 
 ---
 
+## 不変性: 配列/辞書も同様
+
+```cs
+var mutableList = new List<int>();
+var list = mutableList;
+
+mutableList.Append(193);
+Console.WriteLine(list.Count); // "193"が出力される
+```
+
+編集権を渡すつもりがない場合はコピーを渡すか、変更できない方でバインドする
+
+```cs
+var mutableList = new List<int>();
+var list1 = new List<int>(mutableList);
+IReadOnlyList<int> list2 = mutableList;
+```
+
+
+---
+
 ## 不変性: 不変(immutable)と読み取り専用(read-only)の違い
 
 変更させないようにしているつもりが、変更できてしまう例
