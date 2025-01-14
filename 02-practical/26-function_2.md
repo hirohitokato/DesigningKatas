@@ -86,22 +86,22 @@ _Code Readability_
 
 ## 定義指向プログラミングの例(1)
 
-メソッドの深いネストを避けられ、途中処理の意味も伝えられる
-
 ```py
-# func_a()関数の意味が分かりにくい
+# [BAD] func_a()関数の意味が分かりにくい
 c = calculate_sqrt(func_a(a, 2), func_a(b, 2))
 ```
 ↓
 ```py
-# 定義指向プログラミング
+# [GOOD] 定義指向プログラミングの適用例
 # func_aは累乗を計算する関数(==pow())だと読み取れるようになる
 a_square = func_a(a, 2)
 b_square = func_a(b, 2)
 c = calculate_sqrt(a_square, b_square)
 ```
 
-`#define M_PI 3.14159`,`const NAME_KEY="name"`なども同じ
+メソッドの深いネストを避けられ、途中処理の意味も伝えられる
+
+>>> `#define M_PI 3.14159`,`const NAME_KEY="name"`なども同じ定義指向として考える
 
 ---
 
