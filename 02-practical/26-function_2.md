@@ -84,7 +84,7 @@ _Code Readability_
 
 ---
 
-## 定義指向プログラミングの例
+## 定義指向プログラミングの例(1)
 
 メソッドの深いネストを避けられ、途中処理の意味も伝えられる
 
@@ -98,20 +98,20 @@ c = calculate_sqrt(func_a(a, 2), func_a(b, 2))
 # func_aは累乗を計算する関数(==pow())だと読み取れるようになる
 a_square = func_a(a, 2)
 b_square = func_a(b, 2)
-c = calculate_sqrt(a_square + b_square)
+c = calculate_sqrt(a_square, b_square)
 ```
 
 `#define M_PI 3.14159`,`const NAME_KEY="name"`なども同じ
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例1)
+## 定義指向プログラミングの例(2)
 
 ```cs
 [BAD]
 someView.ShowDialogOnError(                   // (もし取得失敗したらエラーダイアログ表示)
     presenter.UpdateSelfProfileView(          // 2.得られたモデルをプロフィール画面に反映
-        userRepository.queryUserModel(userId) // 1.ユーザーIDに紐づくデータを取得
+        userRepository.Query(userId, new Date(dateStr)) // 1.ユーザー情報を取得
     )
 );
 ```
@@ -122,13 +122,13 @@ someView.ShowDialogOnError(                   // (もし取得失敗したらエ
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例1)
+## 定義指向プログラミングの例(2)
 
 ```cs
 [BAD]
 someView.ShowDialogOnError(                   // (もし取得失敗したらエラーダイアログ表示)
     presenter.UpdateSelfProfileView(          // 2.得られたモデルをプロフィール画面に反映
-        userRepository.queryUserModel(userId) // 1.ユーザーIDに紐づくデータを取得
+        userRepository.Query(userId, new Date(dateStr)) // 1.ユーザーIDに紐づくデータを取得
     )
 );
 ```
@@ -136,17 +136,30 @@ someView.ShowDialogOnError(                   // (もし取得失敗したらエ
 ```cs
 [GOOD]
 try {
-    var userModel = userRepository.queryUserModel(userId); // 変数にいったん定義
+    var signedInDate = new Date(str); // 変数にいったん定義
+    var userModel = userRepository.queryUserModel(userId, signedInDate);
     presenter.UpdateSelfProfileView(userModel);
-}
-catch (Exception e) { // エラーを変数に定義
+} catch (Exception e) { // エラーを変数に定義
     someView.ShowDialogOnError(e);
 }
 ```
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例2)
+## 補足: 書籍『リーダブルコード』(*)
+
+変数を「説明変数」「要約変数」２つの意味に分けている
+
+- **説明変数**: 値の意味が何であるかを説明する変数
+- **要約変数**: 式の意味を要約する変数
+
+変数をこの２視点で分割できると、コードがより分かりやすくなる。
+
+>>> *:Dustin Boswell, Trevor Foucher, 須藤功平(解説),角征典(訳).2012. オライリー・ジャパン
+
+---
+
+## 適用するときの注意(1) : if文のネスト
 
 ```cs
 [BAD]
@@ -171,7 +184,7 @@ if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例2)
+## 適用するときの注意(1) : if文のネスト
 
 定義先を変数ではなく関数とすると良い（こともある）
 
@@ -191,7 +204,7 @@ if (_IsValidMessage(messageId) &&
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例3)
+## 適用するときの注意(2) : for文のネスト
 
 ![bg right:30% 90%](assets/25-for_nest.png)
 
@@ -213,7 +226,9 @@ void ...(List<MessageListPage> messageListPages) {
 
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例3)
+## 適用するときの注意(2) : for文のネスト
+
+![bg right:24% 95%](assets/25-for_nest.png)
 
 改悪例。重要な処理が奥に潜り、かえって読みにくくなってしまっている。
 
@@ -244,13 +259,21 @@ private void storeMessageForChunk(MessageListChunk chunk) {
  -->
 ---
 
-## 定義指向プログラミング適用例① : ネスト (例3)
+## 適用するときの注意(2) : for文のネスト
 
 **[対象を取り出す処理]** と **[対象に対して行う処理]** とで分割する
+![bg right:24% 95%](assets/25-for_nest.png)
 
 ```cs
 [GOOD]
-private void forEachMessage(List<MessageListPage> pages, Action<MessageModel> action) {
+void ...(List<MessageListPage> messageListPages) {
+    forEachMessage(messageListPages, (messageModel) => {
+        repository.storeMessage(messageModel);
+    });
+}
+
+void forEachMessage(List<MessageListPage> pages,
+                    Action<MessageModel> action) {
     // スペースの都合でfor文の括弧を省いているので注意
     for (page in pages)
         for (chunk in page)
@@ -258,27 +281,6 @@ private void forEachMessage(List<MessageListPage> pages, Action<MessageModel> ac
                 action(messageModel);
 }
 ```
-```cs
-// 使用方法
-void ...(List<MessageListPage> messageListPages) {
-    forEachMessage(messageListPages, (messageModel) => {
-        repository.storeMessage(messageModel);
-    }
-}
-```
-
----
-
-## 補足: 書籍『リーダブルコード』(*)
-
-変数を「説明変数」「要約変数」２つの意味に分けている
-
-- **説明変数**: 値の意味が何であるかを説明する変数
-- **要約変数**: 式の意味を要約する変数
-
-これらを目的に変数を使うとコードがより分かりやすくなる。
-
->>> *:Dustin Boswell, Trevor Foucher, 須藤功平(解説),角征典(訳).2012. オライリー・ジャパン
 
 ---
 
@@ -310,6 +312,7 @@ for文などの繰り返し処理は２つの責務が混じっている。分�
     - 名前のついた変数・関数・クラスの定義を多用するプログラミングスタイル
         - ネスト・メソッドチェーン・リテラルに有効
     - 処理がネストしないように、定義を途中挟みながら「定義のかたまり」を作っていく
-- ループや分岐処理の解像度も上げよう
+- ついでにループや分岐処理の解像度も上げよう
+    - for,if文は制御表現としてプリミティブすぎる
 
 次回はメソッドチェーン・リテラルを定義指向プログラミングで解決する話を続けます。
