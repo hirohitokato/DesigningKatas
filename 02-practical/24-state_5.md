@@ -69,9 +69,10 @@ _Code Readability_
 ## 非巡回
 
 可変なオブジェクトを作る際はb or cのような遷移にするのが望ましい
+
 |a.巡回のある状態遷移|b.非巡回な状態遷移|c.自己ループを除けば<br/>非巡回な状態遷移|
 |---|---|---|
-|![](./assets/22-cyclic_state.png)|![](./assets/22-acyclic_state.png)|![](./assets/22-acyclic_state_with_selfloop.png)|
+|![w:330px](./assets/22-cyclic_state.png)|![w:330px](./assets/22-acyclic_state.png)|![w:330px](./assets/22-acyclic_state_with_selfloop.png)|
 
 <!-- そのためには、可変なオブジェクトを再利用しないようにすることが重要。 -->
 <!-- なぜか。状態が循環するということは、可能性の話として、プログラム内でいかなる状態にもなりうるので制御が効かなくなりうるということ。
@@ -166,7 +167,8 @@ class StopWatch { // [BAD]
 
 ```cs
 class SomeRunner {
-    private StopWatch _stopWatch = new StopWatch();
+    private StopWatch _stopWatch = new StopWatch(); // 再利用可能なので当然使う
+
     public void RunSomeHeavyTask() {
         _stopWatch.StartMeasurement(); // 計測開始
         : // 重い処理
@@ -189,16 +191,13 @@ class SomeRunner {
 ```cs
 class SomeRunner {
     ...
-    public void RunTask() {
+    public void RunTasks() {
         _stopWatch.StartMeasurement(); // 計測開始
 
-        if (...) {
-            this.RunSomeHeavyTask(); // バグ
-        } else {
-            this.RunAnotherHeavyTask(); // バグ
-        }
+        this.RunSomeHeavyTask();
+        this.RunAnotherHeavyTask(); // 問題発生!!
 
-        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // バグ
+        var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 問題発生!!!
     }
 }
 ```
@@ -228,10 +227,11 @@ class SomeRunner {
 ## 非巡回: まとめ
 
 - 状態に巡回構造があると実装が複雑になりやすい
-    - 再帰的に呼び出されたり、再利用のタイミングを意識しなければならない
+    - 再帰呼び出しや再利用のタイミングを意識しなければならないため
 - 単方向のオブジェクトを使い捨てる設計にする
     - 必要に応じて非巡回構造に再設計する
 - 消せない巡回構造は局所化する
+    - 状態遷移図を俯瞰/凝視できる多層的な視点を持とう
 
 ---
 
