@@ -193,9 +193,9 @@ class SomeRunner {
     ...
     public void RunTasks() {
         _stopWatch.StartMeasurement(); // 計測開始
-
-        this.RunSomeHeavyTask();
-        this.RunAnotherHeavyTask(); // 問題発生!!
+		 // 重い処理
+        this.RunSomeHeavyTask();    // 問題発生!!
+        this.RunAnotherHeavyTask(); // ここは正常に計測できる
 
         var elapsedTimeInMs = stopwatch.FinishMeasurement(); // 問題発生!!!
     }
