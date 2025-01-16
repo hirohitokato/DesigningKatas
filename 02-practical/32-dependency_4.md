@@ -9,7 +9,7 @@ paginate: true
 -->
 <!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
-# 読みやすいコードの作り方 - 依存関係(3)
+# 読みやすいコードの作り方 - 依存関係(4)
 
 _Code Readability_
 
@@ -307,7 +307,7 @@ class SomeUIClass { // [GOOD]
 
 ---
 
-## やむを得ない巡回構造の局所化
+## やむを得ない巡回構造は局所化する
 
 ![](./assets/34-control_dependency.png)
 
@@ -360,4 +360,4 @@ class SomeUIClass { // [GOOD]
 安定依存の法則(SDP。Stable Dependencies Principle)を守る
 
 ![h:200pt](./assets/34-stable_dependency_principle.jpg)
->>> 『ちょうぜつソフトウェア設計入門』(田中ひさてる著)より
+>>> 『ちょうぜつソフトウェア設計入門』(田中ひさてる著)より転載
