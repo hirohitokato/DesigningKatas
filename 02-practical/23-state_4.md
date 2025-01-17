@@ -83,7 +83,7 @@ class GoodClosableClass { // GOOD
 class BadClosableClass { // BAD
     public bool isClosed {get; private set;} = false;
     public void Close() {
-        if (isClosed) { /*例外を投げる*/}
+        if (isClosed) { /*例外を投げる*/ }
         : // 以降は同じ
     }
 }
@@ -231,7 +231,7 @@ class NumberRepository {
 2. HTTPのPOSTメソッド **→ どちらも持たない**
 3. 電源をオフにするボタン **→ 冪等性**
 4. 絶対値を求める関数 **→ 冪等性・参照透過性**
-5. ファイルの内容を文字列で返す関数 全体**→ 冪等性**
+5. ファイルの内容を文字列で返す関数 全体 **→ 冪等性**
 6. 現在の通信状態を返す関数
 
 ---
