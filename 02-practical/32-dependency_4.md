@@ -113,7 +113,7 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 UserModel QueryUserModel(string userName, string userId) {
     // グローバル変数やクラスのメンバー変数を使わず
     // 引数として渡した値やデータ構造のみ使用してデータ取得
-    return UserModel;
+    return userModel;
 }
 ```
 
@@ -127,7 +127,7 @@ UserModel QueryUserModel(string userName, string userId) {
 [BAD]
 // ...データ結合になるよう引数を必要なプリミティブ型だけに限定 💪
 public void ShowUserProfile(string userName, string profileImageUrl) {
-    // `userName`と `profileImageUrl`を使って「メッセージ送信者」を
+    // `userName`と `profileImageUrl`を使って「メッセージ送信者の情報」を
     // 画面に表示するコード
     ...
 }
@@ -152,7 +152,7 @@ ShowUserProfile(userData1.imageUrl, otherUserData.name); // 名前とURLが逆
 
 ```cs
 [BETTER] -- ただしこれも常に良いわけではない(UserDataの神クラス化を招く)
-void ShowUserProfile(UserData userData) { ... }
+void ShowUserProfile(userData1) { ... }
 ```
 <!-- 必要なデータだけ、プリミティブなデータだけ無理に取り出そうとしない。 この場合は同一のユーザーであることが確定しているので、引き離す必要がない-->
 <!-- この解答の一方で、UserDataをどこでも引き回すようになると、神オブジェクトに変化していってしまうし、呼ぶ側も呼ばれる側もUserDataを引き回さないといけないので、奥深くの処理になっているときは扱いづらくなってしまう。 -->
@@ -237,7 +237,7 @@ class SomeUIClass { // [BAD]
 class SomeUIClass { // [GOOD]
     private UserListPresenter _presenter = ...;
     void UpdateUserList(IList<User> users) {
-        _presenter.NotifyUserListUpdated(users); // ←良いデータ結合
+        _presenter.NotifyUserListUpdated(users); // ←良いスタンプ結合
     }
 ```
 ---
