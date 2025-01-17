@@ -135,7 +135,7 @@ class Y {
 
 ## 結合度
 
-ソフトウェアの分割がどの程度行き届いているかを図る尺度。
+ソフトウェアの分割がどの程度行き届いているかを測る尺度。
 
 Reliable software through composite design(*1)の定義 ＋ Software Architect's Handbookの定義(*2)
 
