@@ -66,7 +66,7 @@ _Code Readability_
 
 ---
 
-## 冪等性(べきとうせい)
+## 冪等性(べきとうせい。idempotent)
 
 冪等: 操作を１回行ったときの結果と、操作を複数回行ったときの結果が同じ
 
@@ -119,7 +119,7 @@ class BadClosableClass { // BAD
 ```cs
 class NumberRepository {
     private int? _cachedValue;
-    // キャッシュを保持していようがいまいがGetValue()を呼べば良い
+    // 使う側は中の状態に関係なくGetValue()を呼べば良い
     public int GetValue() {
         if (_cachedValue) { return _cachedValue; }
         else { return loadNewValue(); }
