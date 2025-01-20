@@ -140,9 +140,13 @@ class Y { // 依存先クラス
 
 ## 3.複雑 → 単純 ／ 4.可変 → 不変
 
-機能としての寿命が異なる（単純,不変 |越えられない壁| 複雑,可変）
+機能としての寿命が異なる。
 
-安定依存の法則(SDP。Stable Dependencies Principle)を守る
+> #### 単純,不変(＝安定) <br>**～～|越えられない壁|～～**<br> 複雑,可変(＝不安定)
 
-![h:200pt](./assets/33-stable_dependency_principle.jpg)
+安定依存の法則(SDP。Stable Dependencies Principle)を守る。
+
+**{安定度} = Min({全ての依存先の安定度})**
+
+![bg right:45% h:200pt](./assets/33-stable_dependency_principle.jpg)
 >>> 『ちょうぜつソフトウェア設計入門』(田中ひさてる著)より転載
