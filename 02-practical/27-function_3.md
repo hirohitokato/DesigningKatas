@@ -109,7 +109,7 @@ var query = someList                // [C#]リスト構造のデータ
 
 ## 要改善パターン② : メソッドチェーン
 
-→ 重要な部分でメソッドチェーンをいちど切る
+→ 重要な部分で一度メソッドチェーンを切る
 
 ```kt
 [BAD]
@@ -120,10 +120,12 @@ userModelList.filter { userModel -> userModel.isFriend }
 
 ```kt
 [GOOD]
+// 一覧から必要なデータを抽出したタイミングでワンクッション
 val friendProfileBitmaps = userModelList
     .filter { userModel -> userModel.isFriend }
     .map { userModel -> userModel.profileBitmap }
 
+// 必要なデータに対する処理でワンクッション
 friendProfileBitmaps
     .forEach { bitmap → imageGridView.addImage(bitmap) }
 ```
