@@ -193,6 +193,15 @@ var user = requester.FetchUserData(id); // サーバーからデータ取得す�
 ドメイン駆動設計でスマートなエンティティにこだわり道に迷ったときも注意
 
 <!-- 初心者がデータとメソッドを一緒に持つ！と思って作り上げてしまうだけではなく、DDDをかじり始めた中級者も陥る罠なので要注意。 -->
+<!-- 「データがメソッドを持ってはいけない」ではないので勘違いしないよう注意 -->
+
+---
+
+## 依存の重複
+
+あるクラスを複数のクラスが利用している状態のこと。
+
+![center](https://kroki.io/nomnoml/svg/eNqLds5JLC5WcIzVtYt2zs_Nzc9TAIvEckVDZJxwyjjjlNHT08OUAwBsgyM5)
 
 ---
 
