@@ -272,7 +272,7 @@ class SomeClass {
 ## クラス内でメソッド分割を行うときの注意点
 
 ```cs
-[GOOD] // ビュー生成を
+[GOOD] // ビュー生成を行う処理として、再利用性が高まった
 class SomeClass {
     private View userNameTextView;
     private View profileImageView;
@@ -301,3 +301,5 @@ class SomeClass {
 
 - 定義指向プログラミング
     - ネスト・メソッドチェーン・リテラルを使わず、名前のついた変数・関数・クラスの定義を多用するプログラミングスタイル
+
+一気呵成に解決しようとせず、途中途中の段階を踏ませることで理解しやすくなる。
