@@ -83,6 +83,18 @@ var query = someList                // [C#]リスト構造のデータ
 
 ### :-1: デメリット
 
+あえて考えてみよう・・・ 🤔
+
+---
+
+## 要改善パターン② : メソッドチェーンのメリット/デメリット
+
+### :+1: メリット
+- 関数評価や実行が上から順に行われるので、流れるように読める
+- ネストが浅くなるため、メソッドと引数の関係が分かりやすい
+
+### :-1: デメリット
+
 - どこに重要なコードがあるのか分かりにくい
 - 途中の状態やレシーバが何か分かりにくい
 - 毎回全部読まないと処理が分からない
@@ -91,7 +103,7 @@ var query = someList                // [C#]リスト構造のデータ
 → 何もかもメソッドチェーンだけで書こうとしない。途中で分ける
 
 <!-- （ブレークポイントが文の途中で設定できるものは一部のみ） -->
-<!-- つまるところ途中状態のないクイズを作っている状態なので、神メソッドチェーンになっておいそれと触れなくなる -->
+<!-- つまるところ途中状態が見えないクイズを作っている状態なので、神メソッドチェーンになっておいそれと触れなくなる -->
 
 ---
 
@@ -128,12 +140,13 @@ friendProfileBitmaps
 >
 > ```cs
 > [BAD]
-> var result = someObj.otherObj.action(); // 友達の友達に問い合わせている
+> var result = obj.otherObj.action(); // 友達の友達に問い合わせている。１行で２依存発生！
 > ```
 
-メソッドチェーンは返り値が同じ型である前提で表面をなぞっているのに対し、デメテルの法則の違反ケースではオブジェクトをどんどん掘り下げている。
-知識の範囲はできるだけ表面だけにしないと依存関係が増えて破綻しやすくなるので注意。
+メソッドチェーンは返り値が同じ型である前提で表面をなぞっている
+⇔ デメテルの法則の違反ケースではオブジェクトをどんどん掘り下げている。
 
+**知識範囲はできるだけ表面だけにしないと依存関係が増え破綻しやすくなるので注意**
 <!-- https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%A1%E3%83%86%E3%83%AB%E3%81%AE%E6%B3%95%E5%89%87 より引用。
  犬を散歩に連れ出すことを考える。この際、犬の足に直接「歩け」と命じるのはおかしいだろう。この場合は、犬に対して命令し、自分の足の面倒は自分で見させるのが正しい方法だといえる。
  アーキテクチャで考えても良い。モジュールがレイヤー構造になっている図をイメージしたときに、あるレイヤーをスキップしてさらに先のレイヤーとで直接通信しているのはおかしいと思うはず。 -->
@@ -235,7 +248,7 @@ class SomeClass {
 ## クラス内でメソッド分割を行うときの注意点
 
 ```cs
-[BAD]
+[BAD] // ただ処理を別に書いただけ。再利用性も低い
 class SomeClass {
     private View userNameTextView;
     private View profileImageView;
@@ -245,11 +258,11 @@ class SomeClass {
     }
 
     private void InitializeUserNameTextView() {
-        userNameTextView = new View();
+        this.userNameTextView = new View();
         /* …userNameTextViewに対する長い初期化処理… */
     }
     private void InitializeProfileImageView() {
-        profileImageView = new View();
+        this.profileImageView = new View();
         /* …profileImageViewに対する長い初期化処理… */
     }
 }
@@ -259,13 +272,13 @@ class SomeClass {
 ## クラス内でメソッド分割を行うときの注意点
 
 ```cs
-[GOOD]
+[GOOD] // ビュー生成を
 class SomeClass {
     private View userNameTextView;
     private View profileImageView;
     SomeClass() {
-        userNameTextView = this.CreateUserNameTextView();
-        profileImageView = this.CreateProfileImageView();
+        this.userNameTextView = this.CreateUserNameTextView();
+        this.profileImageView = this.CreateProfileImageView();
     }
 
     private View CreateUserNameTextView() { // 名前がInitialize～からCreate～に変わった点も注目
