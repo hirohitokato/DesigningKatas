@@ -98,3 +98,10 @@
 - [NULLポインタの歴史](09-techniques\03-history_of_nullptr.md)
 - [プログラミングに関するジョークいくつか](10-humor/13-jokes_from_quora.md)
 - [基本編の復習と分類](01-basics/11-wrapup.md)
+
+## 本勉強会の資料について
+
+本サイトの資料はいずれも [Unlicense](https://ja.wikipedia.org/wiki/Unlicense) で公開しています。資料の内容、スライドのテンプレートなど自由にご活用ください。
+
+- 引用先にしている書籍や記事の著作権にはご注意ください
+- 流用する際の連絡は不要ですが、一言伝えていただけると私の自己肯定感が高まります。 ;)
