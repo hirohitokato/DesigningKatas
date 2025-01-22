@@ -53,9 +53,9 @@ _Code Readability_
 
 ## 関数パートの説明内容
 
-1. 関数の責任
-    - 責任の分割の基本方針
-    - コマンドとクエリの分割(Command-Query Separation. CQS)
+1. **関数の責任** ← ｷｮｳﾊｺｺ
+    - **責任の分割の基本方針**
+    - **コマンドとクエリの分割(Command-Query Separation. CQS)**
 1. 関数の流れ
     - 定義指向プログラミング
     - 早期リターン
