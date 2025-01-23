@@ -84,7 +84,7 @@ class Y { // 依存先クラス
 依存関係に巡回構造を作らないことが原則。
 → クラスだけでなく、ファイル、パッケージなどでも同様。
 
-![bg right:40% 90%](./assets/34-cyclic_dependency.png)
+![bg right:40% 90%](./assets/33-cyclic_dependency.png)
 
 >>> C/C++系は`#include`をうっかり巡回させがちなので特に注意
 
