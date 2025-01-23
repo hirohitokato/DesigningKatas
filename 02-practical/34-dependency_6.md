@@ -83,12 +83,100 @@ class Y { // 依存先クラス
 
 ![bg 90% right:30%](./assets/34-implicit_dependence.png)
 明示的な依存関係だけでなく「コードから見えない依存関係(暗黙的な依存関係)」にも気を配る
+（右のコードは実体の注入箇所を見て初めて分かる）
 
 - ポリモーフィズムの実クラス
 - 型定義のないデータフォーマット
 - 引数や戻り値の変域
 - 同じようなコードのコピー
 
-過度な抽象化など「薬も過ぎれば毒になる」ことに留意する
+過度な抽象化、極端な低結合度、… etc.
+ → **「薬も過ぎれば毒になる」**
 
 ---
+
+## アンチパターン(1) 過度な抽象化
+
+![height:120px center](./assets/34-too_abstraction1.png)
+
+```cs
+class CurrentDatePresenter { // 現在の日付を表示するクラス
+    private DateTextFormatter _dateTextFormatter; // 日付(数値)→文字列変換
+    void showCurrentTime() { /* _dateTextFormatterを使った処理 */ }
+}
+
+class UserProfilePresenter { // ユーザー情報を表示するクラス
+    private UserProfileRepository _repository; // ユーザーID(数値)→文字列取得
+    void showProfile(int userId) { /* _repositoryを使った処理 */ }
+}
+```
+
+🤔「どちらも数値→文字列の処理を持ってるな…そうだ、共通部分を抽象化だ！」
+
+---
+
+## アンチパターン(1) 過度な抽象化
+
+
+```cs
+[BAD]
+// 数値を文字列に変換する最高のクラス
+interface NumToStringConverter {
+    string convert(int value);
+}
+
+class DateTextFormatter:  NumToStringConverter { ... }
+class UserProfileRepository:  NumToStringConverter { ... }
+```
+
+🤔「変換部分をインターフェースとして切り出して…継承して…」
+
+---
+
+## アンチパターン(1) 過度な抽象化
+
+```cs
+[BAD]
+class CurrentDatePresenter { // 現在の日付を表示するクラス
+    private NumToStringConverter _dateTextFormatter; // 日付(数値)→文字列変換
+    void showCurrentTime() { /* _dateTextFormatterを使った処理 */ }
+}
+
+class UserProfilePresenter { // ユーザー情報を表示するクラス
+    private NumToStringConverter _repository; // ユーザーID(数値)→文字列取得
+    void showProfile(int userId) { /* _repositoryを使った処理 */ }
+}
+```
+
+🤔「できた…完璧すぎる…」
+
+---
+
+## アンチパターン(1) 過度な抽象化
+
+悪化。動作の流れが暗黙的になって追いにくく、入れ替えても意味がない処理が変えられるようになってしまっている
+
+<center>
+
+|状況|クラス図|
+|---|---|
+|before|![height:120px](./assets/34-too_abstraction1.png)|
+|after👎|![height:170px](./assets/34-too_abstraction2.png)|
+
+</center>
+
+---
+
+## DI(Dependency Injection.依存性注入)の光と闇
+
+> DIとは、オブジェクト間の依存関係をハードコーディングせずに解決する設計パターンのこと。静的なオブジェクト指向言語ではインターフェースと実装クラスとを分離しておき自由に差し替えられるようにする。
+
+DIにはメリットもデメリットもあるので盲信しない。↓のメリットを求めていないのであればDIを使う必要はない
+
+<center>
+
+|メリット|デメリット|
+|---|---|
+|・モジュール間の相互依存の解決<br>・実装の差し替え<br>・ビルドの高速化<br>・ツールによるインスタンス管理|・依存関係の暗黙化<br>・可読性の低下のおそれ|
+
+<center>
