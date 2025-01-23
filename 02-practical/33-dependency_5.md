@@ -84,7 +84,7 @@ class Y { // 依存先クラス
 依存関係に巡回構造を作らないことが原則。
 → クラスだけでなく、ファイル、パッケージなどでも同様。
 
-![bg right:40% 90%](./assets/33-cyclic_dependency.png)
+![bg right:50% 90%](./assets/33-cyclic_dependency.png)
 
 >>> C/C++系は`#include`をうっかり巡回させがちなので特に注意
 
@@ -141,12 +141,14 @@ class Y { // 依存先クラス
 
 > 単純,不変(＝安定) <br><b>||||||||||越えられない壁||||||||</b><br> 複雑,可変(＝不安定)
 
-安定依存の法則(SDP。Stable Dependencies Principle)を守る。
+[安定依存の法則(SDP。Stable Dependencies Principle)](https://hirohitokato.github.io/DesigningKatas/02-practical/10-component-sdp.html)を守る。
 
 **{安定度}** = **min({全ての依存先の安定度})**
 
 ![bg right:45% h:200pt](./assets/33-stable_dependency_principle.jpg)
->>> 『ちょうぜつソフトウェア設計入門』(田中ひさてる著)より転載
+>>> 画像は『ちょうぜつソフトウェア設計入門』(田中ひさてる著)より転載
+
+<!-- https://hirohitokato.github.io/DesigningKatas/02-practical/10-component-sdp.html -->
 
 ---
 
