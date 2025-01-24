@@ -87,6 +87,9 @@
     - [依存関係(2)](02-practical/30-dependency_2.md) - 依存関係(共通結合,外部結合)
     - [依存関係(3)](02-practical/31-dependency_3.md) - 依存関係(制御結合)
     - [依存関係(4)](02-practical/32-dependency_4.md) - 依存関係(スタンプ結合＆データ結合＆メッセージ結合)
+    - [依存関係(5)](02-practical/33-dependency_5.md) - 依存関係(依存の方向)
+    - [依存関係(5)](02-practical/34-dependency_6.md) - 依存関係(依存の重複・明示性)
+
 
 ## C.その他(ネタ,ウンチクなど)
 
