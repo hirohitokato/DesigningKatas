@@ -236,7 +236,7 @@ class UserProfilePresenter { // ユーザー情報を表示するクラス
 
 ---
 
-## DI(Dependency Injection.依存性注入)の光と闇
+## [補足] DI(Dependency Injection.依存性注入)の光と闇
 
 > DIとは、オブジェクト間の依存関係をハードコーディングせずに解決する設計パターンのこと。静的なオブジェクト指向言語ではインターフェースと実装クラスとを分離しておき自由に差し替えられるようにする。
 
@@ -249,3 +249,82 @@ DIにはメリットもデメリットもあるので盲信しない。↓のメ
 |・モジュール間の相互依存の解決<br>・実装の差し替え<br>・ビルドの高速化<br>・ツールによるインスタンス管理|・依存関係の暗黙化<br>・可読性の低下のおそれ|
 
 <center>
+
+---
+
+## アンチパターン(2) 暗黙的な変域
+
+『引数が受け取れる値の範囲 ≠ 値が表現可能な範囲』はわかりにくい
+
+```cs
+class SomeView {
+    void SetBackgroundColor(String colorString) {
+        if (colorString == "red") {
+            self.BackgroundColor = 0xFF0000FF; // RGBAで赤
+        } else if (colorString == "green") {
+            self.BackgroundColor = 0x00FF00FF; // RGBAで緑
+        } else if ( … ) { … } else if ( … ) { … } // いろんなパターンに対処
+        else {
+            self.BackgroundColor = 0x00000000; // マッチしない場合は透明にフォールバック
+        }
+    }
+}
+```
+
+🤔 **QUIZ: このコードの問題を考えてみよう**
+
+---
+
+## アンチパターン(2) 暗黙的な変域
+
+- 問題１: 有効値を知るためにはコードの詳細を読まないといけない
+    - 失敗すると透明になってしまうので誤判定が分かりにくい
+- 問題２: 仕様変更したときに全ての指定箇所を見ないといけない
+    - 検索でヒットしない指定方法をしているかも(例:`"pale"+"blue"`)
+
+```cs
+class SomeView {
+    void SetBackgroundColor(String colorString) {
+        if (colorString == "red") { … }
+        else if (colorString == "green") { … }
+        else if ( … ) { … } else if ( … ) { … }
+        else { … }
+    }
+}
+```
+
+---
+
+## アンチパターン(2) 暗黙的な変域の対策
+
+enumなどで明示的な型を用意する
+
+```cs
+enum ViewColor {
+    RED = 0xFF0000FF,
+    GREEN = 0x00FF00FF,
+    ...
+    TRANSPARENT = 0x00000000
+}
+
+class SomeView {
+    void SetBackgroundColor(ViewColor color) { … }
+}
+```
+
+---
+
+## 依存関係のまとめ
+
+- 結合度
+    - 内容結合は断固解消、共通結合〜制御結合は緩和するべきケースあり
+- 依存の方向
+    - 依存方向を決める基準を使い、単方向にして相互・循環依存を避ける
+- 依存の重複
+    - デメテルの原則をもとに依存の不要な重なりを避ける
+- 依存の明示性
+    - 隠れた依存関係にも注意を払う
+
+---
+
+# :tada:おつかれさまでした！:tada:
