@@ -51,8 +51,8 @@ _Code Readability_
     - コマンドとクエリの分割(Command-Query Separation. CQS)
 1. 関数の流れ
     - 定義指向プログラミング
-    - 早期リターン **←ｺｺ!**
-    - 関数分割のコツ
+    - **早期リターン**
+    - **関数分割のコツ**
 ---
 
 ## 早期リターン(Early return)
