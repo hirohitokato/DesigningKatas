@@ -86,6 +86,26 @@ else:
     show_network_unavailable_dialog() # アンハッピーパス１
 ```
 
+<b>Quiz:</b> 気になる処理・読みにくいと思う部分を考えてみよう
+
+---
+
+## 早期リターンができていない例
+
+```py
+[BAD]
+if is_network_available():
+    query_result = query_to_server()
+    if query_result.is_valid:
+        result_str = query_result.parse()
+        if result_str != "":
+            # ...ハッピーパスの実装...
+    else:
+        show_invalid_response_dialog() # アンハッピーパス２
+else:
+    show_network_unavailable_dialog() # アンハッピーパス１
+```
+
 …３つ目のif文がelseを持っていないのに気づきましたか？アンハッピーパスの記述順がチェックしたときの順と異なっているのに気が付きましたか？
 
 >>> 私も過去のプロダクトコードで同じコードを見たことがあります
