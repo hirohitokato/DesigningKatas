@@ -212,6 +212,8 @@ def send_message(message_type: MessageType, peer: URL): # データを生成し�
 - すべての分岐先で網羅性を担保できない
     - 新しいデータ要素を追加: `MessageType.GET_STATUS`だけ更新忘れ
 
+<!-- 結合度においては「条件結合になっている」と言えます -->
+
 ---
 
 ## 関数分割のコツ: メインシーケンスを１つにする
