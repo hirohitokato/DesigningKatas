@@ -93,7 +93,7 @@ c = calculate_sqrt(func_a(a, 2), func_a(b, 2))
 ```
 ↓
 ```py
-# [GOOD] 定義指向プログラミングの適用例
+# [GOOD] 定義指向プログラミングの適用例。途中の計算結果を定義した
 # func_aは累乗を計算する関数(==pow())だと読み取れるようになる
 a_square = func_a(a, 2)
 b_square = func_a(b, 2)
@@ -176,9 +176,9 @@ if (messageModelList.HasValidModel(messageId)) {
 [NOT GOOD] // なぜNOT GOODかを考えてみよう
 var isMessageValid = messageModelList.HasValidModel(messageId);
 var isMessageViewShown = messageListPresenter.IsMessageShown(messageId);
-var isMessageSengingOngoing = requestQueue.Contains(messageId);
+var isMessageSendingOngoing = requestQueue.Contains(messageId);
 
-if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
+if (isMessageValid && isMessageViewShown && isMessageSendingOngoing) {
     view.ShowStatusText("送信中です");
 }
 ```
@@ -187,7 +187,7 @@ if (isMessageValid && isMessageViewShown && isMessageSengingOngoing) {
 
 ## 適用するときの注意(1) : if文のネスト
 
-定義先を変数ではなく関数とすると良い（こともある）
+定義先を変数ではなく関数とする（と良い場合もある）
 
 ```cs
 [GOOD]
