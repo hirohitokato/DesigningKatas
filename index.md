@@ -67,28 +67,33 @@
 - [ユビキタス言語](01-basics/19-ubiquitous.md)
 - 読みやすいコードの書き方
     - 石川宗寿著『[読みやすいコードのガイドライン―持続可能なソフトウェア開発のために](https://gihyo.jp/book/2022/978-4-297-13036-7)』(技術評論社)の内容をベースに、保守しやすくしなやかなコードを読みやすさの観点から説明します。
-    - [命名(1)](02-practical/12-naming_1.md)
-    - [命名(2)](02-practical/13-naming_2.md)
-    - [命名(3)](02-practical/14-naming_3.md)
-    - [命名(4)](02-practical/15-naming_4.md)
-    - [コメント(1)](02-practical/16-comment_1.md)
-    - [コメント(2)](02-practical/18-comment_2.md) - ドキュメンテーション
-    - [コメント(3)](02-practical/19-comment_3.md) - 非形式的なコメント
-    - [状態(1)](02-practical/20-state_1.md)
-    - [状態(2)](02-practical/21-state_2.md)
-    - [状態(3️)](02-practical/22-state_3.md) - 不変性
-    - [状態(4)](02-practical/23-state_4.md) - 冪等性
-    - [状態(5)](02-practical/24-state_5.md) - 非巡回
-    - [関数(1)](02-practical/25-function_1.md) - 関数の責任
-    - [関数(2)](02-practical/26-function_2.md) - 関数の流れ(定義指向プログラミング)
-    - [関数(3)](02-practical/27-function_3.md) - 関数の流れ(定義指向プログラミング)
-    - [関数(4)](02-practical/28-function_4.md) - 関数の流れ(早期リターン＆関数分割のコツ)
-    - [依存関係(1)](02-practical/29-dependency_1.md) - 依存関係(結合度)
-    - [依存関係(2)](02-practical/30-dependency_2.md) - 依存関係(共通結合,外部結合)
-    - [依存関係(3)](02-practical/31-dependency_3.md) - 依存関係(制御結合)
-    - [依存関係(4)](02-practical/32-dependency_4.md) - 依存関係(スタンプ結合＆データ結合＆メッセージ結合)
-    - [依存関係(5)](02-practical/33-dependency_5.md) - 依存関係(依存の方向)
-    - [依存関係(5)](02-practical/34-dependency_6.md) - 依存関係(依存の重複・明示性)
+    - **命名編**: どのような名前を付けたら可読性を高められるか、文法や単語の選択について具体例を交えつつ説明します。
+        - [命名(1)](02-practical/12-naming_1.md)
+        - [命名(2)](02-practical/13-naming_2.md)
+        - [命名(3)](02-practical/14-naming_3.md)
+        - [命名(4)](02-practical/15-naming_4.md)
+    - **コメント編**: コメントをなぜ書くのか、どのように書けば可読性や保守性を高められるかを説明します。
+        - [コメント(1)](02-practical/16-comment_1.md)
+        - [コメント(2)](02-practical/18-comment_2.md) - ドキュメンテーション
+        - [コメント(3)](02-practical/19-comment_3.md) - 非形式的なコメント
+    - **状態編**: システムの動作に必要不可欠な状態について、可読性と頑健性の向上に有用なコードレベルの概念・技術を説明します。
+        - [状態(1)](02-practical/20-state_1.md)
+        - [状態(2)](02-practical/21-state_2.md)
+        - [状態(3️)](02-practical/22-state_3.md) - 不変性
+        - [状態(4)](02-practical/23-state_4.md) - 冪等性
+        - [状態(5)](02-practical/24-state_5.md) - 非巡回
+    - **関数編**: 関数の中身を斜め読みするだけで理解できる構造にする利点とその実現テクニックを説明します。
+        - [関数(1)](02-practical/25-function_1.md) - 関数の責任
+        - [関数(2)](02-practical/26-function_2.md) - 関数の流れ(定義指向プログラミング)
+        - [関数(3)](02-practical/27-function_3.md) - 関数の流れ(定義指向プログラミング)
+        - [関数(4)](02-practical/28-function_4.md) - 関数の流れ(早期リターン＆関数分割のコツ)
+    - **依存関係編**: 複数クラスが保守性を維持したまま、複雑に協調動作できるようにするための考え方や表現方法を説明します。
+        - [依存関係(1)](02-practical/29-dependency_1.md) - 依存関係(結合度)
+        - [依存関係(2)](02-practical/30-dependency_2.md) - 依存関係(共通結合,外部結合)
+        - [依存関係(3)](02-practical/31-dependency_3.md) - 依存関係(制御結合)
+        - [依存関係(4)](02-practical/32-dependency_4.md) - 依存関係(スタンプ結合＆データ結合＆メッセージ結合)
+        - [依存関係(5)](02-practical/33-dependency_5.md) - 依存関係(依存の方向)
+        - [依存関係(6)](02-practical/34-dependency_6.md) - 依存関係(依存の重複・明示性)
 
 
 ## C.その他(ネタ,ウンチクなど)
