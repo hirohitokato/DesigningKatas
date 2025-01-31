@@ -9,7 +9,7 @@ const markdownIt = require('markdown-it');
 const outputDir = './public';
 
 // コマンドライン引数をパース
-if (process.argv.length != 4) {
+if (process.argv.length != 5) {
   console.error("Invalid arguments.");
   process.exit(1);
 }
