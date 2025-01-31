@@ -5,7 +5,7 @@
   "scripts": {
     "gen:all": "npm run gen:html && npm run convert && npm run copy:assets",
     "gen:html": "marp --theme .marp-themes/katas.css --bespoke.progress --input-dir ./ --output ./public",
-    "convert": "node ./script/convert.js index.md index.html && node ./script/convert.js ACTIVITIES.md ACTIVITIES.html",
+    "convert": "node ./script/convert.js index.md 勉強会#コンテンツ index.html && node ./script/convert.js ACTIVITIES.md 活動履歴 ACTIVITIES.html",
     "copy:assets": "for dir in ./*/; do if [ -d \"$dir/assets\" ]; then rsync -a \"$dir/assets/\" \"./public/${dir%/}/assets/\"; fi; done"
   },
   "author": "",

@@ -14,7 +14,8 @@ if (process.argv.length != 4) {
   process.exit(1);
 }
 const inputFilePath = process.argv[2];
-const outputFilePath = path.join(outputDir, process.argv[3]);
+const pageTitle = process.argv[3];
+const outputFilePath = path.join(outputDir, process.argv[4]);
 
 // Markdown-itのインスタンスを作成
 const md = new markdownIt();
@@ -35,7 +36,8 @@ updatedMarkdown = updatedMarkdown.replace(/<!--.*?-->/gs, '');
 const htmlbody = md.render(updatedMarkdown);
 
 // テンプレートに変換したHTMLを埋め込む
-const result = template.replace('<!-- CONTENT WILL BE INSERTED HERE -->', htmlbody);
+let resultHtmlBody = template.replace('<!-- TITLE WILL BE INSERTED HERE -->', pageTitle);
+resultHtmlBody = resultHtmlBody.replace('<!-- CONTENT WILL BE INSERTED HERE -->', htmlbody);
 
 // 出力ディレクトリが存在しない場合は作成
 if (!fs.existsSync(outputDir)) {
@@ -43,6 +45,6 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // HTMLをファイルに書き込む
-fs.writeFileSync(outputFilePath, result);
+fs.writeFileSync(outputFilePath, resultHtmlBody);
 
 console.log(`Converted ${inputFilePath} to ${outputFilePath}`);
