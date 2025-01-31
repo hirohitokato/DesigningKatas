@@ -8,27 +8,27 @@
 
 多くのプログラミングの状況で共通に適用されるべき、基本的な決まり事を紹介します。
 
-- [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md)
-- [KISS(Keep It Simple, Stupid)](01-basics/03-kiss.md)
-- [DRY(Don't Repeat Yourself)](01-basics/04-dry.md)
-- [名前重要](01-basics/05-naming_is_important.md)
-- [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md)
-- [PIE(Program Intently and Expressively)](01-basics/09-pie.md)
-- [YAGNI](01-basics/20-yagni.md)
+- [銀の弾などない(No silver bullet)](01-basics/01-no_silver_bullets.md): フレデリック・ブルックスの論文を解説します。生産性向上の手立てと本質的な複雑性への対処法を学びます
+- [KISS(Keep It Simple, Stupid)](01-basics/03-kiss.md): KISS原則について解説します。シンプルなコードの書き方とそのメリットを学びます
+- [DRY(Don't Repeat Yourself)](01-basics/04-dry.md): DRY原則について解説します。コードの重複を避けるための具体的なテクニックを学びます
+- [名前重要](01-basics/05-naming_is_important.md): プログラミングにおける名前付けの重要性を解説します。理解しやすいコードを書くための名前付けのコツを学びます
+- [SLAP(Single Level of Abstraction Principle)](01-basics/06-slap.md): SLAP原則について解説します。抽象度を揃えたコードの書き方とそのメリットを学びます
+- [PIE(Program Intently and Expressively)](01-basics/09-pie.md): PIE原則について解説します。意図を表現し読みやすいコードを書くためのテクニックを学びます
+- [YAGNI](01-basics/20-yagni.md): YAGNI原則について解説します。必要な機能だけを実装することの大切さとその考え方を学びます
 
 ### プログラミングの考え方
 
 プログラミングの「思想」に関する原理原則を紹介します。成功したソフトウェアには、その成功を支えた「文化」「哲学」「価値観」といった思想があります。
 
 - アーキテクチャ根底技法
-    - [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md)
-    - [参照の一点性](01-basics/07-single_point_of_reference.md)
-    - [抽象化(Abstraction)](01-basics/12-abstraction.md)
-    - [カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md)
-    - [関心の分離](01-basics/14-separation_of_concerns.md)
-    - [充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md)
-    - [ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md)
-    - [まとめ](01-basics/17-enabling_techniques_wrapup.md)
+    - [分割と統治(Divide and Conquer)](01-basics/02-divide_and_conquer.md): 大きな問題を小さな問題に分割して解決する「分割と統治」の原則について解説します。プログラミングにおける分割統治の重要性と実践方法を学びます
+    - [参照の一点性](01-basics/07-single_point_of_reference.md): 変数を一度定義したら値を書き換えない参照の一点性について解説します。副作用のないコードの書き方とそのメリットを学びます
+    - [抽象化(Abstraction)](01-basics/12-abstraction.md): 抽象化の技法について解説します。概念的な線引きとそのコツから、抽象化の方法とその重要性を学びます
+    - [カプセル化/情報隠蔽/パッケージ化](01-basics/13-encapsulation_infohiding_pkg.md): データとロジックのグルーピングと情報隠蔽の違いについて解説します。カプセル化と情報隠蔽の実践方法を学びます
+    - [関心の分離](01-basics/14-separation_of_concerns.md): 関心の分離原則について解説します。異なる機能・役割を持つものを分類することの重要性とその実践方法を学びます
+    - [充足性 & 完全性 & プリミティブ性](01-basics/15-suff_comp_prim.md): 抽象が満たすべき３つの要件について解説します。抽象の妥当性をチェックする方法を学びます
+    - [ポリシーとメカニズムの分離・インターフェースと実装の分離](01-basics/16-segmentation_principles.md): アプリ独自のロジックと独立した機能の分離について解説します。分離の重要性とその実践方法を学びます
+    - [まとめ](01-basics/17-enabling_techniques_wrapup.md): アーキテクチャ根底技法のまとめとして、各技法の要点とその適用方法を解説します。各技法の総復習とその実践方法を紹介します
 - [７つの設計原理](01-basics/08-seven_design_principles.md)
 - SOLID
     - [単一責任の原則(SRP)](02-practical/01-solid-srp.md)
