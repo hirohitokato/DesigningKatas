@@ -136,7 +136,7 @@ fun registerDescription(keyword: String, description: String)
 ## コメント
 
 1. コメントの種類と目的
-2. ドキュメンテーション **←ﾂｷﾞﾊｺｺ!**
+2. **ドキュメンテーション**
 3. 非形式的なコメント
 
 ---
