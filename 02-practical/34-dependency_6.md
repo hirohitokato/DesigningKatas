@@ -334,3 +334,11 @@ class SomeView {
 # :tada:おつかれさまでした！:tada:
 
 これからも解像度を高くしていってください！！
+
+<!-- 使い方
+https://hirohitokato.github.io/DesigningKatas/
+
+- 個人勉強のフックポイント
+- チームの共通言語
+- 生成AIのキーワード
+ -->
