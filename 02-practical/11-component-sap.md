@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "コンポーネントの原則 SAP"
 ---
 <!-- 
 size: 16:9

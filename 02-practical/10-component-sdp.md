@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "コンポーネントの原則 SDP"
 ---
 <!-- 
 size: 16:9
