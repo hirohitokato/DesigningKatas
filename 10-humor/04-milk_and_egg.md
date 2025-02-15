@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "エンジニア適正クイズ: 牛乳とたまご"
 ---
 <!-- 
 size: 16:9
