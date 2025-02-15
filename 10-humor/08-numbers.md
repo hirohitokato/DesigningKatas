@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "エンジニアとマジックナンバー/マジックストリング"
 ---
 <!-- 
 size: 16:9

@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "プログラマーとは"
 ---
 <!-- 
 size: 16:9

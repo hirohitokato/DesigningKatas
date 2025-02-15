@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アンナ・カレーニナの法則"
 ---
 <!-- 
 size: 16:9
