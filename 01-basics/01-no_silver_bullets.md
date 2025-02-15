@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "銀の弾などない(No silver bullet)"
 ---
 <!-- 
 size: 16:9
