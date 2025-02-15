@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "nullポインタの歴史"
 ---
 <!-- 
 size: 16:9

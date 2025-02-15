@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "継承と委譲の使い分け"
 ---
 <!-- 
 size: 16:9
