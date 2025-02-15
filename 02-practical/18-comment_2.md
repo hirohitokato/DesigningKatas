@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "読みやすいコードの作り方 - コメント(2)"
 ---
 
 <!--

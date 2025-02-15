@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "読みやすいコードの作り方 - 状態(1)"
 ---
 <!-- 
 size: 16:9
