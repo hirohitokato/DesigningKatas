@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "７つの設計原理"
 ---
 <!--
 size: 16:9

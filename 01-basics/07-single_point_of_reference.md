@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "参照の一点性"
 ---
 <!--
 size: 16:9

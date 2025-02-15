@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "DRY"
 ---
 <!-- 
 size: 16:9

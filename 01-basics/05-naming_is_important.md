@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "名前重要"
 ---
 <!-- 
 size: 16:9
