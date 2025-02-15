@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アーキテクチャ根底技法(1) 抽象化"
 ---
 <!-- 
 size: 16:9

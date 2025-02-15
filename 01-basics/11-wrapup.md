@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "ここまでの復習"
 ---
 <!-- 
 size: 16:9

@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "YAGNI"
 ---
 <!-- 
 size: 16:9

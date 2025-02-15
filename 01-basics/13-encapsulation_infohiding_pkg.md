@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アーキテクチャ根底技法(2,3,4) カプセル化 / 情報隠蔽 / パッケージ化"
 ---
 <!-- 
 size: 16:9

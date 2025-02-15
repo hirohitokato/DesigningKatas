@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "ユビキタス言語"
 ---
 <!-- 
 size: 16:9

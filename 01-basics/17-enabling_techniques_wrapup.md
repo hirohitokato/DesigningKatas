@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アーキテクチャ根底技法まとめ"
 ---
 <!-- 
 size: 16:9
