@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SOLID #2 開放閉鎖の原則"
 ---
 <!-- 
 size: 16:9

@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SOLID #5 依存関係逆転の原則"
 ---
 <!-- 
 size: 16:9

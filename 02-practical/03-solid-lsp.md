@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SOLID #3 リスコフの置換原則"
 ---
 <!-- 
 size: 16:9
