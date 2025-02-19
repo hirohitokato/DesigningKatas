@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "エンジニアジョーク"
 ---
 <!-- 
 size: 16:9

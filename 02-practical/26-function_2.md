@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "読みやすいコードの作り方 - 関数(2)"
 ---
 <!-- 
 size: 16:9

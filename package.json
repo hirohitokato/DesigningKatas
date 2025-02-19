@@ -1,6 +1,6 @@
 {
   "name": "designingkatas",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "設計・プログラミングに関する大事な考え方やコードへの応用例を説明します。",
   "scripts": {
     "gen:all": "npm run gen:html && npm run convert && npm run copy:assets",

@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SOLID #4 インターフェース分離の原則"
 ---
 <!-- 
 size: 16:9

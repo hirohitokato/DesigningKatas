@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SLAP"
 ---
 <!-- 
 size: 16:9

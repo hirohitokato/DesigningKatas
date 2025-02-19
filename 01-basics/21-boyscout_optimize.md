@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "ボーイスカウトの規則 & 最適化のルール"
 ---
 <!-- 
 size: 16:9

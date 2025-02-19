@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "世の中には10種類の人間がいる"
 ---
 <!-- 
 size: 16:9

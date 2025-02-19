@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "なぜ配列の要素番号はゼロから始まるのか"
 ---
 <!-- 
 size: 16:9

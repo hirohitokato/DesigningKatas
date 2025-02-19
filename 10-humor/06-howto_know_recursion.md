@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "再帰を理解するたった１つの冴えた方法"
 ---
 <!-- 
 size: 16:9

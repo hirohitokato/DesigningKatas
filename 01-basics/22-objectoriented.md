@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "もう一度学ぶオブジェクト指向"
 ---
 <!-- 
 size: 16:9

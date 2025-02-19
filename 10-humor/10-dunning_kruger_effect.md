@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "ダニング＝クルーガー効果"
 ---
 <!-- 
 size: 16:9

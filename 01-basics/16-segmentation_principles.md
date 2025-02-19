@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アーキテクチャ根底技法(7,8) ポリシーと実装の分離/インターフェースと実装の分離"
 ---
 <!-- 
 size: 16:9

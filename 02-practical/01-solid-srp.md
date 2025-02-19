@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "SOLID #1 単一責任の原則(SRP)"
 ---
 <!-- 
 size: 16:9

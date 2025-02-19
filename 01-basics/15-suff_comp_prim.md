@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "アーキテクチャ根底技法(6) 充足性&完全性&プリミティブ性"
 ---
 <!-- 
 size: 16:9

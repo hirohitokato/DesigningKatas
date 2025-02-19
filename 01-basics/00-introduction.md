@@ -2,6 +2,7 @@
 marp: true
 math: mathjax
 theme: katas
+title: "勉強会# イントロダクション"
 ---
 <!-- 
 size: 16:9
