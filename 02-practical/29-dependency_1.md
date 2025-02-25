@@ -243,7 +243,23 @@ class Calculator {
 
 ---
 
-## 
+## こういうのはOK
+
+表示オプションのように、動作に必須でないものまで一息に設定させる必要はない
+
+```cs
+[GOOD]
+// 注:あるクラスを使う側の処理
+var view = new MyView();
+view.backgroundColor = Color.Yellow;
+view.borderWidth = 2.0;
+view.borderColor = Color.White;
+ ...
+view.Show();
+
+[BAD]
+var view = new MyView(Color.Yellow, 2.0, Color.White, ...... );
+```
 
 
 ---
