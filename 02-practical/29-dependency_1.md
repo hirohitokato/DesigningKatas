@@ -161,7 +161,7 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 <!-- 昔は書けた。自分自身を書き換えながら処理を実行する。でも今は、読み込んだプログラムのメモリ領域はOSによって読み取り専用領域としてフラグを立てているので、そこを書き換えようとしても -->
 ---
 
-## 内容結合: アンチパターン①: 内容結合になってしまうコード
+## 内容結合: アンチパターン①: 内容結合に陥るコード
 
 ```cs
 [BAD] // 内容結合に陥る、不正な使い方が可能なコード
@@ -182,7 +182,7 @@ Console.WriteLine(calculator.Result);
 
 ---
 
-## 内容結合: アンチパターン①: 内容結合を破るコード
+## 内容結合: アンチパターン①: 内容結合に陥るコード
 
 クイズの回答
 
@@ -202,7 +202,7 @@ calculator.Calculate(); // Prepare()を呼ばずに実行
 別回答。自分自身で結合してしまっている。
 
 ```cs
-[BAD] // 内容結合を破るコードの例 2
+[BAD] // 内容結合に陥るコードの例 2
 void CalculateCells() {
     calculator.Prepare(…); // calculatorは共通とする
     calculator.Calculate();
