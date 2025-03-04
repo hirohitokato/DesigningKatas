@@ -11,7 +11,7 @@ paginate: true
 <!-- header: 勉強会# ― エンジニアとしての解像度を高めるための勉強会-->
 
 <style scoped>
-    h1 { color: white}
+    * { color: white}
 </style>
 
 # ジョシュアツリーの法則

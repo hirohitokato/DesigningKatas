@@ -17,7 +17,7 @@ paginate: true
 ---
 
 <style scoped>
-    - { color: white}
+    * { color: white}
 </style>
 
 ![bg contain](assets/02-bigmountain.jpg)
@@ -123,7 +123,7 @@ paginate: true
 ---
 
 <style scoped>
-    - { color: white}
+    * { color: white}
 </style>
 
 ![bg](assets/02-descartes.jpg)
@@ -145,7 +145,7 @@ paginate: true
 ---
 
 <style scoped>
-    - { color: white}
+    * { color: white}
 </style>
 
 ![bg](assets/02-descartes.jpg)
@@ -155,6 +155,7 @@ paginate: true
 - フランス生まれの哲学者、数学者。合理主義哲学の祖であり、近世哲学の祖。
 
 - 1637年刊の『方法序説』で「困難は分割せよ」と記す
+    - → 分割と統治
 
 <!-- 
 この「困難は分割せよ」です。
