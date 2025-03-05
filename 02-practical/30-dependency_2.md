@@ -128,18 +128,20 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 [BAD]
 public static class UserModelRepository {
     public static UserModelRepository SharedInstance() { ... }
+    // システムのあらゆる場所で UserModelRepository.SharedInstance() が書かれる
+    // 変更ができない・完成しないとあらゆる依存元が動かせない
 };
 ```
 
 ```cs
 [GOOD]
-public static class UserModelRepository { ... }
+public class UserModelRepository { ... }
 
 class SomeClass {
     private UserModelRepository _userModelRepository;
     SomeClass(UserModelRepository repository) { _userModelRepository = repository; }
 
-    // repositoryを介して使用
+    // メンバー変数を使用。実体がシングルトンかどうかに依存しなくなった
 }
 ```
 
@@ -162,7 +164,7 @@ class SomeClass {
 }
 ```
 
-`IUserModelRepository`に準拠したクラスであれば自由に差し替えられるようになった
+↑`IUserModelRepository`に準拠していれば自由に差し替えられる(より低依存に)
 
 ---
 
