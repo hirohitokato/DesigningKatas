@@ -129,12 +129,12 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 public static class UserModelRepository {
     public static UserModelRepository SharedInstance() { ... }
 };
-
-// 色々なクラス/場所で UserModelRepository.SharedInstance() を使用...
 ```
 
 ```cs
 [GOOD]
+public static class UserModelRepository { ... }
+
 class SomeClass {
     private UserModelRepository _userModelRepository;
     SomeClass(UserModelRepository repository) { _userModelRepository = repository; }
@@ -144,6 +144,25 @@ class SomeClass {
 ```
 
 ↑コンストラクタの呼び出し元がインスタンスの生存期間や参照を管理できる
+
+---
+
+## 可変なシングルトン使用の緩和策: DI(より柔軟なパターン)
+
+```cs
+[BETTER]
+public interface IUserModelRepository { ... }
+public class UserModelRepository: IUserModelRepository { ... };
+
+class SomeClass {
+    private IUserModelRepository _userModelRepository;
+    SomeClass(IUserModelRepository repository) { _userModelRepository = repository; }
+
+    // repositoryを介して使用
+}
+```
+
+`IUserModelRepository`に準拠したクラスであれば自由に差し替えられるようになった
 
 ---
 
