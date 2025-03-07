@@ -209,7 +209,7 @@ def send_message(message_type: MessageType, peer: URL): # データを生成し�
     send_to(peer, self.data)
 ```
 
-- `create_postdata()`を見ただけでは具体的な処理が分からない
+- `create_postdata_～()`を見ただけでは具体的な処理が分からない
 - すべての分岐先で網羅性を担保できない
     - 新しいデータ要素を追加: `MessageType.GET_STATUS`だけ更新忘れ
 
