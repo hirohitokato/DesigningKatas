@@ -210,7 +210,7 @@ void UpdateProfileImageView() {
 
 ## アンチパターン②の緩和策: 不必要な条件分岐の消去(失敗例)
 
-操作対象が共通なものを別の関数で定義しない。保守性の悪化
+操作対象が共通なものを別の関数で重複定義しない。 → 保守性の悪化
 
 ```cs
 [BAD]
@@ -220,7 +220,7 @@ void UpdateErrorView() { // エラー発生を画面に表示する
     _iconView.Image = CROSS_MARK_IMAGE;
 }
 void UpdateResultView() { // 結果を画面に表示する
-    _resultView.Visible = true;
+    _resultView.Visible = true; ← 上の関数と対象が同じ
     _errorView.Visible = false;
     _iconView.Image = CHECK_MARK_IMAGE;
 }
