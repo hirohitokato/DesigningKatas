@@ -98,15 +98,15 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 
 ## 制御結合
 
-フラグなどにより複数の処理を分岐させている状態。
+フラグやif/switchなどにより複数の処理を分岐させている状態。
 分岐はプログラミングの本質の１つであるため、悪とは言い切れない。
 
-ただし、
+ただし
 
 - 条件分岐の粒度が不必要に大きい
 - 条件分岐間での動作の関連性が薄い
 
-という状態に注意する。
+というコードに陥っていないか注意する。
 
 <!--
 構造化プログラミングにおける３つの重要な要素：
@@ -221,12 +221,12 @@ void UpdateErrorView() { // エラー発生を画面に表示する
     _iconView.Image = CROSS_MARK_IMAGE;
 }
 void UpdateResultView() { // 結果を画面に表示する
-    _resultView.Visible = true; ← 上の関数と対象が同じ
+    _resultView.Visible = true; 　　　　　　← 上と操作対象が同じ
     _errorView.Visible = false;
     _iconView.Image = CHECK_MARK_IMAGE;
 }
-void Update〇〇View() { ... }
-void Update〇〇View() { ... }
+void Update〇〇View() { ... }　　　　　　　 ← 上と操作対象が同じ
+void Update〇〇View() { ... }　　　　　　　 ← 上と操作対象が同じ
 ...
 ```
 
