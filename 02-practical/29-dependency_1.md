@@ -189,11 +189,12 @@ Console.WriteLine(calculator.Result);
 
 ```cs
 [BAD]
-// 依存先のコードを変更する
-calculator.Result = 42;
-
 // 依存先の内部のコードに直接ジャンプする
 calculator.Calculate(); // Prepare()を呼ばずに実行
+
+// 依存先のコードを変更する
+calculator.Result = 42;
+Console.WriteLine(calculator.Result); // 🤔「42が出たぞ？」
 ```
 
 ---
