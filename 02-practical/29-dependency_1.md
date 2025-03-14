@@ -232,22 +232,25 @@ void CalculateAnotherCell() {
 class Calculator {
     int Calculate(int lhs, int rhs) {
         this.Prepare(lhs, rhs);
-        // ... 元のCalculateの処理 ...
+        result = lhs + rhs;
         this.TearDown();
         return result;
     }
+
     // 見せる必要のないものはprivateに変更
     private int result = -1;
     private void Prepare(int lhs, int rhs) { … } // 計算の準備をする
-    private void TearDown(…) { … } // 計算の後始末をする
+    private void TearDown(…) { … }               // 計算の後始末をする
 }
+
+var result = calculator.Calculate(15, 3); // 途中処理の入り込む余地がない
 ```
 
 ---
 
 ## こういうのはOK
 
-表示オプションのように、動作に必須でないものまで一息に設定させる必要はない
+表示オプションのように、処理に必須でないパラメータを強制する必要はない
 
 ```cs
 [GOOD]
