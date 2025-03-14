@@ -277,7 +277,8 @@ class Foo {
     private IList<string> Users;
     public Foo(IList<string> users) { Users = users; }
     // :
-    // Usersを使った処理。変更したときはFooから通知を飛ばす
+    // -- Usersを使った処理 --
+    // Fooは、Usersの中身に変更があったときは通知を飛ばす責務を持つ
     // :
 }
 
@@ -286,6 +287,7 @@ var foo = new Foo(users);
 
 users.Apped("new user"); // fooは変更を検知できない！
 ```
+→ リスト`users`の所有者(Owner)は誰だろう？
 
 <!-- Dependency Injectionでやりがち -->
 
@@ -311,8 +313,9 @@ var foo = new Foo(users);
 var bar = new Bar(users);
 bar.Add("new user"); // fooは変更を検知できない！
 ```
+→ リスト`users`の所有者(Owner)は誰？Foo？それともBar？
 
-<!-- Dependency Injectionでやりがち -->
+<!-- もっと奥深くで変更されていることはままある -->
 
 ---
 
