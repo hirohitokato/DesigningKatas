@@ -166,12 +166,13 @@ Reliable software through composite design(*1)の定義 ＋ Software Architect's
 ```cs
 [BAD] // 内容結合に陥る、不正な使い方が可能なコード
 class Calculator {
-    int Result = -1; // Calculate()の結果を保持する
-    void Prepare(int lhs, int rhs) { … } // 計算の準備をする
-    void Calculate() { … } // 計算する
-    void TearDown() { … } // 計算の後始末をする
+    int Result = -1;                     // Calculate()の結果を保持する
+    void Prepare(int lhs, int rhs) { … } // 1) 計算の準備をする
+    void Calculate() { … }               // 2) 計算する
+    void TearDown() { … }                // 3) 計算の後始末をする
 }
-// 使い方。Prepare→Calculate→TearDownの順に呼び、Resultを読む
+
+// 使い方。Prepare→Calculate→TearDownの順に呼び、その後にResultを読む
 calculator.Prepare(3, 5);
 calculator.Calculate();
 calculator.TearDown();
