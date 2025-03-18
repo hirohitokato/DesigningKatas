@@ -223,6 +223,7 @@ class SomeUIClass { // [BAD]
 - `NotifyUserListUpdated()`だけ見るとメッセージ結合
 - 実際は呼ばれる前に`Users`が更新されていることを想定
     - 広義の共通結合(=共有されたデータ構造を介した受け渡し)
+    - `users`設定と`NotifyUserListUpdated()`の間に内容結合の危険性も
 
 ---
 
