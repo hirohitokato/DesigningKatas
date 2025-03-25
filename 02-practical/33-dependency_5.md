@@ -159,16 +159,16 @@ class Y { // 依存先クラス
 
 ---
 
-## オブジェクト指向設計あるある
+## 不安定→安定::オブジェクト指向設計あるある
 
 データモデル(安定)がデータ取得処理(不安定)を持っている
 
 ```cs
-[BAD]
+[BAD] // 安定→不安定
 class UserEntity {
     string userId;
     string displayName;
-    UserDataFetcher fetcher; // サーバーからデータ取得する
+    UserDataNWFetcher fetcher; // サーバーからデータ取得する
 
     void Initialize(string id) {
         var data = fetcher.FetchUserData(id); // NW経由で取得
@@ -181,7 +181,7 @@ class UserEntity {
 
 ---
 
-## オブジェクト指向設計あるある
+## 不安定→安定::オブジェクト指向設計あるある
 
 安定なコードの中に不安定さを混ぜない。
 
@@ -192,7 +192,7 @@ class UserEntity { // requesterを持たず、データはデータとして管�
     string displayName;
 }
 
-var fetcher = new UserDataFetcher();
+var fetcher = new UserDataNWFetcher();
 var user = fetcher.FetchUserData(id); // サーバーからデータ取得する
 
 ```
