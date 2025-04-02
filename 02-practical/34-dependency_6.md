@@ -134,18 +134,18 @@ var result = obj.otherObj.action(); // 友達の友達に問い合わせてい�
 
 ## 悪い依存の重複②<br>　　依存の集合の重複
 
-![bg 95% right:40%](./assets/33-complex_depends.png)
+![bg 98% right:37%](./assets/33-complex_depends.png)
 
-「依存先のまとまり」が複数のクラスで似通っている
+「依存先や使い方」が複数クラス同士で似ている
 
 - 依存先を制御する処理が散らばりがち
     - 仕様変更等で変更漏れが生じてしまう
 
-**「まとまり」を表す中間層クラスにまとめる。** ただし…
+**「まとまり」を表す中間層クラスにまとめる。**<br>ただし…
 
 - 必要になるまで作らない(KISS, YAGNI)
 - Middlewareクラスを公開しない
-    - 「お、こんな便利なものがある！」と乱用されてしまう→神クラスの発生
+    - 「お、こんな便利なものが！」と乱用されてしまう→神クラスの発生
 
 ---
 
@@ -233,7 +233,7 @@ class UserProfilePresenter { // ユーザー情報を表示するクラス
 |状況|クラス図|
 |---|---|
 |before|![height:120px](./assets/34-too_abstraction1.png)|
-|after👎|![height:170px](./assets/34-too_abstraction2.png)|
+|after👎<br>**[BAD]**|![height:170px](./assets/34-too_abstraction2.png)|
 
 </center>
 
