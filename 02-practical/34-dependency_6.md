@@ -336,7 +336,7 @@ class SomeView {
 
 # :tada:おつかれさまでした！:tada:
 
-これからも巨人の肩に乗り、解像度を高くしていってください！！
+これからも巨人の肩に乗り、解像度を高くしていってください!!
 
 <!-- 使い方
 https://hirohitokato.github.io/DesigningKatas/
